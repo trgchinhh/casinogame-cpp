@@ -1,4 +1,14 @@
-#include "lib\\banner.h"
+#include "lib//header.h"
+
+void inbanner(const string tenbanner){
+    stringstream ss(tenbanner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
 
 void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh) {
     if(!trangthaiamthanh) return;
@@ -592,7 +602,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
     //hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
     while(1){
         system("cls");
-        banner_trangchu();
+        inbanner(bannertrangchu);
         cout << "┌─────────── " << RESET << RED << "GỢI Ý" << RESET << " ────────────┐" << endl;
         cout << "│ " << YELLOW << "▶ " << WHITE << "Dùng phím " << RED << "↑ ↓" << WHITE << " để di chuyển │" << RESET << endl;
         cout << "│ " << YELLOW << "▶ " << WHITE << "Dùng phím " << RED << "Enter" << WHITE << " để chọn    │" << RESET << endl;
@@ -648,7 +658,8 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                 cout << "\n[" << RED << chon << RESET << "] XÓA TÀI KHOẢN" << RESET << "\n\n";
                 xoathongtintaikhoan(danhsachnguoichoi, thongtinnguoichoi);
             } else {
-                banner_tambiet(); 
+                system("cls");
+                inbanner(bannertambiet);
                 hieuungamthanh_wav(dd_xinvinhbietcu, trangthaiamthanh);
                 if(trangthaiamthanh) Sleep(3000);
                 ancontrochuot(false);
@@ -669,7 +680,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     while(1){
         system("cls");
-        banner_sanhchoi();
+        inbanner(bannercasino);
         taidulieujson(danhsachnguoichoi);
         nguoichoi = timtaikhoan(danhsachnguoichoi, nguoichoi->tentaikhoan);
         hiensodunguoichoi(nguoichoi);
@@ -837,7 +848,7 @@ void game_taixiu1xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     nguoichoi->sodu -= tiencuoc;
     int phienhientai = phiencuoicung(nguoichoi->tentaikhoan) + 1;
     system("cls");
-    banner_taixiu();
+    inbanner(bannertaixiu);
     cout << "\tSố dư sau khi cược: " << YELLOW << dinhdangtien(nguoichoi->sodu) << RESET << " VND" << endl;
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai << 
             YELLOW << "\tCược: " << RESET << (luachon == "t" || luachon == "tai" ? "Tài" : "Xỉu") <<
@@ -900,7 +911,7 @@ void game_taixiu3xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     nguoichoi->sodu -= tiencuoc;
     int phienhientai = phiencuoicung(nguoichoi->tentaikhoan) + 1;
     system("cls");
-    banner_taixiu();
+    inbanner(bannertaixiu);
     cout << "\tSố dư sau khi cược: " << YELLOW << dinhdangtien(nguoichoi->sodu) << RESET << " VND" << endl;
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai << 
             YELLOW << "\tCược: " << RESET << (luachon == "t" || luachon == "tai" ? "Tài" : "Xỉu") <<
@@ -975,7 +986,7 @@ void game_doanso(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     nguoichoi->sodu -= tiencuoc;
     int phienhientai = phiencuoicung(nguoichoi->tentaikhoan) + 1;
     system("cls");
-    banner_doanso();
+    inbanner(bannerdoanso);
     cout << "\tSố dư sau khi cược: " << YELLOW << dinhdangtien(nguoichoi->sodu) << RESET << " VND" << endl;
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai << 
             YELLOW << "\tTiền cược: " << RESET << dinhdangtien(tiencuoc) << " VND" << endl;
@@ -1057,7 +1068,7 @@ void game_chanle(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     nguoichoi->sodu -= tiencuoc;
     int phienhientai = phiencuoicung(nguoichoi->tentaikhoan) + 1;
     system("cls");
-    banner_chanle();
+    inbanner(bannerchanle);
     cout << "\tSố dư sau khi cược: " << YELLOW << dinhdangtien(nguoichoi->sodu) << RESET << " VND" << endl;
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai << 
             YELLOW << "\tCược: " << RESET << (luachon == "c" || luachon == "chan" ? "Chẵn" : "Lẻ") <<
@@ -1122,7 +1133,7 @@ void game_upngua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     nguoichoi->sodu -= tiencuoc;
     int phienhientai = phiencuoicung(nguoichoi->tentaikhoan) + 1;
     system("cls");
-    banner_upngua();
+    inbanner(bannertungxu);
     cout << "\tSố dư sau khi cược: " << YELLOW << dinhdangtien(nguoichoi->sodu) << RESET << " VND" << endl;
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai << 
             YELLOW << "\tCược: " << RESET << (luachon == "u" || luachon == "up" ? "Úp" : "Ngửa") <<
