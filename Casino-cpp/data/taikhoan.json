@@ -1,0 +1,23 @@
+[
+    {
+        "sothutu": 1,
+        "tennguoichoi": "chinh",
+        "tentaikhoan": "chinh",
+        "matkhau": "258ae09689bf5b253b84bc3913f3db99460a962ce1b976b8019df1527dfb4497",
+        "sodu": 90002700
+    },
+    {
+        "sothutu": 2,
+        "tennguoichoi": "ui",
+        "tentaikhoan": "ui",
+        "matkhau": "d3ef7de562f9a4a34a9a0b05a112955fdecdd0102c3faae5eeb03a195091a5e4",
+        "sodu": 14552000
+    },
+    {
+        "sothutu": 3,
+        "tennguoichoi": "bao",
+        "tentaikhoan": "bao",
+        "matkhau": "2e95ac47e6fc00030224e20194ce3a9bfa03717c32b5fa2e95b111d7053916a6",
+        "sodu": 100585000
+    }
+]

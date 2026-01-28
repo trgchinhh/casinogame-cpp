@@ -1,0 +1,128 @@
+#include "header.h"
+
+void banner_trangchu(){
+    string banner = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+ _______ _____            _   _  _____    _____ _    _ _    _ 
+|__   __|  __ \     /\   | \ | |/ ____|  / ____| |  | | |  | |
+   | |  | |__) |   /  \  |  \| | |  __  | |    | |__| | |  | |
+   | |  |  _  /   / /\ \ | . ` | | |_ | | |    |  __  | |  | |
+   | |  | | \ \  / ____ \| |\  | |__| | | |____| |  | | |__| |
+   |_|  |_|  \_\/_/    \_\_| \_|\_____|  \_____|_|  |_|\____/ 
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void banner_sanhchoi(){
+    string banner = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+  _____           _____ _____ _   _  ____  
+ / ____|   /\    / ____|_   _| \ | |/ __ \ 
+| |       /  \  | (___   | | |  \| | |  | |
+| |      / /\ \  \___ \  | | | . ` | |  | |
+| |____ / ____ \ ____) |_| |_| |\  | |__| |
+ \_____/_/    \_\_____/|_____|_| \_|\____/ 
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void banner_taixiu(){
+    string banner = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+ _______       _____  __   _______ _    _ 
+|__   __|/\   |_   _| \ \ / /_   _| |  | |
+   | |  /  \    | |    \ V /  | | | |  | |
+   | | / /\ \   | |     > <   | | | |  | |
+   | |/ ____ \ _| |_   / . \ _| |_| |__| |
+   |_/_/    \_\_____| /_/ \_\_____|\____/ 
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void banner_doanso(){
+    string banner = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+ _____   ____          _   _    _____  ____  
+|  __ \ / __ \   /\   | \ | |  / ____|/ __ \ 
+| |  | | |  | | /  \  |  \| | | (___ | |  | |
+| |  | | |  | |/ /\ \ | . ` |  \___ \| |  | |
+| |__| | |__| / ____ \| |\  |  ____) | |__| |
+|_____/ \____/_/    \_\_| \_| |_____/ \____/ 
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void banner_chanle(){
+    string banner = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+  _____ _    _          _   _   _      ______ 
+ / ____| |  | |   /\   | \ | | | |    |  ____|
+| |    | |__| |  /  \  |  \| | | |    | |__   
+| |    |  __  | / /\ \ | . ` | | |    |  __|  
+| |____| |  | |/ ____ \| |\  | | |____| |____ 
+ \_____|_|  |_/_/    \_\_| \_| |______|______|
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void banner_upngua(){
+    string banner = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+ _______ _    _ _   _  _____  __   ___    _ 
+|__   __| |  | | \ | |/ ____| \ \ / / |  | |
+   | |  | |  | |  \| | |  __   \ V /| |  | |
+   | |  | |  | | . ` | | |_ |   > < | |  | |
+   | |  | |__| | |\  | |__| |  / . \| |__| |
+   |_|   \____/|_| \_|\_____| /_/ \_\\____/ 
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void banner_tambiet(){
+    system("cls");
+    string banner = R"(CẢM ƠN QUÝ KHÁCH ĐÃ CHƠI
+ _______       __  __   ____ _____ ______ _______ 
+|__   __|/\   |  \/  | |  _ \_   _|  ____|__   __|
+   | |  /  \  | \  / | | |_) || | | |__     | |   
+   | | / /\ \ | |\/| | |  _ < | | |  __|    | |   
+   | |/ ____ \| |  | | | |_) || |_| |____   | |   
+   |_/_/    \_\_|  |_| |____/_____|______|  |_|   
+    )";
+    stringstream ss(banner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
