@@ -58,11 +58,7 @@
 │   │   ├── resource.o
 │   │   └── resource.rc
 │   └── main.cpp
-├── Casino.exe
-├── LICENSE
-├── build.cpp
-├── build.exe
-└── cautruc.md
+└── build.cpp 
 ```
 
 ## Cài đặt
@@ -103,3 +99,4 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
