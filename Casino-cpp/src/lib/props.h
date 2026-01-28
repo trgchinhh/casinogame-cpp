@@ -2,8 +2,19 @@
 #include <windows.h>
 using namespace std;
 
+// mau va gach chan 
 #define RESET   "\033[0m"
+#define WHITE   "\033[38;2;255;255;255m"
 #define RED     "\033[38;2;255;120;120m"
+#define GREEN   "\033[38;2;120;255;120m"
+#define YELLOW  "\033[38;2;255;255;150m"
+#define BLUE    "\033[36m"
+#define MAGENTA "\033[95m"     
+#define CYAN "\033[38;2;0;255;255m"
+#define ORANGE "\033[38;2;255;200;80m"
+#define UNDERLINE "\033[4m"
+#define NO_UNDERLINE "\033[24m"
+#define BG_WHITE "\033[47m"
 
 const string matxucxac[7][5] = {
     { "", "", "", "", "" },
