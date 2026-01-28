@@ -27,6 +27,8 @@
 ## Yêu cầu
 - Phiên bản C++ 17 trở lên
 - Biên dịch bằng Mingw/GNU (g++) 
+- Đổi font chữ terminal phù hợp để hiển thị ký tự đặc biệt
+  + Ví dụ: Jetbrains Mono Font
 
 ## Cấu trúc dự án
 ```
@@ -100,6 +102,3 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
-
-
-
