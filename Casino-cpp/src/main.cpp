@@ -720,7 +720,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
                     xuatbanglichsu(danhsachlichsu);
                 }
             } else {
-                // cái này thích thì bật (ồn vc)
+                // cái này thích thì bật (hơi ồn)
                 //hieuungamthanh_mp3(dd_maymuanuadi);
                 cout << "\n[" << RED << chon << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
                 chosaukhinhapthanhcong(2);
@@ -785,8 +785,8 @@ bool nhaptiencuoc(int& tiencuoc, ThongTinPtr &nguoichoi){
 }
 
 void napthemtien(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    if(nguoichoi->sodu > 100000000){
-        cout << YELLOW << "\t\t(!) Số dư cao hơn 100.000.000 VND không thể nạp thêm" << RESET << endl;
+    if(nguoichoi->sodu >= 100000000){
+        cout << YELLOW << "\t\t(!) Số dư cao hơn hoặc bằng 100.000.000 VND không thể nạp thêm" << RESET << endl;
         return;
     }
     bool tiennaphople = false;
