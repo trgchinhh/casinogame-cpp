@@ -3,7 +3,7 @@
 ## Giới thiệu
 - Đây là game console viết bằng ngôn ngữ C++ với nhiều trò khác nhau
 - Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện dễ chơi và đẹp mắt
-- Giao diện lấy cảm hứng từ [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp)
+- Giao diện lấy cảm hứng từ dự án [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp)
 
 ## Liên kết 
 ### Video demo chương trình
@@ -100,5 +100,6 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
 
