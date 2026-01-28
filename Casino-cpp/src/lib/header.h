@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,29 +7,17 @@
 #include <regex>
 #include <windows.h>
 #include <conio.h>
+#include <mmsystem.h>
+
+#include "props.h"
+#include "banner.h"
 #include "json.hpp"
 #include "picosha2.h"
-#include "props.h"
-#include <mmsystem.h>
 
 #pragma comment(lib, "winmm.lib")
 
 using namespace std;
 using json = nlohmann::ordered_json;
-
-// mau va gach chan 
-#define RESET   "\033[0m"
-#define WHITE   "\033[38;2;255;255;255m"
-#define RED     "\033[38;2;255;120;120m"
-#define GREEN   "\033[38;2;120;255;120m"
-#define YELLOW  "\033[38;2;255;255;150m"
-#define BLUE    "\033[36m"
-#define MAGENTA "\033[95m"     
-#define CYAN "\033[38;2;0;255;255m"
-#define ORANGE "\033[38;2;255;200;80m"
-#define UNDERLINE "\033[4m"
-#define NO_UNDERLINE "\033[24m"
-#define BG_WHITE "\033[47m"
 
 #define SoTaiKhoanToiDa 100    // dang ky toi da 100 tai khoan
 
@@ -102,14 +89,7 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
 bool xacthucdangnhapdangky(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi, int dangnhapdangky);
 bool nhaptiencuoc(int& tiencuoc, ThongTinPtr& nguoichoi);
 
-void banner_trangchu();
-void banner_sanhchoi();
-void banner_taixiu();
-void banner_doanso();
-void banner_chanle();
-void banner_upngua();
-void banner_tambiet();
-
+void inbanner(const string tenbanner);
 void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh);
 void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh);
 void chuyendoitrangthaiamthanh(bool& trangthaiamthanh);
