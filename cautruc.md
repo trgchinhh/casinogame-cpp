@@ -42,4 +42,4 @@
 - Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ main.cpp resource\\resource.o -o Casino.exe -lwinmm -w`
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
-## Github  : https://github.com/trgchinhh
+### Github  : https://github.com/trgchinhh
