@@ -2,20 +2,29 @@
 
 ## Giới thiệu
 - Đây là game console viết bằng ngôn ngữ C++ với nhiều trò khác nhau
-- Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện dễ chơi và đẹp mắt
+- Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện trực quan và dễ chơi
 - Giao diện lấy cảm hứng từ dự án [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp)
 
 ## Liên kết 
 ### Video demo chương trình
 - Video demo bản cũ: [Xem video tại đây](https://drive.google.com/file/d/1G6eV0DhiAYCDHklUTUk0BhvdWoKOh5SU/view?usp=sharing)
-- Video demo bản mới: [Xem video tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
+- Video demo bản cũ: [Xem video tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
+- Video demo bản mới: [Xem video tại đây]()
 
 ## Chức năng
 ### Trang chủ: 
 - Bật tắt hiệu ứng âm thanh
-- Đăng nhập/ Đăng ký/ Xóa tài khoản
+- Đăng nhập / Đăng ký
 - Thoát game
-### Trang game
+## Phân quyền Admin và User
+### Trang Admin
+- Nạp tiền
+- Trừ tiền
+- Xem thông tin 
+- Xem lịch sử
+- Xóa tài khoản
+- Đăng xuất (quay lại trang chủ)
+### Trang game (User)
 - Tài xỉu 1 xúc xắc / 3 xúc xắc
 - Đoán số trong khoảng A -> B
 - Chẵn lẻ trong khoảng 0 -> 9
@@ -26,13 +35,14 @@
 
 ## Yêu cầu
 - Phiên bản C++ 17 trở lên
-- Biên dịch bằng Mingw/GNU (g++) 
 - Đổi font chữ terminal phù hợp để hiển thị ký tự đặc biệt
   + Ví dụ: Jetbrains Mono Font
 
 ## Cấu trúc dự án
 ```
 ├── data
+│   ├── .taikhoan
+│   │   └── thongtintk.json
 │   ├── lichsugame.json
 │   └── taikhoan.json
 ├── sound
@@ -51,17 +61,32 @@
 │   ├── xin_vinh_biet_cu.mp3
 │   └── xin_vinh_biet_cu.wav
 ├── src
+│   ├── game
+│   │   ├── chanle.h
+│   │   ├── doanso.h
+│   │   ├── taixiu1xx.h
+│   │   ├── taixiu3xx.h
+│   │   └── upngua.h
 │   ├── lib
+│   │   ├── admin.h
 │   │   ├── banner.h
+│   │   ├── dothd.h
 │   │   ├── header.h
 │   │   ├── json.hpp
-│   │   └── picosha2.h
+│   │   ├── picosha2.h
+│   │   └── props.h
 │   ├── resource
 │   │   ├── casino.ico
 │   │   ├── resource.o
 │   │   └── resource.rc
+│   ├── include.h
 │   └── main.cpp
-└── build.cpp 
+├── Casino.exe
+├── LICENSE
+├── README.md
+├── build.cpp
+├── build.exe
+└── cautruc.md
 ```
 
 ## Cài đặt
