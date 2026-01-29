@@ -100,10 +100,13 @@
 ### 1 Phần đăng nhập
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/adbaaf0a-4fa8-445c-bf60-253400fa4c63" />
 
-### 2 Tài xỉu 3 xúc xắc 
+### 2 Admin
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/59a578c7-d5f5-4efc-a57f-3663f1fb9168" />
+
+### 3 Game 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/69ca24c1-886d-42dc-85bd-d7b69766d226" />
 
-### 7 Lịch sử chơi
+### 4 Lịch sử chơi
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/dc15c177-20f7-4932-b39a-f5db86c2aabb" />
 
 
