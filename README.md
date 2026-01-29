@@ -1,8 +1,10 @@
 # CASINO GAME C++
 
 ## Giới thiệu
-- Đây là game console viết bằng ngôn ngữ C++ với nhiều trò khác nhau
+- Đây là game cá cược viết bằng ngôn ngữ C++ với nhiều trò khác nhau
 - Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện trực quan và dễ chơi
+- Game có mô phỏng xúc xắc và các số bằng ký tự ASCII và hiệu ứng âm thanh  
+- Game có nhiều ký tự đặc biệt nên cài JetbrainsMono Font để có trải nghiệm tốt nhất 
 - Giao diện lấy cảm hứng từ dự án [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp)
 
 ## Liên kết 
@@ -36,7 +38,7 @@
 ## Yêu cầu
 - Phiên bản C++ 17 trở lên
 - Đổi font chữ terminal phù hợp để hiển thị ký tự đặc biệt
-  + Ví dụ: Jetbrains Mono Font
+  + Ví dụ: Jetbrains Mono Font, Fira Code Font
 
 ## Cấu trúc dự án
 ```
