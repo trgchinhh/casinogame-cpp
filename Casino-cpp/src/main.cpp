@@ -1,4 +1,5 @@
 #include "include.h"
+#include "lib/header.h"
 
 void inbanner(const string tenbanner){
     stringstream ss(tenbanner);
@@ -263,16 +264,18 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
             break;
         } else thongtinnguoichoi.phanquyen = Nguoichoi;
         if(thongtinnguoichoi.tentaikhoan.empty()){
-            cout << YELLOW << "\t(!) Không được để trống tên đăng nhập !" << RESET << endl;
+            cout << YELLOW << "\t\t(!) Không được để trống tên đăng nhập !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             check1 = 1;
             solansaitk++;
+            continue;
         }
         if(!xacthucthongtin(danhsachnguoichoi, thongtinnguoichoi, 1)){
-            cout << YELLOW << "\t(!) Tên đăng nhập không tồn tại !" << RESET << endl;
+            cout << YELLOW << "\t\t(!) Tên đăng nhập không tồn tại !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             check1 = 1;
             solansaitk++;
+            continue;
         }
     } while(check1 && solansaitk < 3);
 
@@ -285,23 +288,25 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
         getline(cin, thongtinnguoichoi.matkhau);
         if (thongtinnguoichoi.tentaikhoan == TentaikhoanAdmin) {
             if (thongtinnguoichoi.matkhau != MatkhauAdmin) {
-                cout << YELLOW << "\t(!) Mật khẩu admin không hợp lệ !" << RESET << endl;
+                cout << YELLOW << "\t\t(!) Mật khẩu admin không hợp lệ !" << RESET << endl;
                 hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
                 check2 = 1;
                 solansaimk++;
             } else break;
         }
         if(thongtinnguoichoi.matkhau.empty()){
-            cout << YELLOW << "\t(!) Không được để trống mật khẩu !" << RESET << endl;
+            cout << YELLOW << "\t\t(!) Không được để trống mật khẩu !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             check2 = 1;
             solansaimk++;
+            continue;
         } 
         if(!xacthucthongtin(danhsachnguoichoi, thongtinnguoichoi, 2)){
-            cout << YELLOW << "\t(!) Mật khẩu không hợp lệ !" << RESET << endl;
+            cout << YELLOW << "\t\t(!) Mật khẩu không hợp lệ !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             check2 = 1;
             solansaimk++;
+            continue;
         }
     } while(check2 && solansaimk < 3);
     if(solansaimk == 3) return false;
@@ -322,6 +327,7 @@ bool xacthucdangnhapdangky(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiCh
     if(dangnhapdangky == 2){
         if(!dangnhaptaikhoan(danhsachnguoichoi, thongtinnguoichoi)){
             cout << RED << "\t(!) Đăng nhập tài khoản không thành công !" << RESET << endl;
+            dungchuongtrinh();
             return false;
         }
     }
