@@ -316,14 +316,12 @@ bool xacthucdangnhapdangky(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiCh
     if(dangnhapdangky == 1){
         if(!dangkytaikhoan(danhsachnguoichoi, thongtinnguoichoi)){
             cout << RED << "\t(!) Đăng ký tài khoản không thành công !" << RESET << endl;
-            dungchuongtrinh();
             return false;
         }
     }
     if(dangnhapdangky == 2){
         if(!dangnhaptaikhoan(danhsachnguoichoi, thongtinnguoichoi)){
             cout << RED << "\t(!) Đăng nhập tài khoản không thành công !" << RESET << endl;
-            dungchuongtrinh();
             return false;
         }
     }
