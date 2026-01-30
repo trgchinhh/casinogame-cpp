@@ -1,5 +1,4 @@
 #include "include.h"
-#include "lib/header.h"
 
 void inbanner(const string tenbanner){
     stringstream ss(tenbanner);
@@ -1119,3 +1118,4 @@ int main(){
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
+
