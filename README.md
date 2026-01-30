@@ -92,8 +92,10 @@
 ```
 
 ## Cài đặt
+- Phải cài thư viện `OpenSSL` trước khi chạy
 - Để tự động build chương trình thì cần chạy file: `khoichay.cpp`
-- Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\\main.cpp src\\resource\\resource.o -o " + tenchuongtrinh + " -lwinmm -w`
+- Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -w`
+
 
 ## Screenshot
 
@@ -112,4 +114,5 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
