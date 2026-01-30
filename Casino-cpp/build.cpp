@@ -8,7 +8,11 @@
 using namespace std;
 
 const string tenchuongtrinh = "Casino.exe";
-const string lenhbiendich = "g++ src\\main.cpp src\\resource\\resource.o -o " + tenchuongtrinh + " -lwinmm -w";
+const string lenhbiendich = string("g++ src\\main.cpp ") 
+                          + "-IC:\\OpenSSL-Win64\\include "  
+                          + "-LC:\\OpenSSL-Win64\\lib src\\resource\\resource.o -o " 
+                          + tenchuongtrinh 
+                          + " -lwinmm -lssl -lcrypto -w";
 
 int main(){
     system(lenhbiendich.c_str());
