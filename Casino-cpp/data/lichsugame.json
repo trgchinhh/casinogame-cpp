@@ -1,94 +1,94 @@
 {
     "chinh": [
         {
-            "phien": 227,
+            "phien": 237,
             "trochoi": "Taixiu3xx",
-            "sodu": 100033000,
+            "sodu": 99753000,
             "tiencuoc": 30000,
             "luachon": "x",
-            "tongxucxac": 15,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 228,
-            "trochoi": "Taixiu1xx",
-            "sodu": 100035700,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 1,
+            "tongxucxac": 7,
             "ketqua": "Xỉu"
         },
         {
-            "phien": 229,
-            "trochoi": "Taixiu1xx",
-            "sodu": 100062700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 1,
-            "ketqua": "Xỉu"
-        },
-        {
-            "phien": 230,
-            "trochoi": "Taixiu1xx",
-            "sodu": 100032700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 6,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 231,
-            "trochoi": "Taixiu1xx",
-            "sodu": 100035400,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 3,
-            "ketqua": "Xỉu"
-        },
-        {
-            "phien": 232,
-            "trochoi": "Taixiu1xx",
-            "sodu": 100032400,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 4,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 233,
-            "trochoi": "Taixiu1xx",
-            "sodu": 100029400,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 4,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 234,
+            "phien": 238,
             "trochoi": "Taixiu3xx",
-            "sodu": 99930200,
-            "tiencuoc": 30000,
+            "sodu": 99750000,
+            "tiencuoc": 3000,
             "luachon": "x",
-            "tongxucxac": 16,
+            "tongxucxac": 12,
             "ketqua": "Tài"
         },
         {
-            "phien": 235,
-            "trochoi": "Taixiu1xx",
-            "sodu": 99699000,
-            "tiencuoc": 30000,
+            "phien": 239,
+            "trochoi": "Taixiu3xx",
+            "sodu": 100002700,
+            "tiencuoc": 3000,
             "luachon": "x",
-            "tongxucxac": 3,
+            "tongxucxac": 9,
             "ketqua": "Xỉu"
         },
         {
-            "phien": 236,
+            "phien": 240,
             "trochoi": "Taixiu3xx",
-            "sodu": 99726000,
+            "sodu": 99999700,
+            "tiencuoc": 3000,
+            "luachon": "x",
+            "tongxucxac": 11,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 241,
+            "trochoi": "Taixiu3xx",
+            "sodu": 99969700,
             "tiencuoc": 30000,
             "luachon": "x",
-            "tongxucxac": 5,
+            "tongxucxac": 12,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 242,
+            "trochoi": "Taixiu3xx",
+            "sodu": 99996700,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongxucxac": 8,
             "ketqua": "Xỉu"
+        },
+        {
+            "phien": 243,
+            "trochoi": "Taixiu3xx",
+            "sodu": 99966700,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongxucxac": 12,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 244,
+            "trochoi": "Taixiu3xx",
+            "sodu": 49966700,
+            "tiencuoc": 50000000,
+            "luachon": "x",
+            "tongxucxac": 11,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 245,
+            "trochoi": "Taixiu3xx",
+            "sodu": 49936700,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongxucxac": 13,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 246,
+            "trochoi": "Taixiu3xx",
+            "sodu": 49963700,
+            "tiencuoc": 30000,
+            "luachon": "t",
+            "tongxucxac": 13,
+            "ketqua": "Tài"
         }
     ],
     "bao": [
@@ -138,6 +138,15 @@
             "luachon": "x",
             "tongxucxac": 12,
             "ketqua": "Tài"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Taixiu3xx",
+            "sodu": 73270000,
+            "tiencuoc": 300000,
+            "luachon": "x",
+            "tongxucxac": 7,
+            "ketqua": "Xỉu"
         }
     ]
 }
