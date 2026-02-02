@@ -29,6 +29,7 @@ struct ThongTinNguoiChoi {
     string tennguoichoi;              // ten nguoi choi 
     string tentaikhoan;               // ten acc
     string matkhau;                   // mat khau
+    string makhoa6so;                 // mã khóa 6 số (phải nhớ khi quên mật khẩu)
     int sodu;                         // so du
     PhanQuyen phanquyen = Nguoichoi;  // quyền người chơi 
     ThongTinNguoiChoi* next;          // con tro next (de luu nguoi choi tiep)
@@ -53,8 +54,8 @@ struct LichSu {
 };
 
 // cac bien toan cuc
-const string dd_danhsachtaikhoan = "data\\taikhoan.json";
-const string dd_danhsachlichsu = "data\\lichsugame.json";
+const string dd_danhsachtaikhoan = "data\\player\\taikhoan.json";
+const string dd_danhsachlichsu = "data\\player\\lichsugame.json";
 
 const string dd_lindachaocanha = "sound\\linda_chao_ca_nha.wav";
 const string dd_1dongxuroi = "sound\\1_dong_xu_roi.mp3";
@@ -103,6 +104,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
 bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 bool xacthucdangnhapdangky(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi, int dangnhapdangky);
 bool nhaptiencuoc(int& tiencuoc, ThongTinPtr& nguoichoi);
+// viết hàm quên mật khẩu (nhập mã 6 số)
+bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 
 void inbanner(const string tenbanner);
 void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh);
@@ -129,7 +132,9 @@ void game_taixiu3xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
 void game_doanso(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void game_chanle(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void game_upngua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
+void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 
+string chematkhau();
 string mahoamatkhau(string matkhau);
 string dinhdangtien(int sotien);
 
