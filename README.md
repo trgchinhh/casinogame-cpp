@@ -101,7 +101,7 @@
 ## Screenshot
 
 ### 1 Phần đăng nhập
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/adbaaf0a-4fa8-445c-bf60-253400fa4c63" />
+<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/90125af9-3643-4637-b37a-e267405bb2c1" />
 
 ### 2 Admin
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/59a578c7-d5f5-4efc-a57f-3663f1fb9168" />
@@ -115,6 +115,7 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
 
 
