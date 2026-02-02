@@ -17,6 +17,7 @@
 ### Trang chủ: 
 - Bật tắt hiệu ứng âm thanh
 - Đăng nhập / Đăng ký
+- Quên mật khẩu
 - Thoát game
 ## Phân quyền Admin và User
 ### Trang Admin
@@ -114,5 +115,6 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
 
