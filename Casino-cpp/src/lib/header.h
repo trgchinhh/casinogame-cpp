@@ -22,19 +22,19 @@
 using namespace std;
 using json = nlohmann::ordered_json;
 
-#define SoTaiKhoanToiDa 100    // dang ky toi da 100 tai khoan
+#define SoTaiKhoanToiDa 100    // đăng ký tối đa 100 tài khoản
 
 struct ThongTinNguoiChoi {
-    int sothutu;                      // so thu tu
-    string tennguoichoi;              // ten nguoi choi 
-    string tentaikhoan;               // ten acc
-    string matkhau;                   // mat khau
+    int sothutu;                      // số thứ tự
+    string tennguoichoi;              // tên người chơi (dùng như nickname) 
+    string tentaikhoan;               // tên tài khoản (đăng ký)
+    string matkhau;                   // mật khẩu
     string makhoa6so;                 // mã khóa 6 số (phải nhớ khi quên mật khẩu)
-    int sodu;                         // so du
-    PhanQuyen phanquyen = Nguoichoi;  // quyền người chơi 
-    ThongTinNguoiChoi* next;          // con tro next (de luu nguoi choi tiep)
-    ThongTinNguoiChoi* prev;          // con tro prev (de luu nguoi choi truoc)
-}; 
+    int sodu;                         // số dư (giới hạn 100.000.000)
+    PhanQuyen phanquyen = Nguoichoi;  // quyền người chơi (admin - player) 
+    ThongTinNguoiChoi* next;          // con trỏ next 
+    ThongTinNguoiChoi* prev;          // con trỏ prev
+};
 typedef ThongTinNguoiChoi* ThongTinPtr;
 
 struct DS_ThongTinNguoiChoi {
@@ -44,19 +44,20 @@ struct DS_ThongTinNguoiChoi {
 typedef DS_ThongTinNguoiChoi DanhSachNguoiChoi;
 
 struct LichSu {
-    int phien;        // phien game 
-    string trochoi;   // ten tro choi
-    int sodu;         // so du  
-    int tiencuoc;     // tien cuoc
-    string luachon;   // lua chon 
-    int tongdiem;     // tong diem
-    string ketqua;    // ket qua (thang/thua)
+    int phien;        // phiên game
+    string trochoi;   // tên game
+    int sodu;         // số dư 
+    int tiencuoc;     // tiền cược
+    string luachon;   // lựa chọn
+    int tongdiem;     // tổng điểm 
+    string ketqua;    // kết quả 
 };
 
-// cac bien toan cuc
+// Các đường dẫn 
+// Lưu dữ liệu
 const string dd_danhsachtaikhoan = "data\\player\\taikhoan.json";
 const string dd_danhsachlichsu = "data\\player\\lichsugame.json";
-
+// Âm thanh 
 const string dd_lindachaocanha = "sound\\linda_chao_ca_nha.wav";
 const string dd_1dongxuroi = "sound\\1_dong_xu_roi.mp3";
 const string dd_conginuadau = "sound\\con_gi_nua_dau.mp3";
@@ -70,8 +71,14 @@ const string dd_maymuanuadi = "sound\\mua_nua_di.mp3";
 const string dd_dichuyenmenu = "sound\\chon_menu.mp3";
 const string dd_xinvinhbietcu = "sound\\xin_vinh_biet_cu.wav";
 
-const int sodunhonhat = 1000, sodulonnhat = 100000000;
+// Các giá trị bắt buộc 
+const int sodunhonhat = 1000;
+const int sodulonnhat = 100000000;
+const int sogiaycho = 2;
+const int solansaitoida = 3;
+const int chieudaima6so = 6;
 static bool trangthaiamthanh = false;
+
 
 // NGUYÊN MẪU HÀM
 
