@@ -1,7 +1,8 @@
+// include những file cần thiết cho main 
+
 #include "lib//header.h"
 #include "game//taixiu1xx.h"
 #include "game//taixiu3xx.h"
 #include "game//doanso.h"
 #include "game//chanle.h"
 #include "game//upngua.h"
-
