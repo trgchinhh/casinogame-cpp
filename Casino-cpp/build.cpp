@@ -22,12 +22,12 @@ int main(){
     cout << "Đang biên dịch ! Vui lòng chờ..." << endl; 
     try {
         int ketquabiendich = system(lenhbiendich.c_str());
-        if(ketquabiendich != 0){
+        if(ketquabiendich != 0) 
             throw runtime_error("Biên dịch thất bại !");
-        }
         cout << "Đã biên dịch xong ! Chạy file (y/n): ";
         char c; cin >> c;
-        if(c == 'y') system(tenchuongtrinh.c_str());
+        if(c == 'y') 
+            system(tenchuongtrinh.c_str());
     } catch(const exception& e){
         cout << RED << "\nLỗi: " << e.what() << RESET << endl;
     }
