@@ -285,6 +285,23 @@ string chematkhau(){
     return matkhau;
 }
 
+// string chematkhau() {
+//     string matkhau;
+//     char kytu;
+
+//     while ((kytu = _getch()) != '\r') {
+//         if (kytu == '\b') {
+//             if (!matkhau.empty()) {
+//                 matkhau.pop_back();
+//             }
+//         } else {
+//             matkhau += kytu;
+//         }
+//     }
+//     cout << endl;
+//     return matkhau;
+// }
+
 bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi){
     if(kiemtrajsontrong(dd_danhsachtaikhoan)){
         cout << YELLOW << "\t(!) Chưa có tài khoản ! Vui lòng đăng ký trước !" << RESET << endl;
@@ -322,14 +339,18 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
         hoplematkhau = 0;
-        cout << "\t(?) Nhập mật khẩu: ";
-        //getline(cin, thongtinnguoichoi.matkhau);
+        // nhập pass cho admin và player
+        if(thongtinnguoichoi.phanquyen == Admin) 
+            cout << "\t(?) [Admin] Nhập mật khẩu: ";
+        else 
+            cout << "\t(?) Nhập mật khẩu: ";
         thongtinnguoichoi.matkhau = chematkhau();
         if (thongtinnguoichoi.tentaikhoan == TentaikhoanAdmin) {
             if (thongtinnguoichoi.matkhau != MatkhauAdmin) {
-                cout << YELLOW << "\t\t(!) Mật khẩu admin không hợp lệ !" << RESET << endl;
+                cout << YELLOW << "\t\t(!) Mật khẩu Admin không hợp lệ !" << RESET << endl;
                 hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
                 solansaimatkhau++;
+                continue;
             } else break;
         }
         if(thongtinnguoichoi.matkhau.empty()){
@@ -405,7 +426,7 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
     // nhập mã 6 số xác thực
     do {
         cout << "\t(?) Nhập mã 6 số của bạn: ";
-        getline(cin, makhoa6so);
+        makhoa6so = chematkhau();
         if(cin.fail()){
             cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << YELLOW << "\t\t(!) Vui lòng nhập mã khóa 6 số hợp lệ !" << RESET << endl;
@@ -736,20 +757,37 @@ void xuatthongtinnguoichoi(ThongTinNguoiChoi& thongtinnguoichoi, int stt) {
         << "│" << string(pad_matkhau, ' ') << matkhau 
         << "│" << right << setw(13) << dinhdangtien(thongtinnguoichoi.sodu)
         << "│";
-    ingiuamanhinh(oss.str(), WHITE);
+    ingiuamanhinh(oss.str(), RESET);
     cout << endl;
 }
 
+// màu trắng đậm
+// void xuatbangthongtinnguoichoi(vector<ThongTinNguoiChoi>& danhsachthongtinnguoichoi) {
+//     ingiuamanhinh("DANH SÁCH THÔNG TIN NGƯỜI CHƠI", YELLOW); cout << endl << endl;
+//     ingiuamanhinh("┌─────┬─────────────────┬────────────────┬──────────────┬─────────────┐", WHITE); cout << endl;
+//     ingiuamanhinh(WHITE "│" RED " STT " WHITE "│" RED " Tên người chơi  " WHITE "│" RED " Tên tài khoản  " WHITE "│" RED "   Mật khẩu   " WHITE "│" RED "    Số dư    " WHITE "│", WHITE);  cout << endl;
+//     ingiuamanhinh("├─────┼─────────────────┼────────────────┼──────────────┼─────────────┤", WHITE); cout << endl;
+//     for (int i = 0; i < danhsachthongtinnguoichoi.size(); i++) {
+//         xuatthongtinnguoichoi(danhsachthongtinnguoichoi[i], danhsachthongtinnguoichoi[i].sothutu);
+//     }
+//     ingiuamanhinh("└─────┴─────────────────┴────────────────┴──────────────┴─────────────┘", WHITE);
+//     cout << endl;
+// }
+
+// màu reset (trắng mặc định của terminal)
 void xuatbangthongtinnguoichoi(vector<ThongTinNguoiChoi>& danhsachthongtinnguoichoi) {
     ingiuamanhinh("DANH SÁCH THÔNG TIN NGƯỜI CHƠI", YELLOW); cout << endl << endl;
-    ingiuamanhinh("┌─────┬─────────────────┬────────────────┬──────────────┬─────────────┐", WHITE); cout << endl;
-    ingiuamanhinh(WHITE "│" RED " STT " WHITE "│" RED " Tên người chơi  " WHITE "│" RED " Tên tài khoản  " WHITE "│" RED "   Mật khẩu   " WHITE "│" RED "    Số dư    " WHITE "│", WHITE);  cout << endl;
-    ingiuamanhinh("├─────┼─────────────────┼────────────────┼──────────────┼─────────────┤", WHITE); cout << endl;
-    for (int i = 0; i < danhsachthongtinnguoichoi.size(); i++) {
-        xuatthongtinnguoichoi(danhsachthongtinnguoichoi[i], danhsachthongtinnguoichoi[i].sothutu);
-    }
-    ingiuamanhinh("└─────┴─────────────────┴────────────────┴──────────────┴─────────────┘", WHITE);
+    ingiuamanhinh("┌─────┬─────────────────┬────────────────┬──────────────┬─────────────┐", RESET); cout << endl;
+    ingiuamanhinh(RESET "│" RED " STT " RESET "│" RED " Tên người chơi  " RESET "│" RED " Tên tài khoản  " RESET "│" RED "   Mật khẩu   " RESET "│" RED "    Số dư    " RESET "│", RESET); cout << endl;
+    ingiuamanhinh("├─────┼─────────────────┼────────────────┼──────────────┼─────────────┤", RESET);
     cout << endl;
+    for (int i = 0; i < danhsachthongtinnguoichoi.size(); i++) {
+        xuatthongtinnguoichoi(
+            danhsachthongtinnguoichoi[i],
+            danhsachthongtinnguoichoi[i].sothutu
+        );
+    }
+    ingiuamanhinh("└─────┴─────────────────┴────────────────┴──────────────┴─────────────┘", RESET); cout << endl;
 }
 
 
@@ -771,7 +809,7 @@ void xuatlichsu(LichSu& lichsu, int stt) {
         << "│" << right << setw(13) << dinhdangtien(lichsu.sodu)
         << "│";
     string dong = oss.str();
-    ingiuamanhinh(dong, WHITE); 
+    ingiuamanhinh(dong, RESET); 
     cout << endl;
 }
 
@@ -782,14 +820,14 @@ void xuatbanglichsu(vector<LichSu>& danhsachlichsu){
     }
     hieuungamthanh_mp3(dd_hdpethingonluon, trangthaiamthanh);
     ingiuamanhinh("LỊCH SỬ CHƠI 10 PHIÊN GẦN NHẤT", YELLOW); cout << endl << endl;
-    ingiuamanhinh("┌─────┬──────┬──────────┬──────────┬────────┬──────┬─────────┬─────────────┐", WHITE); cout << endl;
-    ingiuamanhinh(WHITE "│" RED " STT " WHITE "│" RED " Phiên" WHITE "│" RED " Trò chơi " WHITE "│" RED " Tiền cược" WHITE "│" RED "  Chọn  " WHITE "│" RED " Tổng " WHITE "│" RED " Kết quả " WHITE "│" RED "    Số dư    " WHITE "│", WHITE); cout << endl;
-    ingiuamanhinh("├─────┼──────┼──────────┼──────────┼────────┼──────┼─────────┼─────────────┤", WHITE); cout << endl;
+    ingiuamanhinh("┌─────┬──────┬──────────┬──────────┬────────┬──────┬─────────┬─────────────┐", RESET); cout << endl;
+    ingiuamanhinh(RESET "│" RED " STT " RESET "│" RED " Phiên" RESET "│" RED " Trò chơi " RESET "│" RED " Tiền cược" RESET "│" RED "  Chọn  " RESET "│" RED " Tổng " RESET "│" RED " Kết quả " RESET "│" RED "    Số dư    " RESET "│", RESET); cout << endl;
+    ingiuamanhinh("├─────┼──────┼──────────┼──────────┼────────┼──────┼─────────┼─────────────┤", RESET); cout << endl;
     int stt = 1;
     for(auto i = danhsachlichsu.rbegin(); i != danhsachlichsu.rend(); i++){
         xuatlichsu(*i, stt++);
     }
-    ingiuamanhinh("└─────┴──────┴──────────┴──────────┴────────┴──────┴─────────┴─────────────┘", WHITE); cout << endl;
+    ingiuamanhinh("└─────┴──────┴──────────┴──────────┴────────┴──────┴─────────┴─────────────┘", RESET); cout << endl;
 }
 
 void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
@@ -850,7 +888,7 @@ void dungchuongtrinh(){
 void hienthongtinadmin(const string& tenadmin){
     const int chieurong = 31;
     //string ttk = tenadmin;
-    string ttk = "ADMIN";
+    string ttk = "Admin";
     string taikhoan = "(-) Tài khoản: ";
     cout << "┌────────────────────────────┐\n";
     cout << "│" << YELLOW << taikhoan << RESET << UNDERLINE << ttk << NO_UNDERLINE << string(chieurong - taikhoan.length() - ttk.length(), ' ') << "│\n";
@@ -884,8 +922,8 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
         taidulieujson(danhsachnguoichoi);
         inbanner(bannertrangchu);
         cout << "┌─────────── " << RESET << RED << "GỢI Ý" << RESET << " ────────────┐" << endl;
-        cout << "│ " << YELLOW << "▶ " << WHITE << "Dùng phím " << RED << "↑ ↓" << WHITE << " để di chuyển │" << RESET << endl;
-        cout << "│ " << YELLOW << "▶ " << WHITE << "Dùng phím " << RED << "Enter" << WHITE << " để chọn    │" << RESET << endl;
+        cout << "│ " << YELLOW << "▶ " << RESET << "Dùng phím " << RED << "↑ ↓" << RESET << " để di chuyển │" << RESET << endl;
+        cout << "│ " << YELLOW << "▶ " << RESET << "Dùng phím " << RED << "Enter" << RESET << " để chọn    │" << RESET << endl;
         cout << "└──────────────────────────────┘" << RESET << endl;
         cout << endl;
 
@@ -1264,7 +1302,7 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
 }
 
 int main() {
-    SetConsoleTitleA("Nhà Cái STU");                // tiêu đề terminal 
+    SetConsoleTitleA("Casino C++");                // tiêu đề terminal 
     SetConsoleCP(CP_UTF8);                          // hiện được tiếng việt và ký tự đặc biệt
     SetConsoleOutputCP(CP_UTF8);                    // này cũng vậy 
     ancontrochuot(true);                            // ẩn con trỏ chuột
