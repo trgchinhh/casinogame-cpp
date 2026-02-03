@@ -3,14 +3,14 @@
 #include <vector>
 #include "..//lib//json.hpp"    // dùng định dạng json 
 #include <openssl/evp.h>        // dùng mã hóa mật khẩu bằng AES
-#include <openssl/rand.h>       // này cũng vậy
+#include <openssl/rand.h>       // dùng random key 
 
 // PHẦN CODE CỦA FOLDER TAIKHOAN
 
 using namespace std;
 using json = nlohmann::ordered_json;
 
-const string dd_dothd = "data\\taikhoan\\thongtintk.json";
+const string dd_dothd = "data\\admin\\thongtintk.json";
 unsigned char khoa[32] = "day_la_khoa_bi_mat_32_byte!!!!!";
 unsigned char iv[16] = "iv_16_byte!!!!!";
 
