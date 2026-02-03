@@ -166,8 +166,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             continue;
         }
         hoplenc = true;
-    } while(!hoplenc && solansainc < 3);
-    if(solansainc == 3) return false;
+    } while(!hoplenc && solansainc < solansaitoida);
+    if(solansainc == solansaitoida) return false;
     // nhap ten tai khoan (dung de dang nhap)
     int check_ttk;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
@@ -196,8 +196,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             continue;
         }
         hopletk = true;
-    } while(!hopletk && solansaitk < 3);
-    if(solansaitk == 3) return false;
+    } while(!hopletk && solansaitk < solansaitoida);
+    if(solansaitk == solansaitoida) return false;
     // nhap mat khau (dung de dang nhap)
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
@@ -210,8 +210,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             continue;
         }
         hoplemk = true;
-    } while(!hoplemk && solansaimk < 3);
-    if(solansaimk == 3) return false;
+    } while(!hoplemk && solansaimk < solansaitoida);
+    if(solansaimk == solansaitoida) return false;
 
     // mã 6 số
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
@@ -222,17 +222,18 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << YELLOW << "\t\t(!) Vui lòng nhập mã 6 số hợp lệ !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
-            solansaisd++;
+            solansaima6so++;
             continue;
         }
-        else if(thongtinnguoichoi.makhoa6so.length() < 6 || thongtinnguoichoi.makhoa6so.length() > 6){
+        else if(thongtinnguoichoi.makhoa6so.length() < chieudaima6so 
+             || thongtinnguoichoi.makhoa6so.length() > chieudaima6so){
             cout << YELLOW << "\t\t(!) Vui lòng nhập mã 6 số hợp lệ !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
-            solansaisd++;
+            solansaima6so++;
             continue;
         } else hoplema6so = true;
-    } while(!hoplema6so && solansaima6so < 3);
-    if(solansaima6so == 3) return false;
+    } while(!hoplema6so && solansaima6so < solansaitoida);
+    if(solansaima6so == solansaitoida) return false;
 
     // nhap so du 
     bool soduhople = false;
@@ -252,8 +253,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             solansaisd++;
         } else soduhople = true;
-    } while(!soduhople && solansaisd < 3);
-    if(solansaisd == 3) return false;
+    } while(!soduhople && solansaisd < solansaitoida);
+    if(solansaisd == solansaitoida) return false;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     thongtinnguoichoi.sothutu = sothutucuoicung(danhsachnguoichoi) + 1;
     luudulieumatjson(thongtinnguoichoi.tentaikhoan, thongtinnguoichoi.matkhau);
@@ -314,9 +315,9 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
             solansaitentaikhoan++;
             continue;
         } hopletentaikhoan = true;
-    } while(!hopletentaikhoan && solansaitentaikhoan < 3);
+    } while(!hopletentaikhoan && solansaitentaikhoan < solansaitoida);
+    if(solansaitentaikhoan == solansaitoida) return false;
 
-    if(solansaitentaikhoan == 3) return false;
     bool hoplematkhau; int solansaimatkhau = 0;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
@@ -344,8 +345,8 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
             continue;
         }
         hoplematkhau = true;
-    } while(!hoplematkhau && solansaimatkhau < 3);
-    if(solansaimatkhau == 3) return false;
+    } while(!hoplematkhau && solansaimatkhau < solansaitoida);
+    if(solansaimatkhau == solansaitoida) return false;
     if (thongtinnguoichoi.phanquyen == Admin) {
         cout << GREEN << "\t(*) Đăng nhập Admin thành công !" << RESET << endl;
     } else cout << GREEN << "\t(*) Đăng nhập thành công !" << RESET << endl;
@@ -386,8 +387,8 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
             continue;
         }
         hopletentaikhoan = 1;
-    } while(!hopletentaikhoan && solansaitentaikhoan < 3);
-    if(solansaitentaikhoan == 3) return false;   
+    } while(!hopletentaikhoan && solansaitentaikhoan < solansaitoida);
+    if(solansaitentaikhoan == solansaitoida) return false;   
 
     // lấy mã khóa 6 số từ danh sách liên kết đã load trong bộ nhớ
     ThongTinPtr ptr = danhsachnguoichoi.first;
@@ -420,8 +421,8 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
             solansaimakhoa6so++;
             continue;
         } else makhoa6sohople = true;
-    } while(!makhoa6sohople && solansaimakhoa6so < 3);
-    if(solansaimakhoa6so == 3) return false;
+    } while(!makhoa6sohople && solansaimakhoa6so < solansaitoida);
+    if(solansaimakhoa6so == solansaitoida) return false;
 
     // nhập đúng thì cho đổi mật khẩu mới
     string matkhaumoi;
@@ -435,7 +436,7 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
             solansaimatkhaumoi++;
             continue;
         } else if(mahoamatkhau(matkhaumoi) == thongtinnguoichoi.matkhau){
-            cout << YELLOW << "\t\t(!) Mật khẩu mới không được trùng với mật khẩu cũ !" << RESET << endl;
+            cout << YELLOW << "\t\t(!) Mật khẩu mới không được trùng với mật khẩu hiện tại !" << RESET << endl;
             solansaimatkhaumoi++;
             continue;
         } else if(matkhaumoi.empty()){
@@ -443,8 +444,8 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
             solansaimatkhaumoi++;
             continue;
         } else matkhauhoplemoi = true;
-    } while(!matkhauhoplemoi && solansaimatkhaumoi < 3);
-    if(solansaimatkhaumoi == 3) return false;
+    } while(!matkhauhoplemoi && solansaimatkhaumoi < solansaitoida);
+    if(solansaimatkhaumoi == solansaitoida) return false;
     thongtinnguoichoi.matkhau = matkhaumoi;
     luumatkhaumoi(danhsachnguoichoi, thongtinnguoichoi);
     cout << GREEN << "\t(*) Đổi mật khẩu mới thành công !" << RESET << endl;
@@ -482,6 +483,7 @@ void xoataikhoannguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
     }
     ThongTinNguoiChoi thongtinnguoichoi;
     int check1, solansaitk = 0;
+    int check2, solansaimk = 0;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
         check1 = 0;
@@ -500,10 +502,10 @@ void xoataikhoannguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             check1 = 1;
             solansaitk++;
         }
-    } while(check1 && solansaitk < 3);
-
-    if(solansaitk == 3) return;
-    int check2, solansaimk = 0;
+    } while(check1 && solansaitk < solansaitoida);
+    if(solansaitk == solansaitoida) {
+        goto XOAKHONGTHANHCONG;
+    }
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
         check2 = 0;
@@ -522,14 +524,15 @@ void xoataikhoannguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             check2 = 1;
             solansaimk++;
         }
-    } while(check2 && solansaimk < 3);
-    if(solansaimk == 3) return;
+    } while(check2 && solansaimk < solansaitoida);
+    if(solansaimk == solansaitoida) return;
     hieuungamthanh_mp3(dd_dunglacontraicuata, trangthaiamthanh);
     if(xoataikhoanjson(thongtinnguoichoi.tentaikhoan)){
-        cout << GREEN << "\t\t(*) Xóa tài khoản " << thongtinnguoichoi.tentaikhoan << " thành công !" << RESET << endl;
+        cout << GREEN << "\t(*) Xóa tài khoản " << thongtinnguoichoi.tentaikhoan << " thành công !" << RESET << endl;
         return;
     }
-    cout << RED << "\t\t(*) Xóa tài khoản " << thongtinnguoichoi.tentaikhoan << " không thành công !" << RESET << endl;
+    XOAKHONGTHANHCONG:
+        cout << RED << "\t(!) Xóa tài khoản không thành công !" << RESET << endl;
 }
 
 bool kiemtrajsontrong(string duongdanjson){
@@ -806,7 +809,11 @@ void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             solansaitentaikhoan++;
             continue;
         } else nhaphople = true;
-    } while(!nhaphople && solansaitentaikhoan < 3);
+    } while(!nhaphople && solansaitentaikhoan < solansaitoida);
+    if(solansaitentaikhoan == solansaitoida){
+        cout << RED << "\t(!) Tìm lịch sừ người chơi không thành công !" << RESET << endl;
+        return;
+    }
     ThongTinPtr nguoichoi = timtaikhoan(danhsachnguoichoi, tentaikhoan);
     vector<LichSu> danhsachlichsu = tailichsujson(nguoichoi->tentaikhoan);
     if(danhsachlichsu.empty()) cout << YELLOW << "\t(!) Chưa có lịch sử chơi !" << RESET << endl;
@@ -921,7 +928,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                         danhsachnguoichoi,
                         thongtinnguoichoi.tentaikhoan
                     );
-                    chosaukhinhapthanhcong(2);
+                    chosaukhinhapthanhcong(sogiaycho);
                     // Phân quyền vào sảnh người chơi và admin
                     if(thongtinnguoichoi.phanquyen == Nguoichoi){
                         sanhchoi(danhsachnguoichoi, nguoichoi);
@@ -1006,7 +1013,7 @@ void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi) {
                 xoataikhoannguoichoi(danhsachnguoichoi);
             } else {
                 cout << "\n[" << RED << chon << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
-                chosaukhinhapthanhcong(2);
+                chosaukhinhapthanhcong(sogiaycho);
                 return;
             }
             dungchuongtrinh();
@@ -1081,7 +1088,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
                 // cái này thích thì bật (hơi ồn)
                 hieuungamthanh_mp3(dd_maymuanuadi, trangthaiamthanh);
                 cout << "\n[" << RED << chon << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
-                chosaukhinhapthanhcong(2);
+                chosaukhinhapthanhcong(sogiaycho);
                 return;
             }
             dungchuongtrinh();
@@ -1129,7 +1136,7 @@ bool nhaptiencuoc(int& tiencuoc, ThongTinPtr &nguoichoi){
             solansaitiencuoc++;
             continue;
         }
-        else if(tiencuoc < 1000){
+        else if(tiencuoc < sodunhonhat){
             cout << YELLOW << "\t\t(!) Vui lòng nạp tiền để chơi tiếp" << RESET << endl;
             solansaitiencuoc++;
         }
@@ -1137,7 +1144,7 @@ bool nhaptiencuoc(int& tiencuoc, ThongTinPtr &nguoichoi){
             cout << YELLOW << "\t\t(!) Mức cược hợp lệ 1000 - " << nguoichoi->sodu << RESET << endl;
             solansaitiencuoc++;
         } else tiencuochople = true;
-    } while(!tiencuochople && solansaitiencuoc < 3);
+    } while(!tiencuochople && solansaitiencuoc < solansaitoida);
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     return tiencuochople;
 }
@@ -1162,14 +1169,14 @@ void naptienchonguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             continue;
         } 
         tentaikhoanhople = true;
-    } while(!tentaikhoanhople && solansaitentaikhoan < 3);
-    if(solansaitentaikhoan == 3){
+    } while(!tentaikhoanhople && solansaitentaikhoan < solansaitoida);
+    if(solansaitentaikhoan == solansaitoida){
         cout << RED << "\t(!) Nạp tiền không thành công !" << RESET << endl;
         hieuungamthanh_mp3(dd_giongcuoithay3, trangthaiamthanh);
         return;
     }
     cout << GREEN << "\t(*) Số dư hiện tại: " << dinhdangtien(nguoiduocnap->sodu) << " VND" << RESET << endl; 
-    if(nguoiduocnap->sodu >= 100000000){
+    if(nguoiduocnap->sodu >= sodulonnhat){
         cout << YELLOW << "\t\t(!) Số dư cao hơn hoặc bằng 100.000.000 VND không thể nạp thêm" << RESET << endl;
         return;
     }
@@ -1183,12 +1190,12 @@ void naptienchonguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             solansaitiennap++;
             continue;
         }
-        else if(tiennap < 1000 || (nguoiduocnap->sodu + tiennap) > 100000000){
-            cout << YELLOW << "\t\t(!) Tiền nạp hợp lệ trong khoảng 1000 -> " << dinhdangtien(100000000 - nguoiduocnap->sodu) << " VND" << RESET << endl;
+        else if(tiennap < sodunhonhat || (nguoiduocnap->sodu + tiennap) > sodulonnhat){
+            cout << YELLOW << "\t\t(!) Tiền nạp hợp lệ trong khoảng 1000 -> " << dinhdangtien(sodulonnhat - nguoiduocnap->sodu) << " VND" << RESET << endl;
             solansaitiennap++;
         } else tiennaphople = true;
-    } while(!tiennaphople && solansaitiennap < 3);
-    if(solansaitiennap == 3){
+    } while(!tiennaphople && solansaitiennap < solansaitoida);
+    if(solansaitiennap == solansaitoida){
         cout << RED << "\t(!) Nạp tiền không thành công !" << RESET << endl;
         hieuungamthanh_mp3(dd_giongcuoithay3, trangthaiamthanh);
         return;
@@ -1219,14 +1226,14 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             continue;
         } 
         tentaikhoanhople = true;
-    } while(!tentaikhoanhople && solansaitentaikhoan < 3);
-    if(solansaitentaikhoan == 3){
+    } while(!tentaikhoanhople && solansaitentaikhoan < solansaitoida);
+    if(solansaitentaikhoan == solansaitoida){
         cout << RED << "\t(!) Trừ tiền không thành công !" << RESET << endl;
         hieuungamthanh_mp3(dd_giongcuoithay3, trangthaiamthanh);
         return;
     }
     cout << GREEN << "\t(*) Số dư hiện tại: " << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl; 
-    if(nguoibitru->sodu < 1000){
+    if(nguoibitru->sodu < sodunhonhat){
         cout << YELLOW << "\t\t(!) Số dư bé hơn 1.000 VND không thể trừ thêm" << RESET << endl;
         return;
     }
@@ -1240,12 +1247,12 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             solansaitientru++;
             continue;
         }
-        else if(tientru < 1000 || tientru > nguoibitru->sodu){
+        else if(tientru < sodunhonhat || tientru > nguoibitru->sodu){
             cout << YELLOW << "\t\t(!) Tiền nạp hợp lệ trong khoảng 1000 -> " << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl;
             solansaitientru++;
         } else tientruhople = true;
-    } while(!tientruhople && solansaitientru < 3);
-    if(solansaitientru == 3){
+    } while(!tientruhople && solansaitientru < solansaitoida);
+    if(solansaitientru == solansaitoida){
         cout << RED << "\t(!) Trừ tiền không thành công !" << RESET << endl;
         hieuungamthanh_mp3(dd_giongcuoithay3, trangthaiamthanh);
         return;
@@ -1256,16 +1263,16 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
     cout << GREEN << "\t(*) Đã trừ tiền tài khoản: " << nguoibitru->tentaikhoan << "\n\t(->) Số dư mới: " << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl;
 }
 
-int main(){
-    SetConsoleTitleA("Nhà Cái Châu Phi");
-    SetConsoleCP(CP_UTF8); 
-    SetConsoleOutputCP(CP_UTF8);
-    ancontrochuot(true); 
-    srand(time(NULL));
-    DanhSachNguoiChoi danhsachnguoichoi; 
+int main() {
+    SetConsoleTitleA("Nhà Cái STU");                // tiêu đề terminal 
+    SetConsoleCP(CP_UTF8);                          // hiện được tiếng việt và ký tự đặc biệt
+    SetConsoleOutputCP(CP_UTF8);                    // này cũng vậy 
+    ancontrochuot(true);                            // ẩn con trỏ chuột
+    srand(time(NULL));                              // khởi tạo random cho game   
+    DanhSachNguoiChoi danhsachnguoichoi;            
     khoitaolist(danhsachnguoichoi);
     taidulieujson(danhsachnguoichoi);
-    ThongTinNguoiChoi thongtinnguoichoi; 
+    ThongTinNguoiChoi thongtinnguoichoi;
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
