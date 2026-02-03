@@ -2,7 +2,7 @@
 #include <windows.h>
 using namespace std;
 
-// mau va gach chan 
+// Định nghĩa màu và hiệu ứng in 
 #define RESET   "\033[0m"
 #define WHITE   "\033[38;2;255;255;255m"
 #define RED     "\033[38;2;255;120;120m"
@@ -16,6 +16,8 @@ using namespace std;
 #define NO_UNDERLINE "\033[24m"
 #define BG_WHITE "\033[47m"
 
+
+// Đạo cụ trong game 
 const string matxucxac[7][5] = {
     { "", "", "", "", "" },
 
