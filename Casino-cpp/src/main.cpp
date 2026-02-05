@@ -268,39 +268,40 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
     return true;
 }
 
-string chematkhau(){
-    string matkhau; char kytu;
-    while ((kytu = _getch()) != '\r') { 
-        if (kytu == '\b') { 
-            if (!matkhau.empty()) {
-                matkhau.pop_back();
-                cout << "\b \b";
-            }
-        } else {
-            matkhau += kytu;
-            cout << "*";
-        }
-    }
-    cout << endl;
-    return matkhau;
-}
-
-// string chematkhau() {
-//     string matkhau;
-//     char kytu;
-
-//     while ((kytu = _getch()) != '\r') {
-//         if (kytu == '\b') {
+// che mật khẩu có ký tự 
+// string chematkhau(){
+//     string matkhau; char kytu;
+//     while ((kytu = _getch()) != '\r') { 
+//         if (kytu == '\b') { 
 //             if (!matkhau.empty()) {
 //                 matkhau.pop_back();
+//                 cout << "\b \b";
 //             }
 //         } else {
 //             matkhau += kytu;
+//             cout << "*";
 //         }
 //     }
 //     cout << endl;
 //     return matkhau;
 // }
+
+// che mật khẩu không ký tự (giống sudo password linux)
+string chematkhau() {
+    string matkhau;
+    char kytu;
+    while ((kytu = _getch()) != '\r') {
+        if (kytu == '\b') {
+            if (!matkhau.empty()) {
+                matkhau.pop_back();
+            }
+        } else {
+            matkhau += kytu;
+        }
+    }
+    cout << endl;
+    return matkhau;
+}
 
 bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi){
     if(kiemtrajsontrong(dd_danhsachtaikhoan)){
@@ -1302,7 +1303,7 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
 }
 
 int main() {
-    SetConsoleTitleA("Casino C++");                // tiêu đề terminal 
+    SetConsoleTitleA("Casino C++");                 // tiêu đề terminal 
     SetConsoleCP(CP_UTF8);                          // hiện được tiếng việt và ký tự đặc biệt
     SetConsoleOutputCP(CP_UTF8);                    // này cũng vậy 
     ancontrochuot(true);                            // ẩn con trỏ chuột
