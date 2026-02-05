@@ -47,10 +47,10 @@ void game_chanle(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
         ((luachon == "l" || luachon == "le") && ketqua == "Lẻ")) {
         int tienthang = tiencuoc * 1.9;
         nguoichoi->sodu += (int)tienthang;
-        cout << GREEN << "\tChúc mừng bạn đã thắng" << RESET << "\n\tTiền thắng: " << YELLOW << dinhdangtien(tienthang) << RESET << " VND" << endl; 
+        cout << GREEN << "\tChúc mừng bạn đã thắng" << RESET << "\n\tTiền thắng: " << YELLOW << "+" << dinhdangtien(tienthang) << RESET << " VND" << endl; 
         hieuungamthanh_mp3(dd_dunglacontraicuata, trangthaiamthanh);
     } else {
-        cout << RED << "\tChúc bạn may mắn lần sau" << RESET << "\n\tTiền thua: " << YELLOW << dinhdangtien(tiencuoc) << RESET << " VND"<< endl;
+        cout << RED << "\tChúc bạn may mắn lần sau" << RESET << "\n\tTiền thua: " << YELLOW << "-" << dinhdangtien(tiencuoc) << RESET << " VND"<< endl;
         hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
     }
     LichSu lichsu;
