@@ -94,6 +94,7 @@
 
 ## Cài đặt
 - Phải cài thư viện `OpenSSL` trước khi chạy
+  + Nếu dùng trình biên dịch MinGW64/Gnu thì cài thông qua lệnh: `pacman -S mingw-w64-x86_64-openssl`
 - Để tự động build chương trình thì cần chạy file: `khoichay.cpp`
 - Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -w`
 
@@ -115,6 +116,7 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
 
 
