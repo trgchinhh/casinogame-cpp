@@ -13,7 +13,7 @@
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
  * Bảo mật bằng hash SHA256 (player) và RSA (admin)    *
- * Có thể viết thêm game trong folder src/game/        *                          *
+ * Có thể viết thêm game trong folder src/game/        * 
 \*******************************************************/
 
 #include "include.h"
@@ -1380,4 +1380,5 @@ int main() {
     ThongTinNguoiChoi thongtinnguoichoi;
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
+
 }
