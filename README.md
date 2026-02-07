@@ -9,9 +9,9 @@
 
 ## Liên kết 
 ### Video demo chương trình
-- Video demo bản cũ: [Xem video tại đây](https://drive.google.com/file/d/1G6eV0DhiAYCDHklUTUk0BhvdWoKOh5SU/view?usp=sharing)
 - Video demo bản cũ: [Xem video tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
-- Video demo bản mới (Phân quyền): [Xem video tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
+- Video demo bản cũ (Phân quyền): [Xem video tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
+- Video demo bản mới nhất: [Xem tại đây](https://drive.google.com/file/d/1c7uQ_GcHkBOLcvkximw3A-mDyji1HHS6/view?usp=sharing)
 
 ## Chức năng
 ### Trang chủ: 
@@ -116,6 +116,7 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
 
 
