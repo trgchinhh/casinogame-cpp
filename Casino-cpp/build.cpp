@@ -1,11 +1,23 @@
-/*****************************************\
- * Casino game code in C++
- * Cấu trúc dữ liệu dựa trên DSLK kép 
- * Gồm màu sắc và hiệu ứng âm thanh 
-\*****************************************/
+//   _____          _             
+//  / ____|        (_)            
+// | |     __ _ ___ _ _ __   ___  
+// | |    / _` / __| | '_ \ / _ \    Casino game C++ 
+// | |___| (_| \__ \ | | | | (_) |   https://github.com/trgchinhh/casinogame-cpp
+//  \_____\__,_|___/_|_| |_|\___/    Tác giả: Nguyễn Trường Chinh
+//                    
+// Bản quyền: MIT LICENSE 2026
 
-#include <exception>
+/*******************************************************\
+ * Hoàn thành ngày 07/02/2026                          *
+ * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
+ * Gồm màu sắc chữ và hiệu ứng âm thanh                *
+ * Lưu data và lịch sử ở các file định dạng JSON       *
+ * Bảo mật bằng hash SHA256 (player) và RSA (admin)    *
+ * Có thể viết thêm game trong folder src/game/        *
+\*******************************************************/
+
 #include <iostream>
+#include <exception>
 using namespace std;
 
 #define RESET   "\033[0m"
