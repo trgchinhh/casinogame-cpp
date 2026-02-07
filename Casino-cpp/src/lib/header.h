@@ -134,15 +134,6 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
 void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void loadraketqua(int sogiay);
 void chosaukhinhapthanhcong(int sogiay);
-// void game_taixiu1xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_taixiu3xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_doanso(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_doanmau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_chanle(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_upngua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_baucua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-// void game_keobuabao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
-//void game_daingan(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 
 string chematkhau();
@@ -151,3 +142,4 @@ string dinhdangtien(int sotien);
 
 ThongTinPtr khoitaotaikhoan(ThongTinNguoiChoi& thongtinnguoichoi);
 ThongTinPtr timtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, string& tentaikhoan);
+
