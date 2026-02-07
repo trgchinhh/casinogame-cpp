@@ -101,21 +101,18 @@
 - Để tự động build chương trình thì cần chạy file: `khoichay.cpp`
 - Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\\main.cpp src\\resource\\resource.o -o " + tenchuongtrinh + " -lwinmm -w`
 
-## Screenshot
+## Demo Screenshot
 
 ### 1 Phần đăng nhập
-<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/adbaaf0a-4fa8-445c-bf60-253400fa4c63" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/beee556c-d633-4a38-b0c6-6a353f0c34b3" />
 
 ### 2 Admin
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/59a578c7-d5f5-4efc-a57f-3663f1fb9168" />
+<img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/16878db4-ba60-42b9-ac8a-4d5ea2626a9c" />
 
 ### 3 Game 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/69ca24c1-886d-42dc-85bd-d7b69766d226" />
-
-### 4 Lịch sử chơi
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/dc15c177-20f7-4932-b39a-f5db86c2aabb" />
-
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/23cd0582-5a31-452b-995e-d0c3821f4437" />
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
+
 
