@@ -13,7 +13,7 @@
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
  * Bảo mật bằng hash SHA256 (player) và RSA (admin)    *
- * Có thể viết thêm game trong folder src/game/        * 
+ * Có thể viết thêm game trong folder src/game/        *
 \*******************************************************/
 
 #include "include.h"
@@ -993,10 +993,10 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                 hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
                 continue;
             } else if(chon == 1){
-                cout << "\n[" << RED << chon << RESET << "] ĐĂNG KÝ TÀI KHOẢN" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG KÝ TÀI KHOẢN" << RESET << "\n\n";
                 xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 1);
             } else if(chon == 2){
-                cout << "\n[" << RED << chon << RESET << "] ĐĂNG NHẬP TÀI KHOẢN" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG NHẬP TÀI KHOẢN" << RESET << "\n\n";
                 if(xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 2)){
                     ThongTinPtr nguoichoi = timtaikhoan(
                         danhsachnguoichoi,
@@ -1012,7 +1012,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                 }
                 continue;
             }else if(chon == 3){
-                cout << "\n[" << RED << chon << RESET << "] THAY ĐỔI MẬT KHẨU" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] THAY ĐỔI MẬT KHẨU" << RESET << "\n\n";
                 xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 3);
             } else {
                 system("cls");
@@ -1073,26 +1073,26 @@ void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi) {
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
-                cout << "\n[" << RED << chon << RESET << "] NẠP TIỀN" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] NẠP TIỀN" << RESET << "\n\n";
                 naptienchonguoichoi(danhsachnguoichoi);
             } else if(chon == 1){
-                cout << "\n[" << RED << chon << RESET << "] TRỪ TIỀN" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1<< RESET << "] TRỪ TIỀN" << RESET << "\n\n";
                 trutiennguoichoi(danhsachnguoichoi);
             } else if(chon == 2){
-                cout << "\n[" << RED << chon << RESET << "] XEM THÔNG TIN" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1<< RESET << "] XEM THÔNG TIN" << RESET << "\n\n";
                 vector<ThongTinNguoiChoi> danhsachthongtinnguoichoi = taithongtinnguoichoi(danhsachnguoichoi);
                 if(danhsachthongtinnguoichoi.empty()) cout << YELLOW << "\t(!) Chưa có lịch sử chơi !" << RESET << endl;
                 else {
                     xuatbangthongtinnguoichoi(danhsachthongtinnguoichoi);
                 }
             } else if(chon == 3){
-                cout << "\n[" << RED << chon << RESET << "] XEM LỊCH SỬ" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] XEM LỊCH SỬ" << RESET << "\n\n";
                 xemlichsunguoichoi(danhsachnguoichoi);
             } else if(chon == 4){
-                cout << "\n[" << RED << chon << RESET << "] XÓA TÀI KHOẢN" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] XÓA TÀI KHOẢN" << RESET << "\n\n";
                 xoataikhoannguoichoi(danhsachnguoichoi);
             } else {
-                cout << "\n[" << RED << chon << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
                 chosaukhinhapthanhcong(sogiaycho);
                 return;
             }
@@ -1102,7 +1102,7 @@ void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi) {
 }
 
 void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    const int somuc = 11;
+    const int somuc = 12;
     const char* menu[somuc] = {
         "Tài xỉu 1xx", 
         "Tài xỉu 3xx", 
@@ -1111,6 +1111,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
         "Đoán số A -> B",
         "Chẵn lẻ 0 -> 9", 
         "Úp ngửa xu", 
+        "Xì dách",
         "Lắc bầu cua",
         "Kéo búa bao",
         "Lịch sử chơi", 
@@ -1153,34 +1154,37 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
-                cout << "\n[" << RED << chon << RESET << "] TÀI XỈU 1 XX" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] TÀI XỈU 1 XX" << RESET << "\n\n";
                 game_taixiu1xx(danhsachnguoichoi, nguoichoi);
             }else if(chon == 1){
-                cout << "\n[" << RED << chon << RESET << "] TÀI XỈU 3 XX" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] TÀI XỈU 3 XX" << RESET << "\n\n";
                 game_taixiu3xx(danhsachnguoichoi, nguoichoi);
             } else if(chon == 2){
-                cout << "\n" << RED << chon << RESET << "] ĐOÁN DÀI NGẮN" << RESET << "\n\n";
+                cout << "\n" << RED << chon + 1 << RESET << "] ĐOÁN DÀI NGẮN" << RESET << "\n\n";
                 game_daingan(danhsachnguoichoi, nguoichoi);
             } else if(chon == 3){
-                cout << "\n" << RED << chon << RESET << "] ĐOÁN MÀU 7 SẮC" << RESET << "\n\n";
+                cout << "\n" << RED << chon + 1 << RESET << "] ĐOÁN MÀU 7 SẮC" << RESET << "\n\n";
                 game_doanmau(danhsachnguoichoi, nguoichoi);
             } else if(chon == 4){
-                cout << "\n[" << RED << chon << RESET << "] ĐOÁN SỐ" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] ĐOÁN SỐ" << RESET << "\n\n";
                 game_doanso(danhsachnguoichoi, nguoichoi);
             } else if(chon == 5){
-                cout << "\n[" << RED << chon << RESET << "] SỐ CHẴN LẺ" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] SỐ CHẴN LẺ" << RESET << "\n\n";
                 game_chanle(danhsachnguoichoi, nguoichoi);
             } else if(chon == 6){
-                cout << "\n[" << RED << chon << RESET << "] XU ÚP NGỬA" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] XU ÚP NGỬA" << RESET << "\n\n";
                 game_upngua(danhsachnguoichoi, nguoichoi);
             } else if(chon == 7){
-                cout << "\n[" << RED << chon << RESET << "] LẮC BẦU CUA" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] XÌ DÁCH" << RESET << "\n\n";
+                game_xidach(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 8){
+                cout << "\n[" << RED << chon + 1 << RESET << "] LẮC BẦU CUA" << RESET << "\n\n";
                 game_baucua(danhsachnguoichoi, nguoichoi);
-            }  else if(chon == 8){
-                cout << "\n[" << RED << chon << RESET << "] KÉO BÚA BAO" << RESET << "\n\n";
+            }  else if(chon == 9){
+                cout << "\n[" << RED << chon + 1 << RESET << "] KÉO BÚA BAO" << RESET << "\n\n";
                 game_keobuabao(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 9){
-                cout << "\n[" << RED << chon << RESET << "] LỊCH SỬ CHƠI" << RESET << "\n\n";
+            } else if(chon == 10){
+                cout << "\n[" << RED << chon + 1 << RESET << "] LỊCH SỬ CHƠI" << RESET << "\n\n";
                 vector<LichSu> danhsachlichsu = tailichsujson(nguoichoi->tentaikhoan);
                 if(danhsachlichsu.empty()) cout << YELLOW << "\t(!) Chưa có lịch sử chơi !" << RESET << endl;
                 else {
@@ -1380,5 +1384,4 @@ int main() {
     ThongTinNguoiChoi thongtinnguoichoi;
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
-
 }
