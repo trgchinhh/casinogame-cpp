@@ -10,3 +10,4 @@
 #include "game//baucua.h"
 #include "game//doanmau.h"
 #include "game//daingan.h"
+#include "game//xidach.h"
