@@ -1,93 +1,93 @@
 {
     "chinh": [
         {
-            "phien": 248,
+            "phien": 509,
             "trochoi": "Taixiu3xx",
-            "sodu": 50266700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 11,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 249,
-            "trochoi": "Taixiu1xx",
-            "sodu": 54586700,
+            "sodu": 69132580,
             "tiencuoc": 30000,
             "luachon": "x",
             "tongxucxac": 4,
-            "ketqua": "Tài"
+            "ketqua": "Thắng"
         },
         {
-            "phien": 250,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54613700,
+            "phien": 510,
+            "trochoi": "Daingan",
+            "sodu": 69102580,
             "tiencuoc": 30000,
-            "luachon": "x",
+            "luachon": "d",
             "tongxucxac": 9,
-            "ketqua": "Xỉu"
+            "ketqua": "Thua"
         },
         {
-            "phien": 251,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54640700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 8,
-            "ketqua": "Xỉu"
+            "phien": 511,
+            "trochoi": "Doanmau",
+            "sodu": 69022580,
+            "tiencuoc": 80000,
+            "luachon": "luc cham",
+            "tongxucxac": 0,
+            "ketqua": "Thua"
         },
         {
-            "phien": 252,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54610700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 16,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 253,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54580700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 17,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 254,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54550700,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 11,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 255,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54547700,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 17,
-            "ketqua": "Tài"
-        },
-        {
-            "phien": 256,
-            "trochoi": "Taixiu3xx",
-            "sodu": 54247700,
-            "tiencuoc": 300000,
-            "luachon": "t",
-            "tongxucxac": 5,
-            "ketqua": "Xỉu"
-        },
-        {
-            "phien": 257,
-            "trochoi": "Upngua",
-            "sodu": 54207700,
+            "phien": 512,
+            "trochoi": "Doanso",
+            "sodu": 69222580,
             "tiencuoc": 40000,
+            "luachon": "14",
+            "tongxucxac": 14,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 513,
+            "trochoi": "Chanle",
+            "sodu": 69192580,
+            "tiencuoc": 30000,
+            "luachon": "l",
+            "tongxucxac": 4,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 514,
+            "trochoi": "Upngua",
+            "sodu": 69219580,
+            "tiencuoc": 30000,
             "luachon": "u",
+            "tongxucxac": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 515,
+            "trochoi": "BauCua",
+            "sodu": 69349580,
+            "tiencuoc": 230000,
+            "luachon": "bau ga tom cua",
             "tongxucxac": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 516,
+            "trochoi": "BauCua",
+            "sodu": 69679580,
+            "tiencuoc": 330000,
+            "luachon": "cua ga ",
+            "tongxucxac": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 517,
+            "trochoi": "Keobuabao",
+            "sodu": 69639580,
+            "tiencuoc": 40000,
+            "luachon": "Kéo",
+            "tongxucxac": 0,
+            "ketqua": "Hòa"
+        },
+        {
+            "phien": 518,
+            "trochoi": "Keobuabao",
+            "sodu": 69539580,
+            "tiencuoc": 100000,
+            "luachon": "Bao",
+            "tongxucxac": 0,
             "ketqua": "Thua"
         }
     ],
@@ -326,24 +326,6 @@
     ],
     "phuc": [
         {
-            "phien": 1,
-            "trochoi": "Taixiu1xx",
-            "sodu": 80027000,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 2,
-            "ketqua": "Xỉu"
-        },
-        {
-            "phien": 2,
-            "trochoi": "Taixiu3xx",
-            "sodu": 79997000,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 12,
-            "ketqua": "Tài"
-        },
-        {
             "phien": 3,
             "trochoi": "Taixiu3xx",
             "sodu": 80357000,
@@ -405,6 +387,44 @@
             "luachon": "u",
             "tongxucxac": 2,
             "ketqua": "Thua"
+        },
+        {
+            "phien": 10,
+            "trochoi": "BauCua",
+            "sodu": 79995700,
+            "tiencuoc": 120000,
+            "luachon": "cua bau tom ca",
+            "tongxucxac": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 11,
+            "trochoi": "Keobuabao",
+            "sodu": 79495700,
+            "tiencuoc": 500000,
+            "luachon": "Bao",
+            "tongxucxac": 2,
+            "ketqua": "Hòa"
+        },
+        {
+            "phien": 12,
+            "trochoi": "Keobuabao",
+            "sodu": 78995700,
+            "tiencuoc": 500000,
+            "luachon": "Kéo",
+            "tongxucxac": 1,
+            "ketqua": "Thua"
+        }
+    ],
+    "hung": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 99700000,
+            "tiencuoc": 300000,
+            "luachon": "x",
+            "tongxucxac": 13,
+            "ketqua": "Tài"
         }
     ]
 }
