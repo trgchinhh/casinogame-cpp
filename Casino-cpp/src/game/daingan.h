@@ -57,7 +57,7 @@ void game_daingan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     cout << RED << "]" << RESET;
     cout << " " << "[0 / " << tongdodai << "]";
     Sleep(1500);
-    for(int i = 0; i <= dodai; i++){
+    for(int i = 0; i < dodai; i++){
         dichuyenXY(diemXbatdau + 1 + i, diemYbatdau);
         cout << "▆";
         if(i == diemcandat){
