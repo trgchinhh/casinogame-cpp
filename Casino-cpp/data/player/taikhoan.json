@@ -5,7 +5,7 @@
         "tentaikhoan": "chinh",
         "matkhau": "258ae09689bf5b253b84bc3913f3db99460a962ce1b976b8019df1527dfb4497",
         "makhoa6so": "bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a",
-        "sodu": 54207700
+        "sodu": 69539580
     },
     {
         "sothutu": 2,
@@ -53,6 +53,14 @@
         "tentaikhoan": "phuc",
         "matkhau": "5e4d82220bd8f92797f463a0b90b4764c1d86dcec44de97aca201b179c3ef10c",
         "makhoa6so": "ec4c88ca7f69534f10c0611c1ecd13e7c2cdf73e1b915e9fd0cf27ac10da43fa",
-        "sodu": 79995700
+        "sodu": 78995700
+    },
+    {
+        "sothutu": 8,
+        "tennguoichoi": "hung",
+        "tentaikhoan": "hung",
+        "matkhau": "c4410f72e4467dfe7d9cd78edbb2f5786bdccaa54a6010782b2c411f988e717a",
+        "makhoa6so": "92925488b28ab12584ac8fcaa8a27a0f497b2c62940c8f4fbc8ef19ebc87c43e",
+        "sodu": 99700000
     }
 ]
