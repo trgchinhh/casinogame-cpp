@@ -358,7 +358,7 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
         hoplematkhau = 0;
         // nhập pass cho admin và player
         if(thongtinnguoichoi.phanquyen == Admin) 
-            cout << "\t(?) [Admin] Nhập mật khẩu: ";
+            cout << "\t(?) [" << RED << "Admin" << RESET << "] Nhập mật khẩu: ";
         else 
             cout << "\t(?) Nhập mật khẩu: ";
         thongtinnguoichoi.matkhau = chematkhau();
@@ -936,9 +936,9 @@ void hiensodunguoichoi(ThongTinPtr& nguoichoi){
 }
 
 void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi){
-    const int somuc = 5;
+    const int somuc = 6;
     const char* menu[somuc] = {
-        "Âm thanh", "Đăng ký", "Đăng nhập", "Quên mật khẩu", "Thoát",
+        "Âm thanh", "Hướng dẫn", "Đăng ký", "Đăng nhập", "Quên mật khẩu", "Thoát",
     };
     int chon = 0; char phim;
     //hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
@@ -993,9 +993,15 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                 hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
                 continue;
             } else if(chon == 1){
+                system("cls");
+                //ingiuamanhinh("HƯỚNG DẪN CÁCH CHƠI", CYAN);
+                inbanner(bannerhuongdan);
+                cout << noidunghuongdan << endl;
+                //ingiuamanhinh("CHÚC BẠN CHƠI GAME VUI VẺ", CYAN);
+            } else if(chon == 2){
                 cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG KÝ TÀI KHOẢN" << RESET << "\n\n";
                 xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 1);
-            } else if(chon == 2){
+            } else if(chon == 3){
                 cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG NHẬP TÀI KHOẢN" << RESET << "\n\n";
                 if(xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 2)){
                     ThongTinPtr nguoichoi = timtaikhoan(
@@ -1011,7 +1017,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                     }
                 }
                 continue;
-            }else if(chon == 3){
+            }else if(chon == 4){
                 cout << "\n[" << RED << chon + 1 << RESET << "] THAY ĐỔI MẬT KHẨU" << RESET << "\n\n";
                 xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 3);
             } else {
@@ -1373,7 +1379,7 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
 }
 
 int main() {
-    SetConsoleTitleA("Casino C++");                 // tiêu đề terminal 
+    SetConsoleTitleA("Casino Game");                // tiêu đề terminal 
     SetConsoleCP(CP_UTF8);                          // hiện được tiếng việt và ký tự đặc biệt
     SetConsoleOutputCP(CP_UTF8);                    // này cũng vậy 
     ancontrochuot(true);                            // ẩn con trỏ chuột
