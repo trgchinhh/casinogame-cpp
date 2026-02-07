@@ -34,6 +34,7 @@
 - Đoán số trong khoảng A -> B
 - Đoán chẵn lẻ trong khoảng 0 -> 9
 - Tung xu úp ngửa
+- Xì dách
 - Lắc bầu cua 
 - Kéo búa bao 
 - Xem lịch sử chơi
