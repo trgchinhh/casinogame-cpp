@@ -1193,7 +1193,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             } else {
                 // cái này thích thì bật (hơi ồn)
                 hieuungamthanh_mp3(dd_maymuanuadi, trangthaiamthanh);
-                cout << "\n[" << RED << chon << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
+                cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
                 chosaukhinhapthanhcong(sogiaycho);
                 return;
             }
