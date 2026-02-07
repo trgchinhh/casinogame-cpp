@@ -1,10 +1,10 @@
 # CASINO GAME C++
 
 ## Giới thiệu
-- Đây là game cá cược viết bằng ngôn ngữ C++ với nhiều trò khác nhau
-- Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện trực quan và dễ chơi
-- Game có mô phỏng xúc xắc và các số bằng ký tự ASCII và hiệu ứng âm thanh  
-- Game có nhiều ký tự đặc biệt nên cài JetbrainsMono Font để có trải nghiệm tốt nhất 
+- Đây là game cá cược viết bằng ngôn ngữ C++ với nhiều trò chơi tết (cá cược) khác nhau 
+- Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện trực quan và dễ chơi và đẹp mắt
+- Game có mô phỏng xúc xắc và các số bằng ký tự ASCII, ngoài ra còn có ký tự đặc biêt và hiệu ứng âm thanh  
+- Game có nhiều ký tự đặc biệt nên cài JetbrainsMono Font hoặc những font khác ngoài font mặc định để có trải nghiệm tốt nhất 
 - Giao diện lấy cảm hứng từ dự án [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp)
 
 ## Liên kết 
@@ -17,7 +17,6 @@
 ### Trang chủ: 
 - Bật tắt hiệu ứng âm thanh
 - Đăng nhập / Đăng ký
-- Quên mật khẩu
 - Thoát game
 ## Phân quyền Admin và User
 ### Trang Admin
@@ -28,26 +27,31 @@
 - Xóa tài khoản
 - Đăng xuất (quay lại trang chủ)
 ### Trang game (User)
-- Tài xỉu 1 xúc xắc / 3 xúc xắc
+- Tài xỉu 1 xúc xắc 
+- Tài xỉu 3 xúc xắc
+- Đoán dài ngắn 
+- Đoán 2/7 màu sắc
 - Đoán số trong khoảng A -> B
-- Chẵn lẻ trong khoảng 0 -> 9
+- Đoán chẵn lẻ trong khoảng 0 -> 9
 - Tung xu úp ngửa
-- Nạp thêm tiền
+- Lắc bầu cua 
+- Kéo búa bao 
 - Xem lịch sử chơi
 - Đăng xuất (quay lại trang chủ)
 
 ## Yêu cầu
 - Phiên bản C++ 17 trở lên
 - Đổi font chữ terminal phù hợp để hiển thị ký tự đặc biệt
-  + Ví dụ: Jetbrains Mono Font, Fira Code Font
+  + Ví dụ: Jetbrains Mono Font, Fira Code Font, ...
 
 ## Cấu trúc dự án
 ```
 ├── data
-│   ├── .taikhoan
+│   ├── admin
 │   │   └── thongtintk.json
-│   ├── lichsugame.json
-│   └── taikhoan.json
+│   └── player
+│       ├── lichsugame.json
+│       └── taikhoan.json
 ├── sound
 │   ├── 1_dong_xu_roi.mp3
 │   ├── chon_menu.mp3
@@ -65,8 +69,12 @@
 │   └── xin_vinh_biet_cu.wav
 ├── src
 │   ├── game
+│   │   ├── baucua.h
 │   │   ├── chanle.h
+│   │   ├── daingan.h
+│   │   ├── doanmau.h
 │   │   ├── doanso.h
+│   │   ├── keobuabao.h
 │   │   ├── taixiu1xx.h
 │   │   ├── taixiu3xx.h
 │   │   └── upngua.h
@@ -84,25 +92,19 @@
 │   │   └── resource.rc
 │   ├── include.h
 │   └── main.cpp
-├── Casino.exe
 ├── LICENSE
 ├── README.md
-├── build.cpp
-├── build.exe
-└── cautruc.md
+└── build.cpp
 ```
 
 ## Cài đặt
-- Phải cài thư viện `OpenSSL` trước khi chạy
-  + Nếu dùng trình biên dịch MinGW64/Gnu thì cài thông qua lệnh: `pacman -S mingw-w64-x86_64-openssl`
 - Để tự động build chương trình thì cần chạy file: `khoichay.cpp`
-- Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -w`
-
+- Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\\main.cpp src\\resource\\resource.o -o " + tenchuongtrinh + " -lwinmm -w`
 
 ## Screenshot
 
 ### 1 Phần đăng nhập
-<img width="1919" height="1078" alt="image" src="https://github.com/user-attachments/assets/90125af9-3643-4637-b37a-e267405bb2c1" />
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/adbaaf0a-4fa8-445c-bf60-253400fa4c63" />
 
 ### 2 Admin
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/59a578c7-d5f5-4efc-a57f-3663f1fb9168" />
@@ -116,9 +118,4 @@
 
 ## Tác giả : Nguyễn Trường Chinh (NTC++)
 ## Github  : https://github.com/trgchinhh
-
-
-
-
-
 
