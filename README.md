@@ -1,52 +1,76 @@
 # CASINO GAME C++
 
 ## Giới thiệu
-- Đây là game cá cược viết bằng ngôn ngữ C++ với nhiều trò chơi tết (cá cược) khác nhau 
-- Chạy trên môi trường dòng lệnh (commandline) với thiết kế giao diện trực quan và dễ chơi và đẹp mắt
-- Game có mô phỏng xúc xắc và các số bằng ký tự ASCII, ngoài ra còn có ký tự đặc biêt và hiệu ứng âm thanh  
-- Game có nhiều ký tự đặc biệt nên cài JetbrainsMono Font hoặc những font khác ngoài font mặc định để có trải nghiệm tốt nhất 
-- Giao diện lấy cảm hứng từ dự án [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp)
 
-## Liên kết 
-### Video demo chương trình
-- Video demo bản cũ: [Xem video tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
-- Video demo bản cũ (Phân quyền): [Xem video tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
-- Video demo bản mới nhất: [Xem tại đây](https://drive.google.com/file/d/1Yp0qnBI1qSjZ2htpUJVHOjZOEJUkno1p/view?usp=sharing)
+**Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (CLI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, mang lại trải nghiệm sinh động ngay trong terminal.
 
-## Chức năng
-### Trang chủ: 
-- Bật tắt hiệu ứng âm thanh
-- Đăng nhập / Đăng ký
-- Thoát game
-## Phân quyền Admin và User
-### Trang Admin
-- Nạp tiền
-- Trừ tiền
-- Xem thông tin 
-- Xem lịch sử
-- Xóa tài khoản
-- Đăng xuất (quay lại trang chủ)
-### Trang game (User)
-- Tài xỉu 1 xúc xắc 
-- Tài xỉu 3 xúc xắc
-- Đoán dài ngắn 
-- Đoán 2/7 màu sắc
-- Đoán số trong khoảng A -> B
-- Đoán chẵn lẻ trong khoảng 0 -> 9
-- Tung xu úp ngửa
-- Xì dách
-- Lắc bầu cua 
-- Kéo búa bao 
-- Xem lịch sử chơi
-- Đăng xuất (quay lại trang chủ)
+Dự án được xây dựng với mục tiêu:
 
-## Yêu cầu
-- Phiên bản C++ 17 trở lên
-- Đổi font chữ terminal phù hợp để hiển thị ký tự đặc biệt
-  + Ví dụ: Jetbrains Mono Font, Fira Code Font, ...
+* Rèn luyện tư duy lập trình C++ thông qua một project nhỏ
+* Làm quen với việc tổ chức mã nguồn, tách module và quản lý dữ liệu
+* Mô phỏng một hệ thống game có tài khoản, phân quyền và lịch sử chơi và bảo mật
 
-## Cấu trúc dự án
-```
+Giao diện và cách tổ chức menu được lấy cảm hứng từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
+
+> ⚠️ Lưu ý: Do sử dụng nhiều ký tự đặc biệt và ASCII art, nên khuyến nghị sử dụng các font monospace như **JetBrains Mono**, **Fira Code**, v.v. để hiển thị tốt nhất.
+
+---
+
+## Video demo
+* Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
+* Demo phiên bản cũ (có phân quyền): [Xem tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
+* Demo phiên bản mới nhất: [Xem tại đây](https://drive.google.com/file/d/1Yp0qnBI1qSjZ2htpUJVHOjZOEJUkno1p/view?usp=sharing)
+
+---
+
+## Chức năng chính
+
+### Trang chủ
+* Bật / tắt hiệu ứng âm thanh
+* Đăng nhập / đăng ký tài khoản
+* Thoát chương trình
+
+### Phân quyền người dùng
+Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
+
+#### Quyền Admin
+* Nạp tiền cho tài khoản người chơi
+* Trừ tiền người chơi
+* Xem thông tin tài khoản
+* Xem lịch sử chơi
+* Xóa tài khoản
+* Đăng xuất (quay về trang chủ)
+
+#### Quyền User (Trang game)
+* Tài xỉu 1 xúc xắc
+* Tài xỉu 3 xúc xắc
+* Đoán dài / ngắn
+* Đoán 2 / 7 màu sắc
+* Đoán số trong khoảng A → B
+* Chẵn / lẻ (0 → 9)
+* Tung xu (úp / ngửa)
+* Xì dách
+* Lắc bầu cua
+* Kéo búa bao
+* Xem lịch sử chơi
+* Đăng xuất
+
+---
+
+## Yêu cầu hệ thống
+
+* Trình biên dịch hỗ trợ **C++17** trở lên
+* Terminal hỗ trợ màu ANSI
+* Font chữ monospace (khuyến nghị):
+
+  * JetBrains Mono
+  * Fira Code
+
+---
+
+## Cấu trúc thư mục
+
+```text
 ├── data
 │   ├── admin
 │   │   └── thongtintk.json
@@ -78,8 +102,7 @@
 │   │   ├── keobuabao.h
 │   │   ├── taixiu1xx.h
 │   │   ├── taixiu3xx.h
-│   │   ├── upngua.h
-│   │   └── xidach.h
+│   │   └── upngua.h
 │   ├── lib
 │   │   ├── admin.h
 │   │   ├── banner.h
@@ -96,25 +119,51 @@
 │   └── main.cpp
 ├── LICENSE
 ├── README.md
-└── build.cpp
+└── cautruc.md
 ```
 
-## Cài đặt
-- Để tự động build chương trình thì cần chạy file: `khoichay.cpp`
-- Còn nếu muốn chạy thủ công thì build chương trình theo lệnh: `g++ src\\main.cpp src\\resource\\resource.o -o " + tenchuongtrinh + " -lwinmm -w`
+---
 
-## Demo Screenshot
+## Cài đặt & Build
 
-### 1 Phần đăng nhập
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/beee556c-d633-4a38-b0c6-6a353f0c34b3" />
+### Build tự động
+Chạy file:
+```bash
+khoichay.cpp
+```
 
-### 2 Admin
-<img width="1919" height="1077" alt="image" src="https://github.com/user-attachments/assets/16878db4-ba60-42b9-ac8a-4d5ea2626a9c" />
+### Build thủ công (Windows - MinGW)
+```bash
+g++ src\\main.cpp src\\resource\\resource.o -o Casino.exe -lwinmm -w
+```
 
-### 3 Game 
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/23cd0582-5a31-452b-995e-d0c3821f4437" />
+---
 
-## Tác giả : Nguyễn Trường Chinh (NTC++)
-## Github  : https://github.com/trgchinhh
+## Ảnh minh họa
 
+### Đăng nhập
+![Login](https://github.com/user-attachments/assets/beee556c-d633-4a38-b0c6-6a353f0c34b3)
 
+### Trang Admin
+![Admin](https://github.com/user-attachments/assets/16878db4-ba60-42b9-ac8a-4d5ea2626a9c)
+
+### Trang Game
+![Game](https://github.com/user-attachments/assets/23cd0582-5a31-452b-995e-d0c3821f4437)
+
+---
+
+## Hạn chế hiện tại
+* Chưa tối ưu kiến trúc file hoàn chỉnh
+* Logic và giao diện vẫn còn gộp ở một số module
+* Còn hardcore vài chổ như biến global 
+
+---
+
+## Tác giả
+**Nguyễn Trường Chinh (NTC++)**
+GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
+
+---
+
+> 📌 Dự án được phát triển với mục đích học tập và nghiên cứu. 
+> 📌 Mọi góp ý và đóng góp đều được hoan nghênh.
