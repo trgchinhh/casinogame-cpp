@@ -10,6 +10,7 @@
 #include <fstream>
 #include <sstream>
 #include <regex>
+#include <random>
 #include <mmsystem.h>       // phát hiệu ứng âm thanh
 #include "props.h"          // chứa mặt xúc xắc và số
 #include "banner.h"         // chứa nhiều banner 
