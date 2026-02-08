@@ -17,6 +17,7 @@
 \*******************************************************/
 
 #include "include.h"
+#include "lib/header.h"
 
 void inbanner(const string tenbanner){
     stringstream ss(tenbanner);
@@ -175,7 +176,7 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             solansainc++;
             continue;
         }
-        if(thongtinnguoichoi.tennguoichoi == TentaikhoanAdmin){
+        if(kiemtratentaikhoanadmin(thongtinnguoichoi.tennguoichoi)){
             cout << YELLOW << "\t\t(!) Vui lòng đặt tên khác !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             solansainc++;
@@ -198,7 +199,7 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             solansaitk++;
             continue;
         }    
-        if(thongtinnguoichoi.tentaikhoan == TentaikhoanAdmin){
+        if(kiemtratentaikhoanadmin(thongtinnguoichoi.tentaikhoan)){
             cout << YELLOW << "\t\t(!) Vui lòng đặt tên khác !" << RESET << endl;
             hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
             solansainc++;
@@ -284,7 +285,7 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
     return true;
 }
 
-// che mật khẩu có ký tự 
+// che mật khẩu có ký tự (*)
 string chematkhau(){
     string matkhau; char kytu;
     while ((kytu = _getch()) != '\r') { 
@@ -302,7 +303,7 @@ string chematkhau(){
     return matkhau;
 }
 
-// che mật khẩu không ký tự (giống sudo password linux)
+//che mật khẩu không ký tự (giống sudo password linux)
 // string chematkhau() {
 //     string matkhau;
 //     char kytu;
@@ -333,7 +334,7 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
     do {
         cout << "\t(?) Nhập tên tài khoản: ";
         getline(cin, thongtinnguoichoi.tentaikhoan);
-        if (thongtinnguoichoi.tentaikhoan == TentaikhoanAdmin) {
+        if (kiemtratentaikhoanadmin(thongtinnguoichoi.tentaikhoan)) {
             thongtinnguoichoi.phanquyen = Admin;
             break;
         } else thongtinnguoichoi.phanquyen = Nguoichoi;
@@ -362,8 +363,9 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
         else 
             cout << "\t(?) Nhập mật khẩu: ";
         thongtinnguoichoi.matkhau = chematkhau();
-        if (thongtinnguoichoi.tentaikhoan == TentaikhoanAdmin) {
-            if (thongtinnguoichoi.matkhau != MatkhauAdmin) {
+        if (thongtinnguoichoi.phanquyen == Admin) {
+            TentaikhoanAdmin = thongtinnguoichoi.tentaikhoan;
+            if (!kiemtramatkhauadmin(thongtinnguoichoi.matkhau)) {
                 cout << YELLOW << "\t\t(!) Mật khẩu Admin không hợp lệ !" << RESET << endl;
                 hieuungamthanh_mp3(dd_dongudoanhai, trangthaiamthanh);
                 solansaimatkhau++;
@@ -906,14 +908,12 @@ void dungchuongtrinh(){
     _getch();
 }
 
-void hienthongtinadmin(const string& tenadmin){
+void hienthongtinadmin(const string& tentaikhoanadmin){
     const int chieurong = 31;
-    //string ttk = tenadmin;
-    string ttk = "Admin";
     string taikhoan = "(-) Tài khoản: ";
     cout << "┌────────────────────────────┐\n";
-    cout << "│" << YELLOW << taikhoan << RESET << UNDERLINE << ttk 
-         << NO_UNDERLINE << string(chieurong - taikhoan.length() - ttk.length(), ' ') << "│\n";
+    cout << "│" << YELLOW << taikhoan << RESET << UNDERLINE << tentaikhoanadmin 
+         << NO_UNDERLINE << string(chieurong - taikhoan.length() - tentaikhoanadmin.length(), ' ') << "│\n";
     cout << "└────────────────────────────┘\n";
 }
 
@@ -1113,7 +1113,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
         "Tài xỉu 1xx", 
         "Tài xỉu 3xx", 
         "Đoán dài ngắn",
-        "Đoán 2/7 màu", 
+        "Đoán 3/7 màu", 
         "Đoán số A -> B",
         "Chẵn lẻ 0 -> 9", 
         "Úp ngửa xu", 
