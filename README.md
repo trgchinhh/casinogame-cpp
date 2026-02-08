@@ -143,13 +143,13 @@ g++ src\\main.cpp src\\resource\\resource.o -o Casino.exe -lwinmm -w
 ## Ảnh minh họa
 
 ### Đăng nhập
-![Login](https://github.com/user-attachments/assets/beee556c-d633-4a38-b0c6-6a353f0c34b3)
+![Login](https://github.com/user-attachments/assets/9d6dde99-3f4e-43ce-a606-118a94dc608b)
 
 ### Trang Admin
-![Admin](https://github.com/user-attachments/assets/16878db4-ba60-42b9-ac8a-4d5ea2626a9c)
+![Admin](https://github.com/user-attachments/assets/0e0df5f5-e185-4223-8409-7fe425c97a2c)
 
 ### Trang Game
-![Game](https://github.com/user-attachments/assets/23cd0582-5a31-452b-995e-d0c3821f4437)
+![Game](https://github.com/user-attachments/assets/4c7274df-9fd9-487d-b709-d73e26eb732f)
 
 ---
 
@@ -168,3 +168,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 
 > 📌 Dự án được phát triển với mục đích học tập và nghiên cứu. 
 > 📌 Mọi góp ý và đóng góp đều được hoan nghênh.
+
