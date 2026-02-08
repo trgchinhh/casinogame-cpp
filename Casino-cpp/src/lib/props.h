@@ -1,3 +1,5 @@
+#pragma once
+
 #include <string>
 #include <windows.h>
 using namespace std;
@@ -25,6 +27,17 @@ using namespace std;
 #define BG_INDIGO  "\033[48;5;54m"
 #define BG_VIOLET  "\033[48;5;93m"
 #define BG_RESET   "\033[0m"
+
+// icon 
+#define ICON_USER   "👤 "
+#define ICON_DICE   "🎲 "
+#define ICON_CARD   "🂡 "
+#define ICON_COIN   "🪙 "
+#define ICON_HAND   "✊ "
+#define ICON_COLOR  "🎨 "
+#define ICON_NUMBER "🔢 "
+#define ICON_HISTORY "📜 "
+#define ICON_WARN   "⚠ "
 
 
 // Đạo cụ trong game 
