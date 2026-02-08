@@ -7,7 +7,14 @@ void game_keobuabao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     }
     string luachon; int tiencuoc = 0; string luachoncuabot; int solansai = 0; 
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
-    cout << "\tDanh sách chọn: ['keo', 'bua', 'bao']" << endl;
+    //cout << "\tDanh sách chọn: ['keo', 'bua', 'bao']" << endl;
+    cout << YELLOW << "\tDanh sách chọn:" << RESET 
+         << " ["
+         << RED << "'keo'" << RESET << ", "
+         << GREEN << "'bua'" << RESET << ", "
+         << YELLOW << "'bao'" << RESET
+         << "]" 
+    << endl;
     do {
         cout << "\t(?) Nhập lựa chọn: ";
         getline(cin, luachon);
@@ -21,6 +28,11 @@ void game_keobuabao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     else if (luachon == "bua") luachon = "Búa";
     else if (luachon == "bao") luachon = "Bao";
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+    cout << "\t[";
+    if (luachon == "Kéo")      cout << RED;
+    else if (luachon == "Búa") cout << GREEN;
+    else if (luachon == "Bao") cout << YELLOW;
+    cout << luachon << RESET << "]: ";
     if(!nhaptiencuoc(tiencuoc, nguoichoi)){
         return;
     }
