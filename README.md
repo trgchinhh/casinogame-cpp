@@ -27,7 +27,8 @@ Giao diện và cách tổ chức menu được lấy cảm hứng từ dự án
 
 ### Trang chủ
 * Bật / tắt hiệu ứng âm thanh
-* Đăng nhập / đăng ký tài khoản
+* Hướng dẫn chơi 
+* Đăng ký / đăng nhập tài khoản
 * Thoát chương trình
 
 ### Phân quyền người dùng
