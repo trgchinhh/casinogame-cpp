@@ -2,11 +2,12 @@
 
 ## Giới thiệu
 
-**Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (CLI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, mang lại trải nghiệm sinh động ngay trong terminal.
+**Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, mang lại trải nghiệm sinh động ngay trong terminal.
 
 Dự án được xây dựng với mục tiêu:
 
 * Rèn luyện tư duy lập trình C++ thông qua một project nhỏ
+* Xây dựng 1 TUI của riêng mình (để hạn chế việc dùng chuột khi chơi)
 * Làm quen với việc tổ chức mã nguồn, tách module và quản lý dữ liệu
 * Mô phỏng một hệ thống game có tài khoản, phân quyền và lịch sử chơi và bảo mật
 
@@ -42,7 +43,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 * Xóa tài khoản
 * Đăng xuất (quay về trang chủ)
 
-> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User).  
+> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
 
 #### Quyền User (Trang game)
 * Tài xỉu 1 xúc xắc
@@ -132,17 +133,24 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 
 ## Cài đặt & Build
 
+> ⚠️ Lưu ý: trước khi build cần phải cài thư viện OpenSSL bằng MingW64/MSYS2. Nếu chưa có chạy lệnh dưới đây
+```bash
+pacman -S mingw-w64-x86_64-openssl
+```
+> Cần chạy lệnh trong MingW64
+
 ### Build tự động
 Chạy file:
 ```bash
-khoichay.cpp
+build.cpp
 ```
-> Sau khi build chạy file khoichay.exe nó sẽ biên dịch tất cả 
+> Sau khi build và chạy file build.exe nó sẽ biên dịch tất cả và chạy chương trình chính 
 
 ### Build thủ công (Windows - MinGW)
 ```bash
-g++ src\\main.cpp src\\resource\\resource.o -o Casino.exe -lwinmm -w
+g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -w
 ```
+> Không build trực tiếp trong Mingw64 
 
 ---
 
@@ -173,5 +181,3 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
-
-
