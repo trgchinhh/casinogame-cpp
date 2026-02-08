@@ -42,6 +42,8 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 * Xóa tài khoản
 * Đăng xuất (quay về trang chủ)
 
+> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
+
 #### Quyền User (Trang game)
 * Tài xỉu 1 xúc xắc
 * Tài xỉu 3 xúc xắc
@@ -66,6 +68,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 
   * JetBrains Mono
   * Fira Code
+  * Hoặc dùng các font hỗ trợ NerdFont
 
 ---
 
@@ -134,6 +137,7 @@ Chạy file:
 ```bash
 khoichay.cpp
 ```
+-> Sau khi build chạy file khoichay.exe nó sẽ biên dịch tất cả 
 
 ### Build thủ công (Windows - MinGW)
 ```bash
@@ -168,8 +172,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 
 ---
 
-> 📌 Dự án được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
-
-
-
-
+> 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
