@@ -22,10 +22,10 @@ RED ICON_NUMBER "** ĐOÁN DÀI NGẮN **\n" RESET
 "\t• Có hiệu ứng chạy số\n"
 "\t• Trên 30 là Dài, dưới hoặc bằng 30 là Ngắn\n\n"
 
-RED ICON_COLOR "** ĐOÁN 2 / 7 MÀU **\n" RESET
+RED ICON_COLOR "** ĐOÁN 3 / 7 MÀU **\n" RESET
 "\t• Chọn màu bạn tin là sẽ ra (2 màu) và nhập tiền cược\n"
 "\t• Hệ thống random màu (2/7 màu)\n"
-"\t• Trúng 1 màu là ăn\n\n"
+"\t• Trúng 1/2 màu là ăn tiền\n\n"
 
 RED ICON_NUMBER "** ĐOÁN SỐ A → B **\n" RESET
 "\t• Nhập khoảng số A đến B và nhập tiền cược\n"
