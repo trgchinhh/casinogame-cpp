@@ -137,7 +137,7 @@ Chạy file:
 ```bash
 khoichay.cpp
 ```
--> Sau khi build chạy file khoichay.exe nó sẽ biên dịch tất cả 
+> Sau khi build chạy file khoichay.exe nó sẽ biên dịch tất cả 
 
 ### Build thủ công (Windows - MinGW)
 ```bash
@@ -173,4 +173,5 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
