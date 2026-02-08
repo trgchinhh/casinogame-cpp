@@ -42,7 +42,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 * Xóa tài khoản
 * Đăng xuất (quay về trang chủ)
 
-> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
+> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User).  
 
 #### Quyền User (Trang game)
 * Tài xỉu 1 xúc xắc
@@ -173,3 +173,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
