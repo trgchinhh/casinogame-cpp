@@ -363,6 +363,7 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
             cout << "\t(?) Nhập mật khẩu: ";
         thongtinnguoichoi.matkhau = chematkhau();
         if (thongtinnguoichoi.phanquyen == Admin) {
+            // Cập nhật tên Admin khi login 
             TentaikhoanAdmin = thongtinnguoichoi.tentaikhoan;
             if (!kiemtramatkhauadmin(thongtinnguoichoi.matkhau)) {
                 cout << YELLOW << "\t\t(!) Mật khẩu Admin không hợp lệ !" << RESET << endl;
@@ -1396,4 +1397,5 @@ int main() {
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
+
 
