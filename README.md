@@ -103,12 +103,14 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   │   ├── keobuabao.h
 │   │   ├── taixiu1xx.h
 │   │   ├── taixiu3xx.h
-│   │   └── upngua.h
+│   │   ├── upngua.h
+│   │   └── xidach.h
 │   ├── lib
 │   │   ├── admin.h
 │   │   ├── banner.h
 │   │   ├── dothd.h
 │   │   ├── header.h
+│   │   ├── instruct.h
 │   │   ├── json.hpp
 │   │   ├── picosha2.h
 │   │   └── props.h
@@ -120,7 +122,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   └── main.cpp
 ├── LICENSE
 ├── README.md
-└── cautruc.md
+└── build.cpp
 ```
 
 ---
@@ -168,4 +170,5 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 
 > 📌 Dự án được phát triển với mục đích học tập và nghiên cứu. 
 > 📌 Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
