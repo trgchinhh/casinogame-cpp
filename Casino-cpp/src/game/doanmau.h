@@ -14,7 +14,19 @@ void game_doanmau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     };
     string luachon;
     vector<int> danhsachmau; map<int,int> tiencuoc; int tongtiencuoc = 0;
-    cout << "\tDanh sách chọn: ['do', 'cam', 'vang', 'luc', 'lam', 'cham', 'tim']" << endl;
+    //cout << "\tDanh sách chọn: ['do', 'cam', 'vang', 'luc', 'lam', 'cham', 'tim']" << endl;
+    // hiện danh sách có màu theo tên màu 
+    cout << YELLOW << "\tDanh sách chọn:" << RESET
+         << " ["
+         << RED     << "'do'"   << RESET << ", "
+         << ORANGE  << "'cam'"  << RESET << ", "
+         << YELLOW  << "'vang'" << RESET << ", "
+         << GREEN   << "'luc'"  << RESET << ", "
+         << BLUE    << "'lam'"  << RESET << ", "
+         << INDIGO  << "'cham'" << RESET << ", "
+         << MAGENTA << "'tim'"  << RESET
+         << "]"
+    << endl;
     cout << "\t(?) Nhập lựa chọn: ";
     getline(cin, luachon); stringstream ss(luachon);
     string tam;
@@ -29,12 +41,22 @@ void game_doanmau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
         cout << YELLOW << "\t\t(!) Không được để trống lựa chọn !" << RESET << endl;
         return;
     }
-    if(danhsachmau.size() > 2){
-        cout << YELLOW << "\t\t(!) Chỉ được cược tối đa 2 màu !" << RESET << endl;
+    if(danhsachmau.size() > 3){
+        cout << YELLOW << "\t\t(!) Chỉ được cược tối đa 3 màu !" << RESET << endl;
         return;
     }
     for(int m : danhsachmau){
-        cout << "\t[" << RED << ten_mau[m] << RESET << "]: ";
+        cout << "\t["; 
+        switch (m) {
+            case 0: cout << RED;     break; 
+            case 1: cout << ORANGE;  break; 
+            case 2: cout << YELLOW;  break; 
+            case 3: cout << GREEN;   break; 
+            case 4: cout << BLUE;    break; 
+            case 5: cout << INDIGO;  break; 
+            case 6: cout << MAGENTA; break; 
+        }
+        cout << ten_mau[m] << RESET << "]: ";
         int tc; if(!nhaptiencuoc(tc, nguoichoi)) return;
         tiencuoc[m] = tc;
         tongtiencuoc += tc;
