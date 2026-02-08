@@ -12,7 +12,17 @@ void game_baucua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     string ten_baucua[6] = {"Bầu", "Cua", "Tôm", "Cá", "Nai", "Gà"};
     string luachon; map<int, int> tiencuoc; int tongtiencuoc = 0; int solansai = 0;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
-    cout << "\tDanh sách chọn: ['bau', 'cua', 'tom', 'ca', 'nai', 'ga']" << endl;
+    //cout << YELLOW << "\tDanh sách chọn:" << RESET << " ['bau', 'cua', 'tom', 'ca', 'nai', 'ga']" << endl;
+    cout << YELLOW << "\tDanh sách chọn:" << RESET
+         << " ["
+         << RED     << "'bau'" << RESET << ", "
+         << ORANGE  << "'cua'" << RESET << ", "
+         << YELLOW  << "'tom'" << RESET << ", "
+         << GREEN   << "'ca'"  << RESET << ", "
+         << BLUE    << "'nai'" << RESET << ", "
+         << MAGENTA << "'ga'"  << RESET
+         << "]"
+     << endl;
     cout << "\t(?) Nhập lựa chọn: ";
     getline(cin, luachon); stringstream ss(luachon);
     string tam;
@@ -30,7 +40,17 @@ void game_baucua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     }
 
     for(int c : danhsachcon){
-        cout << "\t[" << RED << ten_baucua[c] << RESET << "]: ";
+        cout << "\t[";
+        switch (c) {
+            case 0: cout << RED;     break; 
+            case 1: cout << ORANGE;  break; 
+            case 2: cout << YELLOW;  break; 
+            case 3: cout << GREEN;   break; 
+            case 4: cout << BLUE;    break; 
+            case 5: cout << INDIGO;  break; 
+            case 6: cout << MAGENTA; break; 
+        }
+        cout << ten_baucua[c] << RESET << "]: ";
         int tc; if(!nhaptiencuoc(tc, nguoichoi)) return;
         tiencuoc[c] = tc; 
         tongtiencuoc += tc;
