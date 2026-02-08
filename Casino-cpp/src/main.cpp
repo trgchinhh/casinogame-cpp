@@ -1397,5 +1397,3 @@ int main() {
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
-
-
