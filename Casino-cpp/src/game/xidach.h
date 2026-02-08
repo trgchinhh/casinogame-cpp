@@ -135,6 +135,7 @@ void game_xidach(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     else if (diemnguoi > diembot) ketqua = "Thắng";
     else if (diemnguoi < diembot) ketqua = "Thua";
     else ketqua = "Hòa";
+    cout << endl;
     cout << YELLOW << "\tKết quả: " << RESET << "[" << ketqua << "]" << endl;
     if (ketqua == "Hòa") {
         nguoichoi->sodu += tiencuoc;
