@@ -10,13 +10,14 @@
 #include <fstream>
 #include <sstream>
 #include <regex>
-#include <mmsystem.h>   // phát hiệu ứng âm thanh
-#include "props.h"      // chứa mặt xúc xắc và số
-#include "banner.h"     // chứa nhiều banner 
-#include "dothd.h"      // hàm ẩn file mật
-#include "admin.h"      // phân quyền và thông tin admin
-#include "json.hpp"     // dùng định dạng json 
-#include "picosha2.h"   // dùng hash sha256
+#include <mmsystem.h>       // phát hiệu ứng âm thanh
+#include "props.h"          // chứa mặt xúc xắc và số
+#include "banner.h"         // chứa nhiều banner 
+#include "dothd.h"          // hàm ẩn file mật
+#include "admin.h"          // phân quyền và thông tin admin
+#include "json.hpp"         // dùng định dạng json 
+#include "picosha2.h"       // dùng hash sha256
+#include "instruct.h"       // hướng dẫn cách chơi
 
 #pragma comment(lib, "winmm.lib")
 
@@ -142,4 +143,3 @@ string dinhdangtien(int sotien);
 
 ThongTinPtr khoitaotaikhoan(ThongTinNguoiChoi& thongtinnguoichoi);
 ThongTinPtr timtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, string& tentaikhoan);
-
