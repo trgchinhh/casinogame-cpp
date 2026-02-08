@@ -1287,7 +1287,7 @@ void naptienchonguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
         hieuungamthanh_mp3(dd_giongcuoithay3, trangthaiamthanh);
         return;
     }
-    cout << GREEN << "\t(*) Số dư hiện tại: " << dinhdangtien(nguoiduocnap->sodu) << " VND" << RESET << endl; 
+    cout << "\t └> [" << RED << tentaikhoan << RESET << "] Số dư hiện tại: " << YELLOW << dinhdangtien(nguoiduocnap->sodu) << RESET << " VND" << endl; 
     if(nguoiduocnap->sodu >= sodulonnhat){
         cout << YELLOW << "\t\t(!) Số dư cao hơn hoặc bằng 100.000.000 VND không thể nạp thêm" << RESET << endl;
         return;
@@ -1316,8 +1316,10 @@ void naptienchonguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
     nguoiduocnap->sodu += tiennap;
     luudulieujson(danhsachnguoichoi);
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << GREEN << "\t(*) Đã nạp " << dinhdangtien(tiennap) << " VND thành công vào tài khoản: " 
-         << nguoiduocnap->tentaikhoan << "\n\t(->) Số dư mới: " << dinhdangtien(nguoiduocnap->sodu) << " VND" << RESET << endl;
+    cout << "\t │" << GREEN "\t(*)" << RESET << " Đã nạp thành công " << YELLOW << dinhdangtien(tiennap) 
+         << RESET << " VND vào tài khoản: " << RESET
+         << nguoiduocnap->tentaikhoan << "\n\t └> [" << RED << tentaikhoan 
+         << RESET << "] Số dư mới: " << YELLOW << dinhdangtien(nguoiduocnap->sodu) << RESET << " VND" << endl;
 }
 
 void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
@@ -1346,7 +1348,8 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
         hieuungamthanh_mp3(dd_giongcuoithay3, trangthaiamthanh);
         return;
     }
-    cout << GREEN << "\t(*) Số dư hiện tại: " << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl; 
+    cout << "\t └> [" << RED << tentaikhoan 
+         << RESET << "] Số dư hiện tại: " << YELLOW << dinhdangtien(nguoibitru->sodu) << RESET << " VND" << RESET << endl; 
     if(nguoibitru->sodu < sodunhonhat){
         cout << YELLOW << "\t\t(!) Số dư bé hơn 1.000 VND không thể trừ thêm" << RESET << endl;
         return;
@@ -1362,7 +1365,8 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             continue;
         }
         else if(tientru < sodunhonhat || tientru > nguoibitru->sodu){
-            cout << YELLOW << "\t\t(!) Tiền nạp hợp lệ trong khoảng 1000 -> " << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl;
+            cout << YELLOW << "\t\t(!) Tiền nạp hợp lệ trong khoảng 1000 -> "
+                 << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl;
             solansaitientru++;
         } else tientruhople = true;
     } while(!tientruhople && solansaitientru < solansaitoida);
@@ -1374,8 +1378,10 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
     nguoibitru->sodu -= tientru;
     luudulieujson(danhsachnguoichoi);
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    cout << GREEN << "\t(*) Đã trừ " << dinhdangtien(tientru) << " VND vào tài khoản: " 
-         << nguoibitru->tentaikhoan << "\n\t(->) Số dư mới: " << dinhdangtien(nguoibitru->sodu) << " VND" << RESET << endl;
+    cout << "\t │" << GREEN << "\t(*)" << RESET << " Đã trừ " << YELLOW << dinhdangtien(tientru) 
+         << RESET << " VND vào tài khoản: " << RESET 
+         << nguoibitru->tentaikhoan << "\n\t └> [" << RED << tentaikhoan 
+         << RESET << "] Số dư mới: " << YELLOW << dinhdangtien(nguoibitru->sodu) << RESET << " VND" << endl;
 }
 
 int main() {
