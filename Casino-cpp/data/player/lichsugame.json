@@ -1,94 +1,94 @@
 {
     "chinh": [
         {
-            "phien": 509,
-            "trochoi": "Taixiu3xx",
-            "sodu": 69132580,
-            "tiencuoc": 30000,
-            "luachon": "x",
-            "tongxucxac": 4,
+            "phien": 614,
+            "trochoi": "BauCua",
+            "sodu": 70009674,
+            "tiencuoc": 15000,
+            "luachon": "cua bau tom ca",
+            "tongxucxac": 3,
             "ketqua": "Thắng"
         },
         {
-            "phien": 510,
-            "trochoi": "Daingan",
-            "sodu": 69102580,
-            "tiencuoc": 30000,
-            "luachon": "d",
-            "tongxucxac": 9,
-            "ketqua": "Thua"
-        },
-        {
-            "phien": 511,
+            "phien": 615,
             "trochoi": "Doanmau",
-            "sodu": 69022580,
-            "tiencuoc": 80000,
-            "luachon": "luc cham",
+            "sodu": 70037674,
+            "tiencuoc": 2000,
+            "luachon": "do cam",
             "tongxucxac": 0,
             "ketqua": "Thua"
         },
         {
-            "phien": 512,
-            "trochoi": "Doanso",
-            "sodu": 69222580,
-            "tiencuoc": 40000,
-            "luachon": "14",
-            "tongxucxac": 14,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 513,
-            "trochoi": "Chanle",
-            "sodu": 69192580,
-            "tiencuoc": 30000,
-            "luachon": "l",
-            "tongxucxac": 4,
-            "ketqua": "Thua"
-        },
-        {
-            "phien": 514,
-            "trochoi": "Upngua",
-            "sodu": 69219580,
-            "tiencuoc": 30000,
-            "luachon": "u",
-            "tongxucxac": 1,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 515,
-            "trochoi": "BauCua",
-            "sodu": 69349580,
-            "tiencuoc": 230000,
-            "luachon": "bau ga tom cua",
-            "tongxucxac": 2,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 516,
-            "trochoi": "BauCua",
-            "sodu": 69679580,
-            "tiencuoc": 330000,
-            "luachon": "cua ga ",
-            "tongxucxac": 2,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 517,
+            "phien": 616,
             "trochoi": "Keobuabao",
-            "sodu": 69639580,
-            "tiencuoc": 40000,
+            "sodu": 70034674,
+            "tiencuoc": 3000,
             "luachon": "Kéo",
-            "tongxucxac": 0,
-            "ketqua": "Hòa"
+            "tongxucxac": 1,
+            "ketqua": "Thua"
         },
         {
-            "phien": 518,
-            "trochoi": "Keobuabao",
-            "sodu": 69539580,
-            "tiencuoc": 100000,
-            "luachon": "Bao",
+            "phien": 617,
+            "trochoi": "Doanmau",
+            "sodu": 69994674,
+            "tiencuoc": 40000,
+            "luachon": "do cam",
             "tongxucxac": 0,
             "ketqua": "Thua"
+        },
+        {
+            "phien": 618,
+            "trochoi": "Doanmau",
+            "sodu": 69974674,
+            "tiencuoc": 20000,
+            "luachon": "luc lam",
+            "tongxucxac": 0,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 619,
+            "trochoi": "Doanmau",
+            "sodu": 69951674,
+            "tiencuoc": 23000,
+            "luachon": "tim cam",
+            "tongxucxac": 0,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 620,
+            "trochoi": "Doanmau",
+            "sodu": 69891674,
+            "tiencuoc": 60000,
+            "luachon": "do luc tim",
+            "tongxucxac": 0,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 621,
+            "trochoi": "BauCua",
+            "sodu": 69941674,
+            "tiencuoc": 90000,
+            "luachon": "bau cua tom ca",
+            "tongxucxac": 3,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 622,
+            "trochoi": "Keobuabao",
+            "sodu": 69911674,
+            "tiencuoc": 30000,
+            "luachon": "Búa",
+            "tongxucxac": 2,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 623,
+            "trochoi": "Keobuabao",
+            "sodu": 69938674,
+            "tiencuoc": 30000,
+            "luachon": "Búa",
+            "tongxucxac": 0,
+            "ketqua": "Thắng"
         }
     ],
     "bao": [
