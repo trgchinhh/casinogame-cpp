@@ -1,5 +1,4 @@
 #pragma once
-
 #include <string>
 #include <windows.h>
 using namespace std;
@@ -331,3 +330,4 @@ const string xucxac7mau[7][5] = {
         "└─────────┘"
     }
 };
+
