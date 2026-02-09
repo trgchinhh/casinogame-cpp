@@ -5,6 +5,23 @@ struct Labaibacao {
     int kyhieubai;   // 0-3  (4 ký hiệu cơ/rô/chuồng/bích)
 };
 
+void inlabai_bacao_oss(const Labaibacao& b, const int diemtungla) {
+    ostringstream oss;
+    string giatri = giatrilabai[b.giatribai - 1];
+    string kyhieu = Kyhieulabai[b.kyhieubai];
+    ingiuamanhinh("┌──────────┐\n", WHITE);
+    if (giatri.length() == 1) ingiuamanhinh("│ " + giatri + "        │\n", WHITE);
+    else ingiuamanhinh("│ " + giatri + "       │\n", WHITE);
+    ingiuamanhinh("│          │\n", WHITE);
+    ingiuamanhinh("│    " + kyhieu + "     │\n", WHITE); 
+    //cout << "  --> " << YELLOW + to_string(diemtungla) << " nút\n"; 
+    ingiuamanhinh("│          │\n", WHITE);
+    if (giatri.length() == 1) ingiuamanhinh("│        " + giatri + " │\n", WHITE);
+    else ingiuamanhinh("│       " + giatri + " │\n", WHITE);
+    ingiuamanhinh("└──────────┘\n", WHITE);
+    ingiuamanhinh(RED "-->" RESET " Lá hiện tại: " YELLOW + to_string(diemtungla) + RESET + " nút\n", WHITE);
+}
+
 vector<Labaibacao> taobobai52la_bacao() {
     vector<Labaibacao> bobai;
     for (int c = 0; c < 4; c++) {
@@ -111,30 +128,32 @@ void game_bacao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
         else cout << RED << "\t   -" << RESET << " Mở lá " << i + 1 << ": "; 
 
         int diemtungla = 0;
-        for (int j = 0; j <= i; j++){
-            cout << "[" << RED << tenbaibacao(bainguoi[j]) << RESET << "] ";
-            // in tổng nút những lá đã mở 
-            // if (bainguoi[j].giatribai == 1) diemtungla += 1;
-            // else if (bainguoi[j].giatribai >= 10) diemtungla += 0;
-            // else diemtungla += bainguoi[j].giatribai;
-        
-            // in số nút của lá hiện tại (lá đang mở)
-            if (bainguoi[i].giatribai == 1) diemtungla = 1;
-            else if (bainguoi[i].giatribai >= 10) diemtungla = 0;
-            else diemtungla = bainguoi[i].giatribai;
-        }
-        for (int j = i + 1; j < 3; j++)
-            cout << "[-] ";
-        cout << " --> " << YELLOW << diemtungla << RESET << " nút";
+        //for (int j = 0; j <= i; j++){
+        // in số nút của lá hiện tại (lá đang mở)
+        if (bainguoi[i].giatribai == 1) diemtungla = 1;
+        else if (bainguoi[i].giatribai >= 10) diemtungla = 0;
+        else diemtungla = bainguoi[i].giatribai;
         cout << endl;
+        inlabai_bacao_oss(bainguoi[i], diemtungla);
+        cout << endl;
+        //cout << "[" << RED << tenbaibacao(bainguoi[j]) << RESET << "] ";
+        
+        // in tổng nút những lá đã mở 
+        // if (bainguoi[j].giatribai == 1) diemtungla += 1;
+        // else if (bainguoi[j].giatribai >= 10) diemtungla += 0;
+        // else diemtungla += bainguoi[j].giatribai;
+    
+        //}
+        //for (int j = i + 1; j < 3; j++)
+            //cout << "[-] ";
         if(i < 2) _getch();
     }
     cout << endl;
     if(diemnguoi == 0){
-        if(kiemtrabacao(bainguoi)) cout << "\tTổng nút của bạn: " << YELLOW << "3 Cào" << RESET << endl;
-        else cout << "\tTổng nút của bạn: " << YELLOW << "Bù" << RESET << endl;
+        if(kiemtrabacao(bainguoi)) cout << "\tTổng số nút của bạn: " << YELLOW << "3 Cào" << RESET << endl;
+        else cout << "\tTổng số nút của bạn: " << YELLOW << "Bù" << RESET << endl;
     }
-    else cout << "\tTổng nút của bạn: " << YELLOW << diemnguoi << RESET << " nút" << endl;
+    else cout << "\tTổng số nút của bạn: " << YELLOW << diemnguoi << RESET << " nút" << endl;
     cout << endl;
 
     string ketqua;
