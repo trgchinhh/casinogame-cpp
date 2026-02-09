@@ -20,7 +20,7 @@ Giao diện và cách tổ chức menu được lấy cảm hứng từ dự án
 ## Video demo
 * Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
 * Demo phiên bản cũ (có phân quyền): [Xem tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
-* Demo phiên bản mới nhất: [Xem tại đây](https://drive.google.com/file/d/1gejYhMYzRLDjBwVrMAepIwd4Yq70yUlV/view?usp=sharing)
+* Demo phiên bản đầy đủ mới nhất: [Xem tại đây](https://drive.google.com/file/d/1Yp0qnBI1qSjZ2htpUJVHOjZOEJUkno1p/view?usp=sharing)
 
 ---
 
