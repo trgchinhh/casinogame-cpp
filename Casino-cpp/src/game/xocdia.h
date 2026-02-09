@@ -58,23 +58,22 @@ void game_xocdia(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai 
          << YELLOW << "\tCược: " << RESET << (luachon == "c" || luachon == "chan" ? "Chẵn" : "Lẽ") 
          << YELLOW << "\tTiền cược: " << RESET << dinhdangtien(tiencuoc) << RESET << " VND" << endl;
-    cout << endl;
     hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); loadraketqua(5);
     //cout << YELLOW << "\tMặt quân vị: " << RESET;
+    cout << endl;
     vector<int> batxoc(4);
     xocdia(batxoc);
     int sodo = demdo(batxoc);
     int sotrang = 4 - sodo;
     inxocdia(batxoc);
-    cout << endl;
 
     bool lachan = (sodo % 2 == 0);
 
     cout << endl;
-    cout << "\tQuân vị: " 
+    cout << "\t    └─>" << " Quân vị: " 
          << YELLOW << sodo << RESET << " đỏ "
          << YELLOW << sotrang << RESET << " trắng ("  
-         << (lachan ? "Chẵn" : "Lẻ") << ")" << endl;
+         << YELLOW << (lachan ? "Chẵn" : "Lẻ") << RESET << ")" << endl;
 
     cout << endl;
     string ketqua;
@@ -104,5 +103,4 @@ void game_xocdia(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     lichsu.ketqua = ketqua;
     luulichsujson(nguoichoi->tentaikhoan, lichsu);
     luudulieujson(danhsachnguoichoi);
-
 }
