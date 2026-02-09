@@ -145,12 +145,14 @@ void game_xidach(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     }
     int diemnguoi = tinhdiemxidach(bainguoi);
     int diembot   = tinhdiemxidach(baibot);
-    cout << "\t[" << BLUE << "Bài bot" << RESET << "]: ";
     cout << endl;
+    cout << "\t[" << BLUE << "Bài bot" << RESET << "]: ";
+    //cout << endl;
     for (auto& b : baibot)
-        //cout << "[" << RED << tenbaixidach(b) << RESET << "] ";
-        inlabai_xidach_oss(b);
-    cout << RED << "\t\t--> " << RESET << "Điểm bot: " << diembot << " điểm";
+        cout << "[" << RED << tenbaixidach(b) << RESET << "] ";
+        //inlabai_xidach_oss(b);
+    cout << endl;
+    cout << RED << "\t\t--> " << RESET << "Điểm bot: " << YELLOW << diembot << RESET << " điểm";
     cout << endl;
 
     string ketqua;
