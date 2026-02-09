@@ -1,6 +1,8 @@
 // include những file game cho file main 
 
 #include "lib//header.h"
+
+// game
 #include "game//taixiu1xx.h"
 #include "game//taixiu3xx.h"
 #include "game//doanso.h"
@@ -10,4 +12,6 @@
 #include "game//baucua.h"
 #include "game//doanmau.h"
 #include "game//daingan.h"
+#include "game//bacao.h"
 #include "game//xidach.h"
+#include "game//xocdia.h"
