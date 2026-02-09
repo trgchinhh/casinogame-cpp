@@ -11,6 +11,11 @@ RED ICON_USER "** TẠO TÀI KHOẢN **\n" RESET
 "\t• Tạo mã 6 số (buộc nhớ nếu muốn đổi mật khẩu)\n"
 "\t• Tạo số dư (tối đa 100.000.000)\n\n"
 
+RED ICON_USER "** CÁC THỂ LOẠI GAME **\n" RESET
+"\t• Xóc xóc: tài xỉu, xóc dĩa, úp ngửa xu, lắc bầu cua\n"
+"\t• Game bài: ba cào, xì dách\n"
+"\t• May rủi: đoán dài ngắn, đoán 3/7 màu, đoán số, kéo búa bao\n\n"
+
 RED ICON_DICE "** TÀI XỈU 1xx / 3xx **\n" RESET
 "\t• Nhập lựa chọn Tài hoặc Xỉu và nhập tiền cược\n"
 "\t• Chờ 5 giây sẽ có kết quả\n"
@@ -42,12 +47,26 @@ RED ICON_COIN "** ÚP NGỬA XU **\n" RESET
 "\t• Tung đồng xu ngẫu nhiên\n"
 "\t• Đúng thì thắng, sai thì thua\n\n"
 
+RED ICON_CARD "** BA CÀO **\n" RESET
+"\t• Nhập tiền cược đầu tiên\n"
+"\t• Kết quả bot sẽ ra trước\n"
+"\t• Bài 3 lá được phát (che), mình sẽ nặn từng lá\n"
+"\t• Bên nào cao điểm hơn thì thắng\n\n"
+
 RED ICON_CARD "** XÌ DÁCH **\n" RESET
 "\t• Nhập tiền cược đầu tiên\n"
-"\t• Rút 2 lá sau đó chọn rút tiếp hoặc dừng\n"
+"\t• Rút sẵn 2 lá sau đó chọn rút tiếp hoặc dừng\n"
 "\t• A = 1 điểm, J/Q/K = 10 điểm\n"
 "\t• Tổng điểm gần hoặc bằng 21 hơn bot thì thắng\n"
 "\t• Quá 21 là quắc\n\n"
+
+RED ICON_DICE "** XÓC DĨA **\n" RESET
+"\t• Chọn chẵn lẽ và nhập tiền cược\n"
+"\t• Chờ lắc kết quả\n"
+"\t• Gồm 4 quân vị (mỗi quân vị gồm 2 mặt đỏ và trắng)\n"
+"\t• Nếu 2 trắng 2 đỏ hoặc 4 trắng hoặc 4 đỏ thì kết quả chẵn\n"
+"\t• Còn lại là lẽ\n"
+"\t• Đoán trúng kết quả thì ăn tiền\n\n"
 
 RED ICON_DICE "** LẮC BẦU CUA **\n" RESET
 "\t• Chọn linh vật muốn cược (Không giới hạn) \n"
