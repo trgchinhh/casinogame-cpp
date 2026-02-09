@@ -159,7 +159,7 @@ bool xacthucthongtin(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& th
 bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi){
     // neu tai khoan cuoi cung co stt = stktd thi out (so tai khoan toi da cho phep)
     if(sothutucuoicung(danhsachnguoichoi) == SoTaiKhoanToiDa){
-        cout << RED << "\t\t(!) Đã hết lượt đăng ký tài khoản !" << RESET << endl;
+        cout << RED << "\t(!) Đã hết lượt đăng ký tài khoản !" << RESET << endl;
         return false;
     }
     // nhap ten nguoi choi
@@ -1583,3 +1583,4 @@ int main() {
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
+
