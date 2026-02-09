@@ -811,7 +811,6 @@ void xuatbangthongtinnguoichoi(vector<ThongTinNguoiChoi>& danhsachthongtinnguoic
     ingiuamanhinh("└─────┴─────────────────┴────────────────┴──────────────┴─────────────┘", RESET); cout << endl;
 }
 
-
 void xuatlichsu(LichSu& lichsu, int stt) {
     int r_trochoi = do_rong_hien_thi_thuc(lichsu.trochoi);
     int r_luachon = do_rong_hien_thi_thuc(lichsu.luachon); 
@@ -1107,28 +1106,23 @@ void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi) {
     }
 }
 
-void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    const int somuc = 12;
+// sảnh con chứa game xóc xóc 
+void sanh_gamexocxoc(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
+    const int somuc = 6;
     const char* menu[somuc] = {
         "Tài xỉu 1xx", 
         "Tài xỉu 3xx", 
-        "Đoán dài ngắn",
-        "Đoán 3/7 màu", 
-        "Đoán số A -> B",
-        "Chẵn lẻ 0 -> 9", 
-        "Úp ngửa xu", 
-        "Xì dách",
+        "Úp ngửa xu",
+        "Xóc dĩa",
         "Lắc bầu cua",
-        "Kéo búa bao",
-        "Lịch sử chơi", 
-        "Đăng xuất", 
+        "Quay lại", 
     };
     int chon = 0;
     char phim;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     while(1){
         system("cls");
-        inbanner(bannercasino);
+        inbanner(bannergamexocxoc);
         taidulieujson(danhsachnguoichoi);
         nguoichoi = timtaikhoan(danhsachnguoichoi, nguoichoi->tentaikhoan);
         hiensodunguoichoi(nguoichoi);
@@ -1139,7 +1133,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
         for (int i = 0; i < somuc; i++) {
             string so = to_string(i + 1);
             ostringstream oss;
-            oss << setw(2) << right << (i + 1) << " - " << menu[i];
+            oss << setw(1) << right << (i + 1) << " - " << menu[i];
             string dong = oss.str();
             int chieudaidong = doronghienthi(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
@@ -1166,30 +1160,217 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
                 cout << "\n[" << RED << chon + 1 << RESET << "] TÀI XỈU 3 XX" << RESET << "\n\n";
                 game_taixiu3xx(danhsachnguoichoi, nguoichoi);
             } else if(chon == 2){
-                cout << "\n" << RED << chon + 1 << RESET << "] ĐOÁN DÀI NGẮN" << RESET << "\n\n";
-                game_daingan(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 3){
-                cout << "\n" << RED << chon + 1 << RESET << "] ĐOÁN MÀU 7 SẮC" << RESET << "\n\n";
-                game_doanmau(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 4){
-                cout << "\n[" << RED << chon + 1 << RESET << "] ĐOÁN SỐ" << RESET << "\n\n";
-                game_doanso(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 5){
-                cout << "\n[" << RED << chon + 1 << RESET << "] SỐ CHẴN LẺ" << RESET << "\n\n";
-                game_chanle(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 6){
                 cout << "\n[" << RED << chon + 1 << RESET << "] XU ÚP NGỬA" << RESET << "\n\n";
                 game_upngua(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 7){
-                cout << "\n[" << RED << chon + 1 << RESET << "] XÌ DÁCH" << RESET << "\n\n";
-                game_xidach(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 8){
+            } else if(chon == 3){
+                cout << "\n[" << RED << chon + 1 << RESET << "] XÓC DĨA" << RESET << "\n\n";
+                game_xocdia(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 4){
                 cout << "\n[" << RED << chon + 1 << RESET << "] LẮC BẦU CUA" << RESET << "\n\n";
                 game_baucua(danhsachnguoichoi, nguoichoi);
-            }  else if(chon == 9){
+            } else {
+                cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                return;
+            }
+            dungchuongtrinh();
+        }
+    }
+}
+
+// sảnh con chứa game bài 
+void sanh_gamebai(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
+    const int somuc = 3;
+    const char* menu[somuc] = {
+        "Ba cào", 
+        "Xì dách",
+        "Quay lại", 
+    };
+    int chon = 0;
+    char phim;
+    hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+    while(1){
+        system("cls");
+        inbanner(bannergamebai);
+        taidulieujson(danhsachnguoichoi);
+        nguoichoi = timtaikhoan(danhsachnguoichoi, nguoichoi->tentaikhoan);
+        hiensodunguoichoi(nguoichoi);
+        cout << endl;
+
+        const int dorongmenu = 21;
+        cout << "┌───────── " << RED << "GAME" << RESET << " ─────────┐" << endl;
+        for (int i = 0; i < somuc; i++) {
+            string so = to_string(i + 1);
+            ostringstream oss;
+            oss << setw(1) << right << (i + 1) << " - " << menu[i];
+            string dong = oss.str();
+            int chieudaidong = doronghienthi(dong.c_str());
+            int khoangtrang = dorongmenu - chieudaidong;
+            if(khoangtrang < 0) khoangtrang = 0;
+            if (i == chon){
+                cout << "│"  << CYAN << " ▶ " << dong
+                     << string(khoangtrang, ' ') << RESET << "│" << endl;
+            }
+            else{
+                cout << "│   " << dong
+                     << string(khoangtrang, ' ')  << "│" << endl;
+            }
+        }
+        cout << "└────────────────────────┘" << endl;
+        phim = _getch();
+        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) chon = (chon + 1) % somuc;
+        else if(phim == 13) {
+            hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+            if(chon == 0){
+                cout << "\n[" << RED << chon + 1 << RESET << "] BA CÀO" << RESET << "\n\n";
+                game_bacao(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 1){
+                cout << "\n[" << RED << chon + 1 << RESET << "] XÌ DÁCH" << RESET << "\n\n";
+                game_xidach(danhsachnguoichoi, nguoichoi);
+            } else {
+                cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                return;
+            }
+            dungchuongtrinh();
+        }
+    }
+}
+
+// sảnh con chứa game may rủi
+void sanh_gamemayrui(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
+    const int somuc = 6;
+    const char* menu[somuc] = {
+        "Đoán dài ngắn",
+        "Đoán 3/7 màu", 
+        "Đoán số A -> B",
+        "Chẵn lẻ 0 -> 9", 
+        "Kéo búa bao", 
+        "Quay lại", 
+    };
+    int chon = 0;
+    char phim;
+    hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+    while(1){
+        system("cls");
+        inbanner(bannergamemayrui);
+        taidulieujson(danhsachnguoichoi);
+        nguoichoi = timtaikhoan(danhsachnguoichoi, nguoichoi->tentaikhoan);
+        hiensodunguoichoi(nguoichoi);
+        cout << endl;
+
+        const int dorongmenu = 21;
+        cout << "┌───────── " << RED << "GAME" << RESET << " ─────────┐" << endl;
+        for (int i = 0; i < somuc; i++) {
+            string so = to_string(i + 1);
+            ostringstream oss;
+            oss << setw(1) << right << (i + 1) << " - " << menu[i];
+            string dong = oss.str();
+            int chieudaidong = doronghienthi(dong.c_str());
+            int khoangtrang = dorongmenu - chieudaidong;
+            if(khoangtrang < 0) khoangtrang = 0;
+            if (i == chon){
+                cout << "│"  << CYAN << " ▶ " << dong
+                     << string(khoangtrang, ' ') << RESET << "│" << endl;
+            }
+            else{
+                cout << "│   " << dong
+                     << string(khoangtrang, ' ')  << "│" << endl;
+            }
+        }
+        cout << "└────────────────────────┘" << endl;
+        phim = _getch();
+        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) chon = (chon + 1) % somuc;
+        else if(phim == 13) {
+            hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+            if(chon == 0){
+                cout << "\n" << RED << chon + 1 << RESET << "] ĐOÁN DÀI NGẮN" << RESET << "\n\n";
+                game_daingan(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 1){
+                cout << "\n" << RED << chon + 1 << RESET << "] ĐOÁN MÀU 7 SẮC" << RESET << "\n\n";
+                game_doanmau(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 2){
+                cout << "\n[" << RED << chon + 1 << RESET << "] ĐOÁN SỐ" << RESET << "\n\n";
+                game_doanso(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 3){
+                cout << "\n[" << RED << chon + 1 << RESET << "] SỐ CHẴN LẺ" << RESET << "\n\n";
+                game_chanle(danhsachnguoichoi, nguoichoi);
+            }  else if(chon == 4){
                 cout << "\n[" << RED << chon + 1 << RESET << "] KÉO BÚA BAO" << RESET << "\n\n";
                 game_keobuabao(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 10){
+            } else {
+                cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                return;
+            }
+            dungchuongtrinh();
+        }
+    }
+}
+
+void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
+    const int somuc = 5;
+    const char* menu[somuc] = {
+        "Game xóc xóc",
+        "Game bài",
+        "Game may rủi",
+        "Lịch sử chơi", 
+        "Đăng xuất", 
+    };
+    int chon = 0;
+    char phim;
+    hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+    while(1){
+        system("cls");
+        inbanner(bannercasino);
+        taidulieujson(danhsachnguoichoi);
+        nguoichoi = timtaikhoan(danhsachnguoichoi, nguoichoi->tentaikhoan);
+        hiensodunguoichoi(nguoichoi);
+        cout << endl;
+
+        const int dorongmenu = 21;
+        cout << "┌───────── " << RED << "GAME" << RESET << " ─────────┐" << endl;
+        for (int i = 0; i < somuc; i++) {
+            string so = to_string(i + 1);
+            ostringstream oss;
+            oss << setw(1) << right << (i + 1) << " - " << menu[i];
+            string dong = oss.str();
+            int chieudaidong = doronghienthi(dong.c_str());
+            int khoangtrang = dorongmenu - chieudaidong;
+            if(khoangtrang < 0) khoangtrang = 0;
+            if (i == chon){
+                cout << "│"  << CYAN << " ▶ " << dong
+                     << string(khoangtrang, ' ') << RESET << "│" << endl;
+            }
+            else{
+                cout << "│   " << dong
+                     << string(khoangtrang, ' ')  << "│" << endl;
+            }
+        }
+        cout << "└────────────────────────┘" << endl;
+        phim = _getch();
+        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) chon = (chon + 1) % somuc;
+        else if(phim == 13) {
+            hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+            if(chon == 0){
+                cout << "\n[" << RED << chon + 1 << RESET << "] GAME XÓC XÓC" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                sanh_gamexocxoc(danhsachnguoichoi, nguoichoi);
+                continue;
+            } else if(chon == 1){
+                cout << "\n[" << RED << chon + 1 << RESET << "] GAME BÀI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                sanh_gamebai(danhsachnguoichoi, nguoichoi);
+                continue;
+            } else if(chon == 2){
+                cout << "\n[" << RED << chon + 1 << RESET << "] GAME MAY RỦI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                sanh_gamemayrui(danhsachnguoichoi, nguoichoi);
+                continue;
+            } else if(chon == 3){
                 cout << "\n[" << RED << chon + 1 << RESET << "] LỊCH SỬ CHƠI" << RESET << "\n\n";
                 vector<LichSu> danhsachlichsu = tailichsujson(nguoichoi->tentaikhoan);
                 if(danhsachlichsu.empty()) cout << YELLOW << "\t(!) Chưa có lịch sử chơi !" << RESET << endl;
