@@ -1,0 +1,42 @@
+[
+    {
+        "tentaikhoan": "chinh",
+        "matkhau": "8615480ab26de83605d461bed265fb42",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "ui",
+        "matkhau": "bc12a1bad8e5fa511a3f029f11b48b24",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "bao",
+        "matkhau": "7db5ca49ed72ee96dfeb7ff52eb2bdd8",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "mi",
+        "matkhau": "2ef6df9ce243a3b511909bf6b170acc3",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "oi",
+        "matkhau": "e4ba518cb28f1440c6e9c7f43371363a",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "an",
+        "matkhau": "9d604ed67e9c84d0e9cff5461034c1e4",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "phuc",
+        "matkhau": "1f058a8133151534c9c3aa8e5e1fbdfb",
+        "iv": "69765f31365f62797465212121212100"
+    },
+    {
+        "tentaikhoan": "hung",
+        "matkhau": "75dad1c58bb2d7f5fdd54e351b8e5079",
+        "iv": "69765f31365f62797465212121212100"
+    }
+]
