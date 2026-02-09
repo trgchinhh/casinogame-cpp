@@ -937,7 +937,12 @@ void hiensodunguoichoi(ThongTinPtr& nguoichoi){
 void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi){
     const int somuc = 6;
     const char* menu[somuc] = {
-        "Âm thanh", "Hướng dẫn", "Đăng ký", "Đăng nhập", "Quên mật khẩu", "Thoát",
+        "Âm thanh", 
+        "Hướng dẫn", 
+        "Đăng ký", 
+        "Đăng nhập", 
+        "Quên mật khẩu", 
+        "Thoát game",
     };
     int chon = 0; char phim;
     //hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
