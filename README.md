@@ -11,7 +11,7 @@ Dự án được xây dựng với mục tiêu:
 * Làm quen với việc tổ chức mã nguồn, tách module và quản lý dữ liệu
 * Mô phỏng một hệ thống game có tài khoản, phân quyền và lịch sử chơi và bảo mật
 
-Giao diện và cách tổ chức menu được lấy cảm hứng từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
+Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộng thêm từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
 
 > ⚠️ Lưu ý: Do sử dụng nhiều ký tự đặc biệt và ASCII art, nên khuyến nghị sử dụng các font monospace như **JetBrains Mono**, **Fira Code**, v.v. để hiển thị tốt nhất.
 
@@ -198,3 +198,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
