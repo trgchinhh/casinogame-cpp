@@ -20,7 +20,7 @@ Giao diện và cách tổ chức menu được lấy cảm hứng từ dự án
 ## Video demo
 * Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
 * Demo phiên bản cũ (có phân quyền): [Xem tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
-* Demo phiên bản đầy đủ mới nhất: [Xem tại đây](https://drive.google.com/file/d/1Yp0qnBI1qSjZ2htpUJVHOjZOEJUkno1p/view?usp=sharing)
+* Demo phiên bản đầy đủ mới nhất: [Xem tại đây](https://drive.google.com/file/d/1oOljz_fCsw7h26MSMgVNdi5Wh4vCp33_/view?usp=sharing)
 
 ---
 
@@ -198,3 +198,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
