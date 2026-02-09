@@ -1570,7 +1570,7 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
          << RESET << "] Số dư mới: " << YELLOW << dinhdangtien(nguoibitru->sodu) << RESET << " VND" << endl;
 }
 
-int main() {
+___TruongChinh___ {
     SetConsoleTitleA("Casino Game");                // tiêu đề terminal 
     SetConsoleCP(CP_UTF8);                          // hiện được tiếng việt và ký tự đặc biệt
     SetConsoleOutputCP(CP_UTF8);                    // này cũng vậy 
@@ -1583,4 +1583,3 @@ int main() {
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
-
