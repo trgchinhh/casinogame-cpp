@@ -100,7 +100,9 @@ void game_xocdia(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     lichsu.sodu = nguoichoi->sodu;
     lichsu.tiencuoc = tiencuoc;
     lichsu.luachon = luachon;
+    lichsu.tongdiem = sodo;
     lichsu.ketqua = ketqua;
     luulichsujson(nguoichoi->tentaikhoan, lichsu);
     luudulieujson(danhsachnguoichoi);
+
 }
