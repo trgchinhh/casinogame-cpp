@@ -360,10 +360,10 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
         if(thongtinnguoichoi.phanquyen == Admin) 
             cout << "\t(?) [" << RED << "Admin" << RESET << "] Nhập mật khẩu: ";
         else 
-            cout << "\t(?) Nhập mật khẩu: ";
+            cout << "\t(?) [" << GREEN << "Player" << RESET << "] Nhập mật khẩu: ";
         thongtinnguoichoi.matkhau = chematkhau();
-        if (thongtinnguoichoi.phanquyen == Admin) {
-            // Cập nhật tên Admin khi login 
+        if(thongtinnguoichoi.phanquyen == Admin) {
+            // Cập nhật tên tài khoản Admin khi login 
             TentaikhoanAdmin = thongtinnguoichoi.tentaikhoan;
             if (!kiemtramatkhauadmin(thongtinnguoichoi.matkhau)) {
                 cout << YELLOW << "\t\t(!) Mật khẩu Admin không hợp lệ !" << RESET << endl;
