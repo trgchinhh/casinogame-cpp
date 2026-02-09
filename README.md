@@ -20,7 +20,7 @@ Giao diện và cách tổ chức menu được lấy cảm hứng từ dự án
 ## Video demo
 * Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
 * Demo phiên bản cũ (có phân quyền): [Xem tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
-* Demo phiên bản mới nhất: [Xem tại đây](https://drive.google.com/file/d/1Yp0qnBI1qSjZ2htpUJVHOjZOEJUkno1p/view?usp=sharing)
+* Demo phiên bản mới nhất: [Xem tại đây](https://drive.google.com/file/d/1gejYhMYzRLDjBwVrMAepIwd4Yq70yUlV/view?usp=sharing)
 
 ---
 
@@ -165,13 +165,22 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 ## Ảnh minh họa
 
 ### Đăng nhập
-![Login](https://github.com/user-attachments/assets/9d6dde99-3f4e-43ce-a606-118a94dc608b)
+![Login](https://github.com/user-attachments/assets/6c64cfe6-5e64-483d-bbb3-f8f1566b5182)
 
 ### Trang Admin
 ![Admin](https://github.com/user-attachments/assets/0e0df5f5-e185-4223-8409-7fe425c97a2c)
 
-### Trang Game
-![Game](https://github.com/user-attachments/assets/4c7274df-9fd9-487d-b709-d73e26eb732f)
+### Trang Player
+![Game](https://github.com/user-attachments/assets/ae943592-7610-4f51-8630-9a793621ec5b)
+
+### Trang game xóc xóc 
+![Xóc Xóc](https://github.com/user-attachments/assets/4959742b-b88f-4de8-93dd-5648bebc5a22)
+
+### Trang game bài
+![Game bài](https://github.com/user-attachments/assets/6339d5d3-f34a-42bd-a895-8661fe7ed1bc)
+
+### Trang game may rủi
+![Game may rủi](https://github.com/user-attachments/assets/265f8581-49be-4a91-8823-647eac3ace5b)
 
 ---
 
