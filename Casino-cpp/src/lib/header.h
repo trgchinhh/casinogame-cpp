@@ -20,6 +20,9 @@
 #include "picosha2.h"       // dùng hash sha256
 #include "instruct.h"       // hướng dẫn cách chơi
 
+// Định nghĩa tên hàm main
+#define ___TruongChinh___ signed main()
+
 #pragma comment(lib, "winmm.lib")
 
 using namespace std;
