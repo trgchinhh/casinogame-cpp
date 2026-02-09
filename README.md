@@ -46,18 +46,24 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 > ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
 
 #### Quyền User (Trang game)
-* Tài xỉu 1 xúc xắc
-* Tài xỉu 3 xúc xắc
-* Đoán dài / ngắn
-* Đoán 2 / 7 màu sắc
-* Đoán số trong khoảng A → B
-* Chẵn / lẻ (0 → 9)
-* Tung xu (úp / ngửa)
-* Xì dách
-* Lắc bầu cua
-* Kéo búa bao
+* Game Xóc xóc<br>
+    ├─ Tài xỉu 1 xúc xắc<br>
+    ├─ Tài xỉu 3 xúc xắc<br>
+    ├─ Xóc dĩa<br>
+    ├─ Úp ngửa xu<br>
+    ├─ Lắc bầu cua<br>
+    └─ Tung xu (úp / ngửa)<br>
+* Game bài<br>
+    ├─  Ba cào (cào 3 lá)<br>
+    └─ Xì dách (21 điểm)<br>
+* Game May rủi<br>
+    ├─ Đoán dài / ngắn<br>
+    ├─ Đoán 2 / 7 màu sắc<br>
+    ├─ Đoán số trong khoảng A → B<br>
+    ├─ Chẵn / lẻ (0 → 9)<br>
+    └─ Kéo búa bao<br>
 * Xem lịch sử chơi
-* Đăng xuất
+* Đăng xuất (quay về trang chủ)
 
 ---
 
@@ -108,6 +114,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   │   ├── taixiu1xx.h
 │   │   ├── taixiu3xx.h
 │   │   ├── upngua.h
+│   │   ├── bacao.h
 │   │   └── xidach.h
 │   ├── lib
 │   │   ├── admin.h
