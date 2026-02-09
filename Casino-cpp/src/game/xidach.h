@@ -1,33 +1,26 @@
 #include "..//lib//header.h"
 
-// tiếp tục hay dừng (dằn ngay 16 là dằn dơ :)
-int ruthaydung(int& chon, int& nguoi_solanrut){
-    int solansai = 0; bool nhaphople = false;
-    do {
-        cout << "\t\t(?) [1] Rút bài - [2] Dừng: "; cin >> chon;
-        if(cin.fail()){
-            cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << YELLOW << "\t\t(!) Vui lòng nhập lựa chọn hợp lệ !" << RESET << endl;
-            solansai++;
-            continue;
-        } else if(chon != 1 && chon != 2){
-            cout << YELLOW << "\t\t(!) Vui lòng nhập 1 hoặc 2 !" << RESET << endl;
-            solansai++;
-            continue;  
-        } else { 
-            nhaphople = true;
-            nguoi_solanrut += 1;
-        }
-    } while(!nhaphople && solansai < 3);
-    cout << endl;
-    if(solansai == 3) return 2;
-    return 1;
-}
-
 struct Labaixidach {
     int giatribai;   // 1-13 (ách đến già) A -> K
     int kyhieubai;   // 0-3  (4 ký hiệu cơ/rô/chuồng/bích)
 };
+
+void inlabai_xidach_oss(const Labaixidach& b) {
+    ostringstream oss;
+    string giatri = giatrilabai[b.giatribai - 1];
+    string kyhieu = Kyhieulabai[b.kyhieubai];
+    ingiuamanhinh("┌──────────┐\n", WHITE);
+    if (giatri.length() == 1) ingiuamanhinh("│ " + giatri + "        │\n", WHITE);
+    else ingiuamanhinh("│ " + giatri + "       │\n", WHITE);
+    ingiuamanhinh("│          │\n", WHITE);
+    ingiuamanhinh("│    " + kyhieu + "     │\n", WHITE); 
+    //cout << "  --> " << YELLOW + to_string(diemtungla) << " nút\n"; 
+    ingiuamanhinh("│          │\n", WHITE);
+    if (giatri.length() == 1) ingiuamanhinh("│        " + giatri + " │\n", WHITE);
+    else ingiuamanhinh("│       " + giatri + " │\n", WHITE);
+    ingiuamanhinh("└──────────┘\n", WHITE);
+    cout << endl;
+}
 
 vector<Labaixidach> taobobai52la_xidach() {
     vector<Labaixidach> bobai;
@@ -73,6 +66,30 @@ int tinhdiemxidach(const vector<Labaixidach>& bai) {
     return tong;
 }
 
+// tiếp tục hay dừng (dằn ngay 16 là dằn dơ :)
+int ruthaydung(int& chon, int& nguoi_solanrut){
+    int solansai = 0; bool nhaphople = false;
+    do {
+        cout << "\t\t(?) [1] Rút bài - [2] Dừng: "; cin >> chon;
+        if(cin.fail()){
+            cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << YELLOW << "\t\t(!) Vui lòng nhập lựa chọn hợp lệ !" << RESET << endl;
+            solansai++;
+            continue;
+        } else if(chon != 1 && chon != 2){
+            cout << YELLOW << "\t\t(!) Vui lòng nhập 1 hoặc 2 !" << RESET << endl;
+            solansai++;
+            continue;  
+        } else { 
+            nhaphople = true;
+            nguoi_solanrut += 1;
+        }
+    } while(!nhaphople && solansai < 3);
+    cout << endl;
+    if(solansai == 3) return 2;
+    return 1;
+}
+
 void game_xidach(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     if (!kiemtrasodutaikhoan(nguoichoi)) {
         cout << YELLOW << "\t\t(!) Số dư tài khoản không đủ ! Vui lòng nạp thêm" << RESET << endl;
@@ -104,12 +121,18 @@ void game_xidach(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     baibot.push_back(rutbaixidach(bobai));
     baibot.push_back(rutbaixidach(bobai));
     int nguoi_solanrut = 0;
+    // Số lá đã in (không in lá cũ)
+    int soladain = 0;
     while (true) {
         int diem = tinhdiemxidach(bainguoi);
         cout << "\t[" << GREEN << "Bài bạn" << RESET << "]: ";
-        for (auto& b : bainguoi)
-            cout << "[" << RED << tenbaixidach(b) << RESET << "] ";
-        cout << " --> " << diem << " điểm";
+        cout << endl;
+        for (int i = soladain; i < bainguoi.size(); i++){
+            //cout << "[" << RED << tenbaixidach(b) << RESET << "] ";
+            inlabai_xidach_oss(bainguoi[i]);
+        }
+        soladain = bainguoi.size();
+        cout << RED << "\t\t--> " << RESET << "Điểm hiện tại: " << YELLOW << diem << RESET << " điểm";
         cout << endl;
         if (diem > 21) break;
         int chon; ruthaydung(chon, nguoi_solanrut);
@@ -123,9 +146,11 @@ void game_xidach(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     int diemnguoi = tinhdiemxidach(bainguoi);
     int diembot   = tinhdiemxidach(baibot);
     cout << "\t[" << BLUE << "Bài bot" << RESET << "]: ";
+    cout << endl;
     for (auto& b : baibot)
-        cout << "[" << RED << tenbaixidach(b) << RESET << "] ";
-    cout << " --> " << diembot << " điểm";
+        //cout << "[" << RED << tenbaixidach(b) << RESET << "] ";
+        inlabai_xidach_oss(b);
+    cout << RED << "\t\t--> " << RESET << "Điểm bot: " << diembot << " điểm";
     cout << endl;
 
     string ketqua;
