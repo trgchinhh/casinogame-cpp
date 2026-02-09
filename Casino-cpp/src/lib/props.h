@@ -331,3 +331,14 @@ const string xucxac7mau[7][5] = {
     }
 };
 
+const string giatrilabai[13] = {
+    "A","2","3","4","5","6","7",
+    "8","9","10","J","Q","K"
+};
+
+const string Kyhieulabai[4] = {
+    RED "♥" RESET,   // Cơ
+    RED "♦" RESET,   // Rô
+    WHITE "♣" RESET,  // Chuồn
+    WHITE "♠" RESET, // Bích
+};
