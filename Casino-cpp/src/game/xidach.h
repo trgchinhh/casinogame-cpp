@@ -84,9 +84,9 @@ int ruthaydung(int& chon, int& nguoi_solanrut){
             nhaphople = true;
             nguoi_solanrut += 1;
         }
-    } while(!nhaphople && solansai < 3);
+    } while(!nhaphople && solansai < solansaitoida);
     cout << endl;
-    if(solansai == 3) return 2;
+    if(solansai == solansaitoida) return 2;
     return 1;
 }
 
