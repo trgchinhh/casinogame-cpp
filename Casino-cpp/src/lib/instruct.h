@@ -83,7 +83,8 @@ RED ICON_HAND "** GAME 2 NGƯỜI **\n" RESET
 "\t• Đầu tiên nhập tên người chơi thứ 2\n"
 "\t• Tiếp theo đến lượt ai người đó nhấn bất kỳ phím để ra kết quả\n"
 "\t• Những trò đó luật như trên\n"
-"\t• Game 2 người chơi vui (Không cần cược)\n\n"
+"\t• Game 2 người chơi vui\n"
+"\t• Không cần tiền cược và lhông lưu lịch sử game\n\n"
 
 RED ICON_WARN "** LƯU Ý **\n" RESET
 "\t[->] Thắng có thể x1.9 hoặc x2 tùy game\n"
