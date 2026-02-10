@@ -48,6 +48,7 @@ void inlabai_bacao_oss(const Labaibacao& b, const int diemtungla) {
     ingiuamanhinh(RED "-->" RESET " Lá hiện tại: " YELLOW + to_string(diemtungla) + RESET + " nút\n", WHITE);
 }
 
+// tạo bộ bài 52 lá với 13 lá và 4 loại khác nhau
 vector<Labaibacao> taobobai52la_bacao() {
     vector<Labaibacao> bobai;
     for (int c = 0; c < 4; c++) {
@@ -215,4 +216,3 @@ void game_bacao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     luulichsujson(nguoichoi->tentaikhoan, lichsu);
     luudulieujson(danhsachnguoichoi);
 }
-
