@@ -18,42 +18,6 @@
 
 #include "include.h"
 
-void intennguoichoi1(const ThongTinPtr nguoichoi){
-    cout << "\tNgười chơi 1: " << YELLOW 
-         << nguoichoi->tentaikhoan << RESET << endl;
-}
-
-void inbanner(const string tenbanner){
-    stringstream ss(tenbanner);
-    string line;
-    cout << endl;
-    while (getline(ss, line)) {
-        ingiuamanhinh(line, CYAN);
-        cout << endl;
-    }
-}
-
-void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh) {
-    if(!trangthaiamthanh) return;
-    string cmd = "play \"" + duongdanamthanh + "\" from 0";
-    mciSendStringA(cmd.c_str(), NULL, 0, NULL);
-}
-
-void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh){
-    if(!trangthaiamthanh) return;
-    PlaySoundA(duongdanamthanh.c_str(), NULL, SND_FILENAME | SND_ASYNC);
-}
-
-void chuyendoitrangthaiamthanh(bool& trangthaiamthanh){
-    if(!trangthaiamthanh) trangthaiamthanh = true;
-    else trangthaiamthanh = false;
-}
-
-string xoa_ansi(string s) {
-    static regex ansi(R"(\x1B\[[0-9;]*m)");
-    return regex_replace(s, ansi, "");
-}
-
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi){
     danhsachnguoichoi.first = NULL;
     danhsachnguoichoi.last = NULL;
@@ -125,6 +89,42 @@ int phiencuoicung(string& tentaikhoan){
     if(data[tentaikhoan].empty()) return 0;
     return data[tentaikhoan].back()["phien"].get<int>();
 }   
+
+void intennguoichoi1(const ThongTinPtr nguoichoi){
+    cout << "\t(*) Người chơi 1: " << YELLOW 
+         << nguoichoi->tentaikhoan << RESET << endl;
+}
+
+void inbanner(const string tenbanner){
+    stringstream ss(tenbanner);
+    string line;
+    cout << endl;
+    while (getline(ss, line)) {
+        ingiuamanhinh(line, CYAN);
+        cout << endl;
+    }
+}
+
+void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh) {
+    if(!trangthaiamthanh) return;
+    string cmd = "play \"" + duongdanamthanh + "\" from 0";
+    mciSendStringA(cmd.c_str(), NULL, 0, NULL);
+}
+
+void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh){
+    if(!trangthaiamthanh) return;
+    PlaySoundA(duongdanamthanh.c_str(), NULL, SND_FILENAME | SND_ASYNC);
+}
+
+void chuyendoitrangthaiamthanh(bool& trangthaiamthanh){
+    if(!trangthaiamthanh) trangthaiamthanh = true;
+    else trangthaiamthanh = false;
+}
+
+string xoa_ansi(string s) {
+    static regex ansi(R"(\x1B\[[0-9;]*m)");
+    return regex_replace(s, ansi, "");
+}
 
 string mahoamatkhau(string matkhau){
     return picosha2::hash256_hex_string(matkhau);
