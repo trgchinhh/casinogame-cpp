@@ -2,7 +2,8 @@
 
 #include "lib//header.h"
 
-// game
+// 15 game
+// game chơi với bot
 #include "game//taixiu1xx.h"
 #include "game//taixiu3xx.h"
 #include "game//doanso.h"
@@ -15,3 +16,8 @@
 #include "game//bacao.h"
 #include "game//xidach.h"
 #include "game//xocdia.h"
+
+// game 2 người
+#include "game//nemxucxac.h"
+#include "game//bacao2nguoi.h"
+#include "game//xidach2nguoi.h"
