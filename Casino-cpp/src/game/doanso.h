@@ -21,8 +21,8 @@ void game_doanso(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             cout << YELLOW << "\t\t(!) Vui lòng nhập số đầu < số cuối !" << RESET << endl;
             solansai++;
         } else kiemtrahople = true;
-    } while(!kiemtrahople && solansai < 3);
-    if(solansai == 3) return;
+    } while(!kiemtrahople && solansai < solansaitoida);
+    if(solansai == solansaitoida) return;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     if(!nhaptiencuoc(tiencuoc, nguoichoi)){
