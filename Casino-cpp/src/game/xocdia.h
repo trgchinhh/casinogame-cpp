@@ -7,9 +7,7 @@ void xocdia(vector<int>& bat) {
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> dist(0, 1);
-
-    for (int i = 0; i < 4; i++)
-        bat[i] = dist(gen);
+    for (int i = 0; i < 4; i++) bat[i] = dist(gen);
 }
 
 int demdo(const vector<int>& bat) {
@@ -70,10 +68,15 @@ void game_xocdia(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     bool lachan = (sodo % 2 == 0);
 
     cout << endl;
-    cout << "\t    └─>" << " Quân vị: " 
-         << YELLOW << sodo << RESET << " đỏ "
-         << YELLOW << sotrang << RESET << " trắng ("  
-         << YELLOW << (lachan ? "Chẵn" : "Lẻ") << RESET << ")" << endl;
+    cout << "\t    └─>" << " Quân vị: "; 
+    if (batxoc[0] == 1){
+        cout << YELLOW << sodo << RESET << " đỏ "
+             << YELLOW << sotrang << RESET << " trắng ("; 
+    } else {
+        cout << YELLOW << sotrang << RESET << " trắng"
+             << YELLOW << sodo << RESET << " đỏ (";
+    }
+    cout << YELLOW << (lachan ? "Chẵn" : "Lẻ") << RESET << ")" << endl;
 
     cout << endl;
     string ketqua;
