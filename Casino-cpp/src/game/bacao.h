@@ -5,6 +5,32 @@ struct Labaibacao {
     int kyhieubai;   // 0-3  (4 ký hiệu cơ/rô/chuồng/bích)
 };
 
+// Phân loại bài
+enum Loaibai {
+    Bu, Nut, Bacao
+};
+
+bool kiemtrabacao(const vector<Labaibacao>& bai){
+    if(bai.size() != 3) return false;
+    for(auto& b : bai){
+        if(b.giatribai < 11) return false;
+    }
+    return true;
+}
+
+Loaibai loaibai(const vector<Labaibacao>& bai) {
+    if (kiemtrabacao(bai)) return Bacao;
+    int diem = 0;
+    for (auto& b : bai) {
+        if (b.giatribai == 1) diem += 1;
+        else if (b.giatribai >= 10) diem += 0;
+        else diem += b.giatribai;
+    }
+    diem %= 10;
+    if (diem == 0) return Bu;
+    return Nut;
+}
+
 void inlabai_bacao_oss(const Labaibacao& b, const int diemtungla) {
     ostringstream oss;
     string giatri = giatrilabai[b.giatribai - 1];
@@ -25,7 +51,7 @@ void inlabai_bacao_oss(const Labaibacao& b, const int diemtungla) {
 vector<Labaibacao> taobobai52la_bacao() {
     vector<Labaibacao> bobai;
     for (int c = 0; c < 4; c++) {
-        for (int g = 1; g <= 13; g++) {
+        for (int g = 10; g <= 13; g++) {
             bobai.push_back({g, c}); 
         }
     }
@@ -52,14 +78,6 @@ string tenbaibacao(const Labaibacao& b) {
     else if (b.giatribai == 13) ten = "K";
     else ten = to_string(b.giatribai);
     return ten;
-}
-
-bool kiemtrabacao(const vector<Labaibacao>& bai){
-    if(bai.size() != 3) return false;
-    for(auto& b : bai){
-        if(b.giatribai < 10) return false;
-    }
-    return true;
 }
 
 void game_bacao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
@@ -109,14 +127,15 @@ void game_bacao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     if(diembot == 0){
         if(kiemtrabacao(baibot)) 
             cout << " -->" << YELLOW << " Ba cào" << RESET << endl; 
+        else cout << " -->" << YELLOW << " Bù" << RESET << endl;
     }
     else cout << " --> " << YELLOW << diembot << RESET << " nút" << endl;
     cout << endl;
 
     // Mở bài người chơi
-    cout << "\t>> Nhấn phím bất kỳ để nặn bài !" << endl << endl;
+    cout << "\t>> Nhấn phím bất kỳ để nặn bài !" << endl;
     cout << "\t[" << GREEN << "Bài bạn" << RESET << "]: ";
-    cout << "[-] [-] [-] (Đang che)" << endl;
+    cout << "[\\] [\\] [\\] (Đang che)" << endl;
     //cout << "\t    │" << endl;
 
     _getch();
@@ -156,10 +175,20 @@ void game_bacao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     else cout << "\tTổng số nút của bạn: " << YELLOW << diemnguoi << RESET << " nút" << endl;
     cout << endl;
 
+    Loaibai loaibainguoi = loaibai(bainguoi);
+    Loaibai loaibaibot = loaibai(baibot); 
+
     string ketqua;
-    if (diemnguoi > diembot) ketqua = "Thắng";
-    else if (diemnguoi < diembot) ketqua = "Thua";
-    else ketqua = "Hòa";
+    
+    if (loaibainguoi == Bacao && loaibaibot != Bacao) ketqua = "Thắng";
+    else if (loaibainguoi != Bacao && loaibaibot == Bacao) ketqua = "Thua";
+    else if (loaibainguoi == Bacao && loaibaibot == Bacao) ketqua = "Hòa";
+    else {
+        if (diemnguoi > diembot) ketqua = "Thắng";
+        else if (diemnguoi < diembot) ketqua = "Thua";
+        else ketqua = "Hòa";
+    }
+
     cout << YELLOW << "\tKết quả: " << RESET << "[" << ketqua << "]" << endl;
     if (ketqua == "Hòa") {
         nguoichoi->sodu += tiencuoc;
