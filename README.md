@@ -141,6 +141,9 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 
 ## Cài đặt & Build
 
+### Đã cập nhật bản build chính thức ở Release: [Casino 1.0.0](https://github.com/trgchinhh/casinogame-cpp/releases/tag/v.1.0.0) 
+---
+
 > ⚠️ Lưu ý: trước khi build cần phải cài thư viện OpenSSL bằng MingW64/MSYS2. Nếu chưa có chạy lệnh dưới đây
 ```bash
 pacman -S mingw-w64-x86_64-openssl
@@ -207,5 +210,6 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
 
