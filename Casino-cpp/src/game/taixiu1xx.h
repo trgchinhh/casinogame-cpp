@@ -29,7 +29,8 @@ void game_taixiu1xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     cout << YELLOW << "\tPhiên: " << RESET << phienhientai << 
             YELLOW << "\tCược: " << RESET << (luachon == "t" || luachon == "tai" ? "Tài" : "Xỉu") <<
             YELLOW << "\tTiền cược: " << RESET << dinhdangtien(tiencuoc) << " VND" << endl;
-    hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); loadraketqua(5);
+    hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); 
+    loadraketqua(3);
     int xucxac = rand() % 6 + 1;
     cout << YELLOW << "\tXúc xắc: " << RESET << "[" << xucxac << "]" << endl;
     cout << endl;
