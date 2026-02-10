@@ -75,7 +75,8 @@ void game_baucua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
          << RESET << " VND" << endl;
     }
     cout << endl;
-    hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); loadraketqua(5);
+    hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); 
+    loadraketqua(3);
     cout << YELLOW << "\tXúc xắc: " << RESET;
     int xucxac1 = rand() % 6;
     int xucxac2 = rand() % 6;
