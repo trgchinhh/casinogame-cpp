@@ -20,8 +20,8 @@ void game_daingan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             cout << YELLOW << "\t\t(!) Vui lòng chọn d/dai hoặc n/ngan" << RESET << endl;
             solansai++;
         } 
-    } while(!(luachon == "d" || luachon == "dai" || luachon == "n" || luachon == "ngan" || solansai == 3));
-    if(solansai == 3) return;
+    } while(!(luachon == "d" || luachon == "dai" || luachon == "n" || luachon == "ngan" || solansai == solansaitoida));
+    if(solansai == solansaitoida) return;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     if(!nhaptiencuoc(tiencuoc, nguoichoi)){
         return;
