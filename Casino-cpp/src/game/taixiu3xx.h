@@ -14,8 +14,8 @@ void game_taixiu3xx(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
             cout << YELLOW << "\t\t(!) Vui lòng nhập t/tai hoặc x/xiu" << RESET << endl;
             solansai++;
         } 
-    } while(!(luachon == "t" || luachon == "tai" || luachon == "x" || luachon == "xiu" || solansai == 3));
-    if(solansai == 3) return;
+    } while(!(luachon == "t" || luachon == "tai" || luachon == "x" || luachon == "xiu" || solansai == solansaitoida));
+    if(solansai == solansaitoida) return;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     if(!nhaptiencuoc(tiencuoc, nguoichoi)){
         return;
