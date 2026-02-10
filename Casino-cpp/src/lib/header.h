@@ -155,6 +155,9 @@ void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thon
 // void game_bacao(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 // void game_xidach(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 // void game_xocdia(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
+// void game_nemxucxac(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
+// void game_bacao2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
+// void game_xidach2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 
 string chematkhau();
 string mahoamatkhau(string matkhau);
