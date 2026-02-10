@@ -36,7 +36,7 @@ void game_nemxucxac(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     cout << "\t>> Nhấn phím bất kỳ để ném xúc xắc..." << endl;
     _getch();
     hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); 
-    loadraketqua(3); cout << endl;
+    loadraketqua(5); cout << endl;
     cout << "\tXúc xắc của " << YELLOW << nguoichoi->tentaikhoan << RESET;
     int xucxac1 = rand() % 6 + 1;
     int xucxac2 = rand() % 6 + 1;
@@ -55,7 +55,7 @@ void game_nemxucxac(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     cout << "\t>> Nhấn phím bất kỳ để ném xúc xắc..." << endl;
     _getch();
     hieuungamthanh_mp3(dd_lacxucxac, trangthaiamthanh); 
-    loadraketqua(3); cout << endl;
+    loadraketqua(5); cout << endl;
     cout << "\tXúc xắc của " << YELLOW << tennguoichoi2 << RESET << RESET;
     int xucxac4 = rand() % 6 + 1;
     int xucxac5 = rand() % 6 + 1;
