@@ -18,6 +18,11 @@
 
 #include "include.h"
 
+void intennguoichoi1(const ThongTinPtr nguoichoi){
+    cout << "\tNgười chơi 1: " << YELLOW 
+         << nguoichoi->tentaikhoan << RESET << endl;
+}
+
 void inbanner(const string tenbanner){
     stringstream ss(tenbanner);
     string line;
@@ -1315,12 +1320,76 @@ void sanh_gamemayrui(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
     }
 }
 
+void sanh_game2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
+    const int somuc = 4;
+    const char* menu[somuc] = {
+        "Ném xúc xắc",
+        "Ba cào", 
+        "Xì dách",  
+        "Quay lại", 
+    };
+    int chon = 0;
+    char phim;
+    hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+    while(1){
+        system("cls");
+        inbanner(bannergame2nguoi);
+        taidulieujson(danhsachnguoichoi);
+        nguoichoi = timtaikhoan(danhsachnguoichoi, nguoichoi->tentaikhoan);
+        hiensodunguoichoi(nguoichoi);
+        cout << endl;
+
+        const int dorongmenu = 21;
+        cout << "┌───────── " << RED << "GAME" << RESET << " ─────────┐" << endl;
+        for (int i = 0; i < somuc; i++) {
+            string so = to_string(i + 1);
+            ostringstream oss;
+            oss << setw(1) << right << (i + 1) << " - " << menu[i];
+            string dong = oss.str();
+            int chieudaidong = doronghienthi(dong.c_str());
+            int khoangtrang = dorongmenu - chieudaidong;
+            if(khoangtrang < 0) khoangtrang = 0;
+            if (i == chon){
+                cout << "│"  << CYAN << " ▶ " << dong
+                     << string(khoangtrang, ' ') << RESET << "│" << endl;
+            }
+            else{
+                cout << "│   " << dong
+                     << string(khoangtrang, ' ')  << "│" << endl;
+            }
+        }
+        cout << "└────────────────────────┘" << endl;
+        phim = _getch();
+        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) chon = (chon + 1) % somuc;
+        else if(phim == 13) {
+            hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
+            if(chon == 0){
+                cout << "\n" << RED << chon + 1 << RESET << "] NÉM XÚC XẮC" << RESET << "\n\n";
+                game_nemxucxac(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 1){
+                cout << "\n" << RED << chon + 1 << RESET << "] BA CÀO 2 NGƯỜI" << RESET << "\n\n";
+                game_bacao2nguoi(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 2){
+                cout << "\n[" << RED << chon + 1 << RESET << "] XÌ DÁCH 2 NGƯỜI" << RESET << "\n\n";
+                game_xidach2nguoi(danhsachnguoichoi, nguoichoi);
+            } else {
+                cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                return;
+            }
+            dungchuongtrinh();
+        }
+    }
+}
+
 void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    const int somuc = 5;
+    const int somuc = 6;
     const char* menu[somuc] = {
         "Game xóc xóc",
         "Game bài",
         "Game may rủi",
+        "Game 2 người",
         "Lịch sử chơi", 
         "Đăng xuất", 
     };
@@ -1376,6 +1445,11 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
                 sanh_gamemayrui(danhsachnguoichoi, nguoichoi);
                 continue;
             } else if(chon == 3){
+                cout << "\n[" << RED << chon + 1 << RESET << "] GAME 2 NGƯỜI" << RESET << "\n\n";
+                chosaukhinhapthanhcong(sogiaycho);
+                sanh_game2nguoi(danhsachnguoichoi, nguoichoi);
+                continue;
+            } else if(chon == 4){
                 cout << "\n[" << RED << chon + 1 << RESET << "] LỊCH SỬ CHƠI" << RESET << "\n\n";
                 vector<LichSu> danhsachlichsu = tailichsujson(nguoichoi->tentaikhoan);
                 if(danhsachlichsu.empty()) cout << YELLOW << "\t(!) Chưa có lịch sử chơi !" << RESET << endl;
@@ -1384,7 +1458,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
                 }
             } else {
                 // cái này thích thì bật (hơi ồn)
-                hieuungamthanh_mp3(dd_maymuanuadi, trangthaiamthanh);
+                //hieuungamthanh_mp3(dd_maymuanuadi, trangthaiamthanh);
                 cout << "\n[" << RED << chon + 1 << RESET << "] ĐĂNG XUẤT" << RESET << "\n\n";
                 chosaukhinhapthanhcong(sogiaycho);
                 return;
@@ -1583,4 +1657,3 @@ ___TruongChinh___ {
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     return 0;
 }
-
