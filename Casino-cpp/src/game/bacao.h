@@ -51,7 +51,7 @@ void inlabai_bacao_oss(const Labaibacao& b, const int diemtungla) {
 vector<Labaibacao> taobobai52la_bacao() {
     vector<Labaibacao> bobai;
     for (int c = 0; c < 4; c++) {
-        for (int g = 10; g <= 13; g++) {
+        for (int g = 1; g <= 13; g++) {
             bobai.push_back({g, c}); 
         }
     }
@@ -215,3 +215,4 @@ void game_bacao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
     luulichsujson(nguoichoi->tentaikhoan, lichsu);
     luudulieujson(danhsachnguoichoi);
 }
+
