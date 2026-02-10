@@ -14,8 +14,8 @@ void game_upngua(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             cout << YELLOW << "\t\t(!) Vui lòng nhập u/up hoặc n/ngua" << RESET << endl;
             solansai++;
         } 
-    } while(!(luachon == "u" || luachon == "up" || luachon == "n" || luachon == "ngua" || solansai == 3));
-    if(solansai == 3) return;
+    } while(!(luachon == "u" || luachon == "up" || luachon == "n" || luachon == "ngua" || solansai == solansaitoida));
+    if(solansai == solansaitoida) return;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     if(!nhaptiencuoc(tiencuoc, nguoichoi)){
         return;
