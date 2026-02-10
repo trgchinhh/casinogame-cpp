@@ -1468,14 +1468,31 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     }
 }
 
+// void loadraketqua(int sogiay){
+//     const char kytu[] = {'/', '-', '\\', '|'};
+//     int vitri = 0;
+//     while(sogiay > 0){
+//         cout << "\r\t(" << RED << kytu[vitri] << RESET << ") Vui lòng chờ kết quả trong giây lát...";  
+//         vitri = (vitri + 1) % 4;
+//         Sleep(1000);
+//         sogiay--;
+//     }
+//     cout << endl;
+// }
+
+// load spinner xoay nhanh hơn
 void loadraketqua(int sogiay){
     const char kytu[] = {'/', '-', '\\', '|'};
     int vitri = 0;
-    while(sogiay > 0){
-        cout << "\r\t(" << RED << kytu[vitri] << RESET << ") Vui lòng chờ kết quả trong giây lát...";  
+    // độ trễ xoay spinner
+    const int dotre = 100;    
+    const int tickpersec = 1000 / dotre;
+    int tongtick = sogiay * tickpersec;
+    for (int tick = 0; tick < tongtick; tick++){
+        cout << "\r\t(" << RED << kytu[vitri] << RESET
+             << ") Vui lòng chờ kết quả trong giây lát...";
         vitri = (vitri + 1) % 4;
-        Sleep(1000);
-        sogiay--;
+        Sleep(dotre);
     }
     cout << endl;
 }
