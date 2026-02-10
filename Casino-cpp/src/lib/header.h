@@ -120,6 +120,7 @@ bool nhaptiencuoc(int& tiencuoc, ThongTinPtr& nguoichoi);
 bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 
 void inbanner(const string tenbanner);
+void intennguoichoi1(const ThongTinPtr nguoichoi);
 void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh);
 void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh);
 void chuyendoitrangthaiamthanh(bool& trangthaiamthanh);
