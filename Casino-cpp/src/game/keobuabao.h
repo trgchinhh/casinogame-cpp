@@ -22,8 +22,8 @@ void game_keobuabao(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
             cout << YELLOW << "\t\t(!) Vui lòng nhập kéo hoặc búa hoặc bao" << RESET << endl;
             solansai++;
         } 
-    } while(!(luachon == "keo" || luachon == "bua" || luachon == "bao" || solansai == 3));
-    if(solansai == 3) return;
+    } while(!(luachon == "keo" || luachon == "bua" || luachon == "bao" || solansai == solansaitoida));
+    if(solansai == solansaitoida) return;
     if (luachon == "keo") luachon = "Kéo";
     else if (luachon == "bua") luachon = "Búa";
     else if (luachon == "bao") luachon = "Bao";
