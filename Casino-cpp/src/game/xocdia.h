@@ -41,8 +41,8 @@ void game_xocdia(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
             cout << YELLOW << "\t\t(!) Vui lòng nhập c/chan hoặc l/le" << RESET << endl;
             solansai++;
         } 
-    } while(!(luachon == "c" || luachon == "chan" || luachon == "l" || luachon == "le" || solansai == 3));
-    if(solansai == 3) return;
+    } while(!(luachon == "c" || luachon == "chan" || luachon == "l" || luachon == "le" || solansai == solansaitoida));
+    if(solansai == solansaitoida) return;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     if (!nhaptiencuoc(tiencuoc, nguoichoi)){
         return;
