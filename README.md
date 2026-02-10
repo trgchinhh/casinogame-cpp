@@ -167,11 +167,14 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 ### Đăng nhập
 ![Login](https://github.com/user-attachments/assets/6c64cfe6-5e64-483d-bbb3-f8f1566b5182)
 
+### Hướng dẫn
+![Hướng dẫn](https://github.com/user-attachments/assets/bd1c06aa-efd7-45e7-b892-cee63ee661ee)
+
 ### Trang Admin
 ![Admin](https://github.com/user-attachments/assets/0e0df5f5-e185-4223-8409-7fe425c97a2c)
 
 ### Trang Player
-![Game](https://github.com/user-attachments/assets/ae943592-7610-4f51-8630-9a793621ec5b)
+![Game](https://github.com/user-attachments/assets/ec2e2017-592a-47c6-bbd6-c64ee5388d3d)
 
 ### Trang game xóc xóc 
 ![Xóc Xóc](https://github.com/user-attachments/assets/4959742b-b88f-4de8-93dd-5648bebc5a22)
@@ -181,6 +184,12 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 
 ### Trang game may rủi
 ![Game may rủi](https://github.com/user-attachments/assets/265f8581-49be-4a91-8823-647eac3ace5b)
+
+### Trang game 2 người
+![Game 2 người](https://github.com/user-attachments/assets/1e656ce7-b07e-4a24-9103-43eeb6c0a3be)
+
+### Lịch sử chơi
+![Lịch sử chơi](https://github.com/user-attachments/assets/78e624a8-5cb1-4970-ac1d-e5be431e6b1e)
 
 ---
 
@@ -198,4 +207,5 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
