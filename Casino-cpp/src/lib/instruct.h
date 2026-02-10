@@ -11,7 +11,7 @@ RED ICON_USER "** TẠO TÀI KHOẢN **\n" RESET
 "\t• Tạo mã 6 số (buộc nhớ nếu muốn đổi mật khẩu)\n"
 "\t• Tạo số dư (tối đa 100.000.000)\n\n"
 
-RED ICON_USER "** CÁC THỂ LOẠI GAME **\n" RESET
+RED ICON_HGAME "** CÁC THỂ LOẠI GAME **\n" RESET
 "\t• Xóc xóc: tài xỉu, xóc dĩa, úp ngửa xu, lắc bầu cua\n"
 "\t• Game bài: ba cào, xì dách\n"
 "\t• May rủi: đoán dài ngắn, đoán 3/7 màu, đoán số, kéo búa bao\n\n"
@@ -79,7 +79,7 @@ RED ICON_HAND "** KÉO BÚA BAO **\n" RESET
 "\t• So kết quả với bot\n"
 "\t• Thắng thì lụm tiền\n\n"
 
-RED ICON_HAND "** GAME 2 NGƯỜI **\n" RESET
+RED ICON_PERSON "** GAME 2 NGƯỜI **\n" RESET
 "\t• Đầu tiên nhập tên người chơi thứ 2\n"
 "\t• Tiếp theo đến lượt ai người đó nhấn bất kỳ phím để ra kết quả\n"
 "\t• Những trò đó luật như trên\n"
