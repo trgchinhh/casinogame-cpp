@@ -73,7 +73,7 @@ void game_xocdia(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
         cout << YELLOW << sodo << RESET << " đỏ "
              << YELLOW << sotrang << RESET << " trắng ("; 
     } else {
-        cout << YELLOW << sotrang << RESET << " trắng"
+        cout << YELLOW << sotrang << RESET << " trắng "
              << YELLOW << sodo << RESET << " đỏ (";
     }
     cout << YELLOW << (lachan ? "Chẵn" : "Lẻ") << RESET << ")" << endl;
