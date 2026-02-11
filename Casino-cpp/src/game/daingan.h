@@ -43,8 +43,17 @@ void game_daingan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
     int chieurongthanhload = tongdodai + 2;
     int diemXbatdau = (chieurongterminal - chieurongthanhload) / 2;
     int diemYbatdau = 16;
-    cout << RED << "\tLưu ý: " 
-         << RESET << "Để thắng thanh cần đạt tối thiểu [" << RED << diemcandat << RESET << " / " << tongdodai << "]" << endl;
+
+    // Câu lưu ý
+    if(luachon == "d" || luachon == "dai"){
+        cout << RED << "\tLưu ý: " 
+             << RESET << "Để thắng thanh cần đạt tối thiểu [" 
+             << RED << diemcandat << RESET << " / " << tongdodai << "] điểm" << endl;
+    } else {
+        cout << RED << "\tLưu ý: " 
+             << RESET << "Để thắng thanh cần dưới [" 
+             << RED << diemcandat << RESET << "] điểm" << endl;
+    }
     cout << endl;
     dichuyenXY(diemXbatdau, diemYbatdau);
     cout << RED << "[" << RESET;
