@@ -11,6 +11,7 @@
 #include <sstream>
 #include <regex>
 #include <random>
+#include <chrono>
 #include <mmsystem.h>       // phát hiệu ứng âm thanh
 #include "props.h"          // chứa mặt xúc xắc và số
 #include "banner.h"         // chứa nhiều banner 
@@ -26,6 +27,7 @@
 #pragma comment(lib, "winmm.lib")
 
 using namespace std;
+using namespace chrono;
 using json = nlohmann::ordered_json;
 
 #define SoTaiKhoanToiDa 100           // đăng ký tối đa 100 tài khoản
@@ -143,6 +145,7 @@ void chosaukhinhapthanhcong(int sogiay);
 void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 
 // game 
+// #ifdef MAIN
 // void game_taixiu1xx(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 // void game_taixiu3xx(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 // void game_doanso(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
@@ -158,6 +161,7 @@ void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thon
 // void game_nemxucxac(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 // void game_bacao2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
 // void game_xidach2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
+// #endif
 
 string chematkhau();
 string mahoamatkhau(string matkhau);
