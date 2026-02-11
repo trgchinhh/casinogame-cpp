@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 10/02/2026                          *
+ * Hoàn thành ngày 11/02/2026                          *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -827,7 +827,7 @@ void xuatlichsu(LichSu& lichsu, int stt) {
     oss << "│" << right << setw(5) << stt
         << "│" << right << setw(6) << lichsu.phien
         << "│" << string(pad_trochoi, ' ') << lichsu.trochoi
-        << "│" << right << setw(10) << dinhdangtien(lichsu.tiencuoc)
+        << "│" << right << setw(12) << dinhdangtien(lichsu.tiencuoc)
         << "│" << string(pad_luachon, ' ') << lichsu.luachon
         << "│" << right << setw(6) << lichsu.tongdiem
         << "│" << string(pad_ketqua, ' ') << lichsu.ketqua
@@ -845,16 +845,16 @@ void xuatbanglichsu(vector<LichSu>& danhsachlichsu){
     }
     hieuungamthanh_mp3(dd_hdpethingonluon, trangthaiamthanh);
     ingiuamanhinh("LỊCH SỬ CHƠI 10 PHIÊN GẦN NHẤT", YELLOW); cout << endl << endl;
-    ingiuamanhinh("┌─────┬──────┬──────────┬──────────┬──────────────────────┬──────┬─────────┬─────────────┐", RESET); cout << endl;
-    ingiuamanhinh(RESET "│" RED " STT " RESET "│" RED " Phiên" RESET "│" RED " Trò chơi " RESET "│" RED " Tiền cược" 
+    ingiuamanhinh("┌─────┬──────┬──────────┬────────────┬──────────────────────┬──────┬─────────┬─────────────┐", RESET); cout << endl;
+    ingiuamanhinh(RESET "│" RED " STT " RESET "│" RED " Phiên" RESET "│" RED " Trò chơi " RESET "│" RED " Tiền cược  " 
                   RESET "│" RED "         Chọn         " 
                   RESET "│" RED " Tổng " RESET "│" RED " Kết quả " RESET "│" RED "    Số dư    " RESET "│", RESET); cout << endl;
-    ingiuamanhinh("├─────┼──────┼──────────┼──────────┼──────────────────────┼──────┼─────────┼─────────────┤", RESET); cout << endl;
+    ingiuamanhinh("├─────┼──────┼──────────┼────────────┼──────────────────────┼──────┼─────────┼─────────────┤", RESET); cout << endl;
     int stt = 1;
     for(auto i = danhsachlichsu.rbegin(); i != danhsachlichsu.rend(); i++){
         xuatlichsu(*i, stt++);
     }
-    ingiuamanhinh("└─────┴──────┴──────────┴──────────┴──────────────────────┴──────┴─────────┴─────────────┘", RESET); cout << endl;
+    ingiuamanhinh("└─────┴──────┴──────────┴────────────┴──────────────────────┴──────┴─────────┴─────────────┘", RESET); cout << endl;
 }
 
 void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
