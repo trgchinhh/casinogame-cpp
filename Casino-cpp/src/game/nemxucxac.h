@@ -42,7 +42,8 @@ void game_nemxucxac(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     int xucxac2 = rand() % 6 + 1;
     int xucxac3 = rand() % 6 + 1;
     tongxucxac1 = xucxac1 + xucxac2 + xucxac3;
-    cout << ": [" << xucxac1 << "] [" << xucxac2 << "] [" << xucxac3 << "]" << endl; 
+    cout << ": [" << xucxac1 << "] [" << xucxac2 << "] [" << xucxac3 << "] --> " 
+         << YELLOW << tongxucxac1 << RESET << " điểm" << endl; 
     cout << endl;
     for(int i = 0; i < 5; i++){
         ingiuamanhinh(matxucxac[xucxac1][i] + "        " + matxucxac[xucxac2][i] + "        " + matxucxac[xucxac3][i], WHITE);
@@ -61,7 +62,8 @@ void game_nemxucxac(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi
     int xucxac5 = rand() % 6 + 1;
     int xucxac6 = rand() % 6 + 1;
     tongxucxac2 = xucxac4 + xucxac5 + xucxac6;
-    cout << ": [" << xucxac4 << "] [" << xucxac5 << "] [" << xucxac6 << "]" << endl; 
+    cout << ": [" << xucxac4 << "] [" << xucxac5 << "] [" << xucxac6 << "] --> " 
+         << YELLOW << tongxucxac2 << RESET << " điểm" << endl; 
     cout << endl;
     for(int i = 0; i < 5; i++){
         ingiuamanhinh(matxucxac[xucxac4][i] + "        " + matxucxac[xucxac5][i] + "        " + matxucxac[xucxac6][i], WHITE);
