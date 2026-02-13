@@ -62,6 +62,13 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
     ├─ Đoán số trong khoảng A → B<br>
     ├─ Chẵn / lẻ (0 → 9)<br>
     └─ Kéo búa bao<br>
+* Game 2 người<br>
+    ├─ Ném 1 xúc xắc<br>
+    ├─ Ném 3 xúc xắc<br>
+    ├─ Ba cào 2 người<br>
+    ├─ Xì dách 2 người<br>
+    └─ So bài 1 lá <br>
+
 * Xem lịch sử chơi
 * Đăng xuất (quay về trang chủ)
 
@@ -105,18 +112,27 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   └── xin_vinh_biet_cu.wav
 ├── src
 │   ├── game
-│   │   ├── baucua.h
-│   │   ├── chanle.h
-│   │   ├── daingan.h
-│   │   ├── doanmau.h
-│   │   ├── doanso.h
-│   │   ├── keobuabao.h
-│   │   ├── taixiu1xx.h
-│   │   ├── taixiu3xx.h
-│   │   ├── upngua.h
-│   │   ├── bacao.h
-│   │   ├── xocdia.h
-│   │   └── xidach.h
+│   │   ├── Game 2 người
+│   │   │   ├── bacao2nguoi.h
+│   │   │   ├── nem1xucxac.h
+│   │   │   ├── nem3xucxac.h
+│   │   │   ├── sobai1la2nguoi.h
+│   │   │   └── xidach2nguoi.h
+│   │   ├── Game bài
+│   │   │   ├── bacao.h
+│   │   │   └── xidach.h
+│   │   ├── Game may rủi
+│   │   │   ├── chanle.h
+│   │   │   ├── daingan.h
+│   │   │   ├── doanmau.h
+│   │   │   ├── doanso.h
+│   │   │   └── keobuabao.h
+│   │   └── Game xóc xóc
+│   │       ├── baucua.h
+│   │       ├── taixiu1xx.h
+│   │       ├── taixiu3xx.h
+│   │       ├── upngua.h
+│   │       └── xocdia.h
 │   ├── lib
 │   │   ├── admin.h
 │   │   ├── banner.h
@@ -189,7 +205,7 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 ![Game may rủi](https://github.com/user-attachments/assets/265f8581-49be-4a91-8823-647eac3ace5b)
 
 ### Trang game 2 người
-![Game 2 người](https://github.com/user-attachments/assets/1e656ce7-b07e-4a24-9103-43eeb6c0a3be)
+![Game 2 người](https://github.com/user-attachments/assets/15fc5d79-22dd-49d9-9345-17fcce442742)
 
 ### Lịch sử chơi
 ![Lịch sử chơi](https://github.com/user-attachments/assets/78e624a8-5cb1-4970-ac1d-e5be431e6b1e)
