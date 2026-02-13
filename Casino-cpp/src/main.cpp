@@ -1321,11 +1321,13 @@ void sanh_gamemayrui(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
 }
 
 void sanh_game2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    const int somuc = 4;
+    const int somuc = 6;
     const char* menu[somuc] = {
-        "Ném xúc xắc",
+        "Ném 1 xúc xắc",
+        "Ném 3 xúc xắc",
         "Ba cào", 
         "Xì dách",  
+        "So bài 1 lá",
         "Quay lại", 
     };
     int chon = 0;
@@ -1365,14 +1367,20 @@ void sanh_game2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
-                cout << "\n" << RED << chon + 1 << RESET << "] NÉM XÚC XẮC" << RESET << "\n\n";
-                game_nemxucxac(danhsachnguoichoi, nguoichoi);
+                cout << "\n" << RED << chon + 1 << RESET << "] NÉM 1 XÚC XẮC" << RESET << "\n\n";
+                game_nem1xucxac(danhsachnguoichoi, nguoichoi);
             } else if(chon == 1){
+                cout << "\n" << RED << chon + 1 << RESET << "] NÉM 3 XÚC XẮC" << RESET << "\n\n";
+                game_nem3xucxac(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 2){
                 cout << "\n" << RED << chon + 1 << RESET << "] BA CÀO 2 NGƯỜI" << RESET << "\n\n";
                 game_bacao2nguoi(danhsachnguoichoi, nguoichoi);
-            } else if(chon == 2){
+            } else if(chon == 3){
                 cout << "\n[" << RED << chon + 1 << RESET << "] XÌ DÁCH 2 NGƯỜI" << RESET << "\n\n";
                 game_xidach2nguoi(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 4){
+                cout << "\n[" << RED << chon + 1 << RESET << "] SO BÀI 1 LÁ" << RESET << "\n\n";
+                game_sobai1la2nguoi(danhsachnguoichoi, nguoichoi);
             } else {
                 cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
                 chosaukhinhapthanhcong(sogiaycho);
