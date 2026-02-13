@@ -204,6 +204,16 @@ const string bannernemxucxac = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
 
 )";
 
+const string bannersobai = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+  _____  ____    ____   __    _____ 
+ / ____|/ __ \  |  _ \  \_\  |_   _|
+| (___ | |  | | | |_) | / \    | |  
+ \___ \| |  | | |  _ < / _ \   | |  
+ ____) | |__| | | |_) / ___ \ _| |_ 
+|_____/ \____/  |____/_/   \_\_____|
+
+)";
+
 const string bannertambiet = R"(CẢM ƠN QUÝ KHÁCH ĐÃ CHƠI
  _______       __  __   ____ _____ ______ _______ 
 |__   __|/\   |  \/  | |  _ \_   _|  ____|__   __|
