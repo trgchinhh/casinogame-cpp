@@ -2,22 +2,29 @@
 
 #include "lib//header.h"
 
-// 15 game
-// game chơi với bot
-#include "game//taixiu1xx.h"
-#include "game//taixiu3xx.h"
-#include "game//doanso.h"
-#include "game//chanle.h"
-#include "game//upngua.h"
-#include "game//keobuabao.h"
-#include "game//baucua.h"
-#include "game//doanmau.h"
-#include "game//daingan.h"
-#include "game//bacao.h"
-#include "game//xidach.h"
-#include "game//xocdia.h"
+// 17 game với 4 thể loại
 
-// game 2 người
-#include "game//nemxucxac.h"
-#include "game//bacao2nguoi.h"
-#include "game//xidach2nguoi.h"
+// [Game xóc xóc] 
+#include "game//Game xóc xóc//taixiu1xx.h"
+#include "game//Game xóc xóc//taixiu3xx.h"
+#include "game//Game xóc xóc//upngua.h"
+#include "game//Game xóc xóc//baucua.h"
+#include "game//Game xóc xóc//xocdia.h"
+
+// [Game bài]
+#include "game//Game bài//bacao.h"
+#include "game//Game bài//xidach.h"
+
+// [Game may rủi]
+#include "game//Game may rủi//doanso.h"
+#include "game//Game may rủi//chanle.h"
+#include "game//Game may rủi//keobuabao.h"
+#include "game//Game may rủi//doanmau.h"
+#include "game//Game may rủi//daingan.h"
+
+// [Game 2 người]
+#include "game//Game 2 người//nem1xucxac.h"
+#include "game//Game 2 người//nem3xucxac.h"
+#include "game//Game 2 người//bacao2nguoi.h"
+#include "game//Game 2 người//xidach2nguoi.h"
+#include "game//Game 2 người//sobai1la2nguoi.h"
