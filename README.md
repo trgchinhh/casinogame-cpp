@@ -17,6 +17,11 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 
 ---
 
+## Bài viết
+* Bài viết chính thức: [Xem tại đây](https://www.facebook.com/share/p/1DkLyLTCGQ/)
+
+---
+
 ## Video demo
 * Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
 * Demo phiên bản cũ (có phân quyền): [Xem tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
@@ -227,5 +232,6 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
 
