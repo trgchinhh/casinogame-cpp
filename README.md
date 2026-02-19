@@ -73,7 +73,13 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
     ├─ Ba cào 2 người<br>
     ├─ Xì dách 2 người<br>
     └─ So bài 1 lá <br>
-
+* Game flag<br>
+    ├─ Ném 1 xúc xắc<br>
+    ├─ Ném 3 xúc xắc<br>
+    ├─ Ba cào 2 người<br>
+    ├─ Xì dách 2 người<br>
+    └─ So bài 1 lá <br>
+> Lưu ý: phần game flag chỉ chơi được khi gõ terminal `Casino.exe [game]`
 * Xem lịch sử chơi
 * Đăng xuất (quay về trang chủ)
 
@@ -126,6 +132,12 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   │   ├── Game bài
 │   │   │   ├── bacao.h
 │   │   │   └── xidach.h
+│   │   ├── Game flag
+│   │   │   ├── bacao2nguoi_flag.h
+│   │   │   ├── nem1xucxac_flag.h
+│   │   │   ├── nem3xucxac_flag.h
+│   │   │   ├── sobai1la2nguoi_flag.h
+│   │   │   └── xidach2nguoi_flag.h
 │   │   ├── Game may rủi
 │   │   │   ├── chanle.h
 │   │   │   ├── daingan.h
@@ -232,6 +244,3 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
-
-
-
