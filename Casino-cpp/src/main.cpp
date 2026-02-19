@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 11/02/2026                          *
+ * Hoàn thành ngày 19/02/2026                          *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -1727,3 +1727,4 @@ ___TruongChinh___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
+
