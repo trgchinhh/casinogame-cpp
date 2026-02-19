@@ -28,3 +28,10 @@
 #include "game//Game 2 người//bacao2nguoi.h"
 #include "game//Game 2 người//xidach2nguoi.h"
 #include "game//Game 2 người//sobai1la2nguoi.h"
+
+// [Game flag]
+#include "game//Game flag//nem1xucxac_flag.h"
+#include "game//Game flag/nem3xucxac_flag.h"
+#include "game//Game flag//bacao2nguoi_flag.h"
+#include "game//Game flag//xidach2nguoi_flag.h"
+#include "game//Game flag//sobai1la2nguoi_flag.h"
