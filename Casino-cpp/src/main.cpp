@@ -17,6 +17,7 @@
 \*******************************************************/
 
 #include "include.h"
+#include "lib/header.h"
 
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi){
     danhsachnguoichoi.first = NULL;
@@ -1669,16 +1670,60 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
          << RESET << "] Số dư mới: " << YELLOW << dinhdangtien(nguoibitru->sodu) << RESET << " VND" << endl;
 }
 
-___TruongChinh___ {
-    SetConsoleTitleA("Casino Game");                // tiêu đề terminal 
+// danh sách game flag 
+FlagGame games[soluonggameflag] = {
+    {"nem1xx", game_nem1xucxac_flag},
+    {"nem3xx", game_nem3xucxac_flag},
+    {"bacao",  game_bacao2nguoi_flag},
+    {"xidach", game_xidach2nguoi_flag},
+    {"sobai",  game_sobai1la2nguoi_flag}
+};
+
+int kiemtraflag(char* flag){
+     for(int i = 0; i < 5; i++){
+        if(strcmp(flag, games[i].game) == 0)
+            return i;
+    }
+    return -1;
+}
+
+void huongdanflag(){
+    cout << RED << "Vui lòng nhập đúng tên game !" << RESET << endl; 
+    cout << "Các game hợp lệ: [";
+    for(int i = 0; i < soluonggameflag -1; i++){
+        cout << YELLOW << games[i].game << RESET << ", ";
+    }
+    cout << YELLOW << games[soluonggameflag -1].game << RESET;
+    cout << "]";
+}
+
+___TruongChinh___(int argc, char** argv) {
     SetConsoleCP(CP_UTF8);                          // hiện được tiếng việt và ký tự đặc biệt
     SetConsoleOutputCP(CP_UTF8);                    // này cũng vậy 
     ancontrochuot(true);                            // ẩn con trỏ chuột
-    srand(time(NULL));                              // khởi tạo random cho game   
+    srand(time(NULL) ^ clock());                    // khởi tạo random cho game 
+
+    // Phần ưu tiên kiểm tra dành cho flag game
+    if(argc > 1){
+        int vitrigameflag = kiemtraflag(argv[1]);
+        if(vitrigameflag == -1){
+            huongdanflag();
+            ancontrochuot(false);
+            return -1;
+        }
+        cout << endl;
+        games[vitrigameflag].tenhamgame();
+        ancontrochuot(false);
+        return 0;
+    }                       
+
+    // Phần chạy chương trình chính 
+    SetConsoleTitleA("Casino Game");                // tiêu đề terminal        
     DanhSachNguoiChoi danhsachnguoichoi;            
     khoitaolist(danhsachnguoichoi);
     taidulieujson(danhsachnguoichoi);
     ThongTinNguoiChoi thongtinnguoichoi;
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
+    ancontrochuot(false);
     return 0;
 }
