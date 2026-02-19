@@ -22,7 +22,7 @@
 #include "instruct.h"       // hướng dẫn cách chơi
 
 // Định nghĩa tên hàm main
-#define ___TruongChinh___ signed main()
+#define ___TruongChinh___ signed main
 
 #pragma comment(lib, "winmm.lib")
 
@@ -60,6 +60,13 @@ struct LichSu {
     int tongdiem;     // tổng điểm 
     string ketqua;    // kết quả 
 };
+
+struct FlagGame {
+    const char* game;
+    void (*tenhamgame)();
+};
+
+const int soluonggameflag = 5;
 
 // Các đường dẫn 
 // Lưu dữ liệu
@@ -120,6 +127,8 @@ bool xacthucdangnhapdangky(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiCh
 bool nhaptiencuoc(int& tiencuoc, ThongTinPtr& nguoichoi);
 // viết hàm quên mật khẩu (nhập mã 6 số)
 bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
+// hàm kiểm tra flag game trước khi chạy chương trình
+int kiemtraflag(string flag);
 
 void inbanner(const string tenbanner);
 void intennguoichoi1(const ThongTinPtr nguoichoi);
@@ -143,27 +152,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void loadraketqua(int sogiay);
 void chosaukhinhapthanhcong(int sogiay);
 void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
-
-// game 
-// #ifdef MAIN
-// void game_taixiu1xx(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_taixiu3xx(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_doanso(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_chanle(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_upngua(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_keobuabao(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_baucua(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_doanmau(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_daingan(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_bacao(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_xidach(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_xocdia(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_nemxucxac(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_bacao2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_xidach2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_nem1xucxac(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// void game_sobai1la2nguoi(DanhSachNguoiChoi &danhsachnguoichoi, ThongTinPtr &nguoichoi);
-// #endif
+void huongdanflag();
 
 string chematkhau();
 string mahoamatkhau(string matkhau);
