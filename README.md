@@ -18,7 +18,7 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 ---
 
 ## Bài viết
-* Bài viết chính thức: [Xem tại đây](https://www.facebook.com/share/p/1DkLyLTCGQ/)
+* Bài viết trên facebook chính thức: [Xem tại đây](https://www.facebook.com/share/p/1DkLyLTCGQ/)
 
 ---
 
@@ -174,8 +174,8 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 
 ## Cài đặt & Build
 
-### Bản build đầu tiên ở Release (11/02/2026): [Casino 1.0.0](https://github.com/trgchinhh/casinogame-cpp/releases/tag/v1.0.0)
-### Bản cập nhật bản build mới nhất ở Release (13/02/2026): [Casino 1.1.0](https://github.com/trgchinhh/casinogame-cpp/releases/tag/v1.1.0)
+### Xem các bản cập nhật và bản build chính thức tại: [Realease](https://github.com/trgchinhh/casinogame-cpp/releases)
+
 ---
 
 > ⚠️ Lưu ý: trước khi build cần phải cài thư viện OpenSSL bằng MingW64/MSYS2. Nếu chưa có chạy lệnh dưới đây
@@ -244,4 +244,5 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
