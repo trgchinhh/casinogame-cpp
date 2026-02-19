@@ -79,7 +79,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
     ├─ Ba cào 2 người<br>
     ├─ Xì dách 2 người<br>
     └─ So bài 1 lá <br>
-> Lưu ý: phần game flag chỉ chơi được khi gõ terminal `Casino.exe [game]`
+> ⚠️ Lưu ý: phần game flag chỉ chơi được khi gõ terminal `Casino.exe [game]`
 * Xem lịch sử chơi
 * Đăng xuất (quay về trang chủ)
 
@@ -244,3 +244,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
