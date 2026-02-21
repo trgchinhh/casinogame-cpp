@@ -87,8 +87,8 @@ const string dd_dichuyenmenu = "sound\\chon_menu.mp3";
 const string dd_xinvinhbietcu = "sound\\xin_vinh_biet_cu.wav";
 
 // Các giá trị bắt buộc 
-const int sodunhonhat = 1000;           // số dư lớn nhất cho phép
-const int sodulonnhat = 100000000;      // số dư nhỏ nhất cho phép
+const int sodunhonhat = 1000;           // số dư nhỏ nhất cho phép
+const int sodulonnhat = 100000000;      // số dư lớn nhất cho phép
 const int sogiaycho = 2;                // số giây load khi đăng nhập / xuất 
 const int solansaitoida = 3;            // số lần sai tối đa
 const int chieudaima6so = 6;            // chiều dài mã khóa 6 số
