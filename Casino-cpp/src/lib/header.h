@@ -61,11 +61,29 @@ struct LichSu {
     string ketqua;    // kết quả 
 };
 
+/*
+- Game flag là gì ?
+  -> Nó giống như flag khi các bạn dùng các chương trình như cmatrix (linux) 
+  hoặc rs-matrix cần có flag là các cụm như:
+    
+    -c/--colour:       màu sắc
+    -h/--help:         thể hiện xem lệnh
+    -d/--direction:    dường dẫn
+    -V/--version:      phiên bản
+    ...
+    
+  ngay sau chương trình chính 
+
+  * Game flag truyền tham số [tên game] vào sau tên chương trình
+  VD: Casino.exe bacao hoặc Casino.exe "bacao"
+  Các game flag hợp lệ bao gồm: [nem1xx, nem3xx, bacao, xidach, sobai] 
+*/
 struct FlagGame {
-    const char* game;
+    const char* game; 
     void (*tenhamgame)();
 };
 
+// số lượng game flag
 const int soluonggameflag = 5;
 
 // Các đường dẫn 
