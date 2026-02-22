@@ -17,6 +17,7 @@
 \*******************************************************/
 
 #include "include.h"
+#include "lib/header.h"
 
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi){
     danhsachnguoichoi.first = NULL;
@@ -301,6 +302,7 @@ string chematkhau(){
         } else {
             matkhau += kytu;
             cout << "*";
+            //cout << "●";
         }
     }
     cout << endl;
@@ -392,6 +394,7 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
         hoplematkhau = true;
     } while(!hoplematkhau && solansaimatkhau < solansaitoida);
     if(solansaimatkhau == solansaitoida) return false;
+    cout << endl;
     if (thongtinnguoichoi.phanquyen == Admin) {
         cout << GREEN << "\t(*) Đăng nhập Admin thành công !" << RESET << endl;
     } else cout << GREEN << "\t(*) Đăng nhập thành công !" << RESET << endl;
@@ -969,7 +972,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                 ostringstream oss;
                 oss << setw(1) << right << (i + 1) 
                     << "/ Âm thanh: "
-                    << (trangthaiamthanh ? "Bật" : "Tắt");
+                    << (trangthaiamthanh ? GREEN "Bật   " RESET : RED "Tắt   " RESET);
                 noidung = oss.str();
             } 
             else {
@@ -1726,6 +1729,3 @@ ___TruongChinh___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
-
-
-
