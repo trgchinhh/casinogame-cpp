@@ -17,7 +17,6 @@
 \*******************************************************/
 
 #include "include.h"
-#include "lib/header.h"
 
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi){
     danhsachnguoichoi.first = NULL;
@@ -1729,3 +1728,4 @@ ___TruongChinh___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
+
