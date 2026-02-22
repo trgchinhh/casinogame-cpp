@@ -1679,7 +1679,7 @@ FlagGame games[soluonggameflag] = {
 };
 
 int kiemtraflag(char* flag){
-     for(int i = 0; i < 5; i++){
+     for(int i = 0; i < soluonggameflag; i++){
         if(strcmp(flag, games[i].game) == 0)
             return i;
     }
@@ -1726,5 +1726,6 @@ ___TruongChinh___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
+
 
 
