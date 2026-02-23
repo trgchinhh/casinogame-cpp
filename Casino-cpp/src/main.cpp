@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 19/02/2026                          *
+ * Hoàn thành ngày 23/02/2026                          *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -1192,10 +1192,11 @@ void sanh_gamexocxoc(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
 
 // sảnh con chứa game bài 
 void sanh_gamebai(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    const int somuc = 3;
+    const int somuc = 4;
     const char* menu[somuc] = {
         "Ba cào", 
         "Xì dách",
+        "So bài",
         "Quay lại", 
     };
     int chon = 0;
@@ -1240,6 +1241,9 @@ void sanh_gamebai(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             } else if(chon == 1){
                 cout << "\n[" << RED << chon + 1 << RESET << "] XÌ DÁCH" << RESET << "\n\n";
                 game_xidach(danhsachnguoichoi, nguoichoi);
+            } else if(chon == 2){
+                cout << "\n[" << RED << chon + 1 << RESET << "] SO BÀI 1 LÁ" << RESET << "\n\n";
+                game_sobai1la(danhsachnguoichoi, nguoichoi);
             } else {
                 cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
                 chosaukhinhapthanhcong(sogiaycho);
@@ -1511,7 +1515,7 @@ void chosaukhinhapthanhcong(int sogiay) {
     int phantramtientrinh = 0;
     const int dodaithanh = 25;
     int thoigiandung = static_cast<int>((sogiay * 1000) / dodaithanh);
-    for (int i = 0; i <= dodaithanh; i++) {
+    for (int i = 0; i < dodaithanh; i++) {
         int phantram = (i * 100) / dodaithanh;
         cout << "\r\tĐang tải:" << " [";
         for (int j = 0; j < dodaithanh; j++) {
@@ -1728,4 +1732,3 @@ ___TruongChinh___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
-
