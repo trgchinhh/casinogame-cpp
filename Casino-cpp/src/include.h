@@ -14,6 +14,7 @@
 // [Game bài]
 #include "game//Game bài//bacao.h"
 #include "game//Game bài//xidach.h"
+#include "game//Game bài//sobai1la.h"
 
 // [Game may rủi]
 #include "game//Game may rủi//doanso.h"
