@@ -59,8 +59,9 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
     ├─ Lắc bầu cua<br>
     └─ Tung xu (úp / ngửa)<br>
 * Game bài<br>
-    ├─  Ba cào (cào 3 lá)<br>
-    └─ Xì dách (21 điểm)<br>
+    ├─ Ba cào (cào 3 lá)<br>
+    ├─ Xì dách (21 điểm)<br>
+    └─ So bài 1 lá<br>
 * Game May rủi<br>
     ├─ Đoán dài / ngắn<br>
     ├─ Đoán 2 / 7 màu sắc<br>
@@ -131,7 +132,8 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   │   │   └── xidach2nguoi.h
 │   │   ├── Game bài
 │   │   │   ├── bacao.h
-│   │   │   └── xidach.h
+│   │   │   ├── xidach.h
+│   │   │   └── sobai1la.h
 │   │   ├── Game flag
 │   │   │   ├── bacao2nguoi_flag.h
 │   │   │   ├── nem1xucxac_flag.h
