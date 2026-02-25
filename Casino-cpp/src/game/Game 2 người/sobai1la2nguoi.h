@@ -1,11 +1,11 @@
 #include "..//..//lib//header.h"
 
-struct Labai1la2nguoi {
+struct Labai1la2nguoiflag {
     int giatribai;   // 1-13 (ách đến già) A -> K
     int kyhieubai;   // 0-3  (4 ký hiệu cơ/rô/chuồng/bích)
 };
 
-void inlabai_1la_oss_2nguoi(const Labai1la2nguoi& b, const int diemtungla) {
+void inlabai_1la_oss_2nguoiflag(const Labai1la2nguoiflag& b, const int diemtungla) {
     ostringstream oss;
     string giatri = giatrilabai[b.giatribai - 1];
     string kyhieu = Kyhieulabai[b.kyhieubai];
@@ -23,8 +23,8 @@ void inlabai_1la_oss_2nguoi(const Labai1la2nguoi& b, const int diemtungla) {
 }
 
 // tạo bộ bài 52 lá với 13 lá và 4 loại khác nhau
-vector<Labai1la2nguoi> taobobai52la_1la_2nguoi() {
-    vector<Labai1la2nguoi> bobai;
+vector<Labai1la2nguoiflag> taobobai52la_1la_2nguoiflag() {
+    vector<Labai1la2nguoiflag> bobai;
     for (int c = 0; c < 4; c++) {
         for (int g = 1; g <= 13; g++) {
             bobai.push_back({g, c}); 
@@ -33,19 +33,19 @@ vector<Labai1la2nguoi> taobobai52la_1la_2nguoi() {
     return bobai;
 }
 
-void xaobai1la2nguoi(vector<Labai1la2nguoi>& bobai) {
+void xaobaibacao2nguoiflag(vector<Labai1la2nguoiflag>& bobai) {
     random_device rd;
     mt19937 gen(rd());
     shuffle(bobai.begin(), bobai.end(), gen);
 }
 
-Labai1la2nguoi rutbai1la2nguoi(vector<Labai1la2nguoi>& bobai) {
-    Labai1la2nguoi b = bobai.back();
+Labai1la2nguoiflag rutbai1la2nguoiflag(vector<Labai1la2nguoiflag>& bobai) {
+    Labai1la2nguoiflag b = bobai.back();
     bobai.pop_back();
     return b;
 }
 
-string tenbai1la2nguoi(const Labai1la2nguoi& b) {
+string tenbai1la2nguoiflag(const Labai1la2nguoiflag& b) {
     string ten;
     if (b.giatribai == 1) ten = "A";
     else if (b.giatribai == 11) ten = "J";
@@ -55,7 +55,7 @@ string tenbai1la2nguoi(const Labai1la2nguoi& b) {
     return ten;
 }
 
-string hienthiten2nguoi(int diem){
+string hienthitenflag(int diem){
     if(diem == 1) return "(Ách)";
     if(diem == 11) return "(Bồi)";
     if(diem == 12) return "(Đầm)";
@@ -63,8 +63,22 @@ string hienthiten2nguoi(int diem){
     return"";
 }
 
-void game_sobai1la2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi) {
-    intennguoichoi1(nguoichoi);
+void game_sobai1la2nguoi_flag() {
+    string tennguoichoi1; int solansaiten1 = 0; 
+    bool hopletennguoichoi1 = false;
+    do {
+        cout << "\t(?) Nhập tên người chơi 1: ";
+        getline(cin, tennguoichoi1);
+        if(tennguoichoi1.empty()){
+            cout << YELLOW << "\t\t(!) Không được để trống tên người chơi !" << RESET << endl;
+            solansaiten1++;
+            continue;
+        } else hopletennguoichoi1 = true;
+    } while(!hopletennguoichoi1 && solansaiten1 < solansaitoida);
+    if(solansaiten1 == solansaitoida){
+        return;
+    }
+
     string tennguoichoi2; int solansaiten = 0; 
     bool hopletennguoichoi2 = false;
     do {
@@ -74,8 +88,7 @@ void game_sobai1la2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguo
             cout << YELLOW << "\t\t(!) Không được để trống tên người chơi !" << RESET << endl;
             solansaiten++;
             continue;
-        } else if(tennguoichoi2 == nguoichoi->tentaikhoan 
-               || tennguoichoi2 == nguoichoi->tennguoichoi){
+        } else if(tennguoichoi2 == tennguoichoi1){
             cout << YELLOW << "\t\t(!) Vui lòng đặt tên khác !" << RESET << endl;
             solansaiten++;
             continue;
@@ -90,12 +103,12 @@ void game_sobai1la2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguo
     cout << "\n" << RED << "[GAME] " << RESET << "SO BÀI 1 LÁ\n\n";
     
     // Khởi tạo bài và xào bài
-    vector<Labai1la2nguoi> bobai = taobobai52la_1la_2nguoi();
-    xaobai1la2nguoi(bobai);
-    vector<Labai1la2nguoi> bainguoi1, bainguoi2;
+    vector<Labai1la2nguoiflag> bobai = taobobai52la_1la_2nguoiflag();
+    xaobaibacao2nguoiflag(bobai);
+    vector<Labai1la2nguoiflag> bainguoi1, bainguoi2;
     // Phát mỗi người 1 lá
-    bainguoi1.push_back(rutbai1la2nguoi(bobai));
-    bainguoi2.push_back(rutbai1la2nguoi(bobai));
+    bainguoi1.push_back(rutbai1la2nguoiflag(bobai));
+    bainguoi2.push_back(rutbai1la2nguoiflag(bobai));
 
     int diemnguoi1 = bainguoi1[0].giatribai;
     int diemnguoi2 = bainguoi2[0].giatribai;
@@ -104,15 +117,15 @@ void game_sobai1la2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguo
     cout << "\t>> Nhấn phím bất kỳ để lật bài !" << endl << endl;
     
     // Lượt người chơi 1 
-    cout << "\t>> Lượt " << YELLOW << nguoichoi->tentaikhoan << RESET << endl;
-    cout << "\t[" << GREEN << "Bài " << nguoichoi->tentaikhoan << RESET << "]: ";
+    cout << "\t>> Lượt " << YELLOW << tennguoichoi1 << RESET << endl;
+    cout << "\t[" << GREEN << "Bài " << tennguoichoi1 << RESET << "]: ";
     cout << "[\\] (Đang che)" << endl;
     _getch();
-    inlabai_1la_oss_2nguoi(bainguoi1[0], diemnguoi1);
+    inlabai_1la_oss_2nguoiflag(bainguoi1[0], diemnguoi1);
     cout << endl;
-    cout << "\t" << YELLOW << nguoichoi->tentaikhoan << RESET 
+    cout << "\t" << YELLOW << tennguoichoi1 << RESET 
          << " ra: " << YELLOW << diemnguoi1 << RESET << " nút " 
-         << hienthiten2nguoi(diemnguoi1) << endl; 
+         << hienthitenflag(diemnguoi1) << endl; 
 
     cout << endl;
 
@@ -121,11 +134,11 @@ void game_sobai1la2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguo
     cout << "\t[" << GREEN << "Bài " << tennguoichoi2 << RESET << "]: ";
     cout << "[\\] (Đang che)" << endl;
     _getch();
-    inlabai_1la_oss_2nguoi(bainguoi2[0], diemnguoi2);
+    inlabai_1la_oss_2nguoiflag(bainguoi2[0], diemnguoi2);
     cout << endl;
     cout << "\t" << YELLOW << tennguoichoi2 << RESET 
          << " ra: " << YELLOW << bainguoi2[0].giatribai << RESET << " nút "
-         << hienthiten2nguoi(diemnguoi2) << endl; 
+         << hienthitenflag(diemnguoi2) << endl; 
     cout << endl;
 
     string ketqua;
@@ -135,7 +148,7 @@ void game_sobai1la2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguo
 
     cout << YELLOW << "\tKết quả: " << RESET;
     if(ketqua == "Thắng"){
-        cout << YELLOW << nguoichoi->tentaikhoan << RESET << " thắng " 
+        cout << YELLOW << tennguoichoi1 << RESET << " thắng " 
              << "(" << diemnguoi1 << " > " << diemnguoi2 << ")" << endl;
     } else if(ketqua == "Thua"){
         cout << YELLOW << tennguoichoi2 << RESET << " thắng "
