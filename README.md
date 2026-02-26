@@ -232,13 +232,14 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 
 ---
 
+## Ưu điểm
+* Code đã được chỉnh để chạy trên trình biên dịch GNU/GCC trên Windows và Linux
+
 ## Hạn chế hiện tại
 * Chưa tối ưu kiến trúc file hoàn chỉnh
 * Logic và giao diện vẫn còn gộp ở một số module
 * Còn hardcore vài chổ như biến global 
 
-## Ưu điểm
-* Code đã được chỉnh để chạy trên trình biên dịch GNU/GCC trên Windows và Linux
 ---
 
 ## Tác giả
@@ -248,4 +249,5 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+
 
