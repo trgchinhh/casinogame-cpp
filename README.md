@@ -33,6 +33,7 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 
 ### Trang chủ
 * Bật / tắt hiệu ứng âm thanh
+* Thông tin game
 * Hướng dẫn chơi 
 * Đăng ký / đăng nhập tài khoản
 * Thoát chương trình
@@ -45,6 +46,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 * Trừ tiền người chơi
 * Xem thông tin tài khoản
 * Xem lịch sử chơi
+* Xem bảng xếp hạng
 * Xóa tài khoản
 * Đăng xuất (quay về trang chủ)
 
@@ -157,6 +159,7 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 │   │   ├── banner.h
 │   │   ├── dothd.h
 │   │   ├── header.h
+│   │   ├── info.h
 │   │   ├── instruct.h
 │   │   ├── json.hpp
 │   │   ├── picosha2.h
@@ -237,7 +240,9 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 
 ## Hạn chế hiện tại
 * Chưa tối ưu kiến trúc file hoàn chỉnh
+* Chưa mở rộng class mà còn dùng struct
 * Logic và giao diện vẫn còn gộp ở một số module
+* Còn lặp lại nhiều chỗ trong main
 * Còn hardcore vài chổ như biến global 
 
 ---
@@ -249,5 +254,3 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 ---
 
 > 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
-
-
