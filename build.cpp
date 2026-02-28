@@ -28,14 +28,11 @@ using namespace std;
     const string lenhbiendich = string("g++ src\\main.cpp")
                               + " -IC:\\OpenSSL-Win64\\include"
                               + " -LC:\\OpenSSL-Win64\\lib src\\resource\\resource.o -o "
-                              + tenchuongtrinh
-                              + " -lwinmm -lssl -lcrypto -w";
+                              + tenchuongtrinh + " -lwinmm -lssl -lcrypto -w";
 #else
     const string tenchuongtrinh = "./Casino";
     const string lenhbiendich = string("g++ src/main.cpp")
-                              + " -o"
-                              + tenchuongtrinh
-                              + " -lssl -lcrypto -w";
+                              + " -o" + tenchuongtrinh + " -lssl -lcrypto -w";
 #endif
 
 int main(){
@@ -46,7 +43,7 @@ int main(){
             throw runtime_error("Biên dịch thất bại !");
         cout << "Đã biên dịch xong ! Chạy file (y/n): ";
         char c; cin >> c;
-        if(c == 'y')
+        if(c == 'y') 
             system(tenchuongtrinh.c_str());
     } catch(const exception& e){
         cout << RED << "\nLỗi: " << e.what() << RESET << endl;
