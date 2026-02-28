@@ -33,6 +33,7 @@
 #include "json.hpp"         // dùng định dạng json 
 #include "picosha2.h"       // dùng hash sha256
 #include "instruct.h"       // hướng dẫn cách chơi
+#include "info.h"           // thông tin game
 
 // Định nghĩa tên hàm main
 #define ___CasinoGames___ signed main
@@ -53,6 +54,9 @@ struct ThongTinNguoiChoi {
     string matkhau;                   // mật khẩu
     string makhoa6so;                 // mã khóa 6 số (phải nhớ khi quên mật khẩu)
     int sodu;                         // số dư (giới hạn 100.000.000)
+    int sotiendachoi = 0;             // tổng số tiền đã chơi mọi game
+    int sotienthang = 0;              // tống số tiền thắng chơi mọi game
+    int levelnguoichoi = 0;           // level người chơi tính theo số tiền thắng 
     PhanQuyen phanquyen = Nguoichoi;  // quyền người chơi (admin - player) 
     ThongTinNguoiChoi* next;          // con trỏ next 
     ThongTinNguoiChoi* prev;          // con trỏ prev
@@ -119,6 +123,8 @@ const string dd_dichuyenmenu       = "sound/chon_menu.mp3";
 const string dd_xinvinhbietcu      = "sound/xin_vinh_biet_cu.wav";
 
 // Các giá trị bắt buộc 
+const int levelthapnhat = 0;            // level thấp nhất cho phép
+const int levelcaonhat = 10;            // level cao nhất cho phép
 const int sodunhonhat = 1000;           // số dư nhỏ nhất cho phép
 const int sodulonnhat = 100000000;      // số dư lớn nhất cho phép
 const int sogiaycho = 2;                // số giây load khi đăng nhập / xuất 
@@ -135,18 +141,22 @@ void xemthongtinnguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
 void xuatthongtinnguoichoi(ThongTinNguoiChoi& thongtinnguoichoi);
 void xuatbangthongtinnguoichoi(vector<ThongTinNguoiChoi>& danhsachthongtinnguoichoi);
 void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
+void xuatthongtinxephang(ThongTinNguoiChoi& thongtinnguoichoi, int top);
+void xuatbangxephangnguoichoi(vector<ThongTinNguoiChoi>& danhsachthongtinnguoichoi, ThongTinPtr nguoichoi = NULL);
 void xoataikhoannguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
 void naptienchonguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
 void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
 
 // Người chơi
+int tinhlevelnguoichoi(ThongTinPtr& nguoichoi);
+string tinhranknguoichoi(int level);
 int kiemtrasoluongtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi);
 int sothutucuoicung(DanhSachNguoiChoi& danhsachnguoichoi);
 int phiencuoicung(string& tentaikhoan);
 int laychieurongterminal();
 int doronghienthi(const char* s);
-int do_rong_hien_thi_thuc(const string& str);
-int dodai_hienthi_utf8(const string& s);
+int doronghienthithuc(const string& str);
+int dodaihienthiutf8(const string& s);
 int docphim();
 
 void sleep(int sogiaymili); // Delay 
