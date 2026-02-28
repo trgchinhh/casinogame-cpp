@@ -1,0 +1,21 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.VC.db
+*.opendb
+ipch/
+
+# Build
+x64/
+Debug/
+Release/
+*.obj
+*.pdb
+*.ilk
+*.exe
+*.idb
+*.tlog
+
+data/player/*.json
+data/admin/*.json
