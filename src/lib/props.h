@@ -34,6 +34,7 @@ using namespace std;
 #define ORANGE       "\033[38;2;255;200;80m"
 #define INDIGO       "\033[38;2;75;0;130m"     
 #define VIOLET       "\033[38;2;180;90;255m"
+#define GRAY         "\033[38;2;150;150;150m"
 #define UNDERLINE    "\033[4m"
 #define NO_UNDERLINE "\033[24m"
 
