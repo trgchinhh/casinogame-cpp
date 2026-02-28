@@ -1080,7 +1080,7 @@ void clear(){
 }
 
 void dungchuongtrinh(){
-    cout << CYAN << "\n\tNhấn phím bất kỳ để tiếp tục ..." << RESET;
+    cout << CYAN << "\n\tNhấn phím enter để tiếp tục ..." << RESET;
     getchar();
 }
 
@@ -1930,3 +1930,4 @@ ___CasinoGames___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
+
