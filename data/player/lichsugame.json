@@ -1,78 +1,6 @@
 {
     "chinh": [
         {
-            "phien": 798,
-            "trochoi": "SoBai",
-            "sodu": 78769774,
-            "tiencuoc": 3000,
-            "luachon": "Lat bai 1 la",
-            "tongxucxac": 2,
-            "ketqua": "Thua"
-        },
-        {
-            "phien": 799,
-            "trochoi": "SoBai",
-            "sodu": 78772774,
-            "tiencuoc": 3000,
-            "luachon": "Lat bai 1 la",
-            "tongxucxac": 12,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 800,
-            "trochoi": "Taixiu3xx",
-            "sodu": 78769774,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 13,
-            "ketqua": "Thua"
-        },
-        {
-            "phien": 801,
-            "trochoi": "Taixiu3xx",
-            "sodu": 78766774,
-            "tiencuoc": 3000,
-            "luachon": "x",
-            "tongxucxac": 16,
-            "ketqua": "Thua"
-        },
-        {
-            "phien": 802,
-            "trochoi": "BauCua",
-            "sodu": 78766774,
-            "tiencuoc": 6000,
-            "luachon": "bau cua tom",
-            "tongxucxac": 1,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 803,
-            "trochoi": "BaCao",
-            "sodu": 78769774,
-            "tiencuoc": 3000,
-            "luachon": "Lat bai tung la",
-            "tongxucxac": 6,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 804,
-            "trochoi": "XocDia",
-            "sodu": 78772774,
-            "tiencuoc": 3000,
-            "luachon": "chan",
-            "tongxucxac": 2,
-            "ketqua": "Thắng"
-        },
-        {
-            "phien": 805,
-            "trochoi": "XocDia",
-            "sodu": 78769774,
-            "tiencuoc": 3000,
-            "luachon": "chan",
-            "tongxucxac": 1,
-            "ketqua": "Thua"
-        },
-        {
             "phien": 806,
             "trochoi": "SoBai",
             "sodu": 78799774,
@@ -89,6 +17,78 @@
             "luachon": "Lat bai 1 la",
             "tongxucxac": 6,
             "ketqua": "Thắng"
+        },
+        {
+            "phien": 808,
+            "trochoi": "SoBai",
+            "sodu": 78752774,
+            "tiencuoc": 50000,
+            "luachon": "Lat bai 1 la",
+            "tongxucxac": 4,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 809,
+            "trochoi": "SoBai",
+            "sodu": 79102774,
+            "tiencuoc": 300000,
+            "luachon": "Lat bai 1 la",
+            "tongxucxac": 3,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 810,
+            "trochoi": "BauCua",
+            "sodu": 79122774,
+            "tiencuoc": 20000,
+            "luachon": "bau cua",
+            "tongxucxac": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 811,
+            "trochoi": "BaCao",
+            "sodu": 79092774,
+            "tiencuoc": 30000,
+            "luachon": "Lat bai tung la",
+            "tongxucxac": 0,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 812,
+            "trochoi": "XiDach",
+            "sodu": 79052774,
+            "tiencuoc": 40000,
+            "luachon": "Rut 1 lan",
+            "tongxucxac": 20,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 813,
+            "trochoi": "XiDach",
+            "sodu": 79082774,
+            "tiencuoc": 30000,
+            "luachon": "Rut 3 lan",
+            "tongxucxac": 17,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 814,
+            "trochoi": "SoBai",
+            "sodu": 79052774,
+            "tiencuoc": 30000,
+            "luachon": "Lat bai 1 la",
+            "tongxucxac": 3,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 815,
+            "trochoi": "SoBai",
+            "sodu": 78972774,
+            "tiencuoc": 80000,
+            "luachon": "Lat bai 1 la",
+            "tongxucxac": 6,
+            "ketqua": "Thua"
         }
     ],
     "bao": [
@@ -425,6 +425,80 @@
             "luachon": "x",
             "tongxucxac": 13,
             "ketqua": "Tài"
+        }
+    ],
+    "mi": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 5000000,
+            "tiencuoc": 60000000,
+            "luachon": "t",
+            "tongxucxac": 7,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Upngua",
+            "sodu": 3000000,
+            "tiencuoc": 2000000,
+            "luachon": "up",
+            "tongxucxac": 2,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 3,
+            "trochoi": "BauCua",
+            "sodu": 3020000,
+            "tiencuoc": 60000,
+            "luachon": "bau cua tom",
+            "tongxucxac": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 4,
+            "trochoi": "SoBai",
+            "sodu": 6020000,
+            "tiencuoc": 3000000,
+            "luachon": "Lat bai 1 la",
+            "tongxucxac": 7,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 5,
+            "trochoi": "Taixiu3xx",
+            "sodu": 11420000,
+            "tiencuoc": 6000000,
+            "luachon": "x",
+            "tongxucxac": 9,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 6,
+            "trochoi": "Taixiu3xx",
+            "sodu": 1420000,
+            "tiencuoc": 10000000,
+            "luachon": "t",
+            "tongxucxac": 8,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 7,
+            "trochoi": "XocDia",
+            "sodu": 1390000,
+            "tiencuoc": 30000,
+            "luachon": "chan",
+            "tongxucxac": 1,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 8,
+            "trochoi": "BauCua",
+            "sodu": 1420000,
+            "tiencuoc": 90000,
+            "luachon": "ca nai ga",
+            "tongxucxac": 2,
+            "ketqua": "Thắng"
         }
     ]
 }
