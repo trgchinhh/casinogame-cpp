@@ -27,7 +27,7 @@ const string noidungthongtin =
 
 void mogithub(){
     cout << noidungthongtin;
-    cout << "\t(?) Bạn có muốn mở Github (y/n): ";
+    cout << "\t(?) Bạn có muốn xem chi tiết (y/n): ";
     #ifdef _WIN32
         char c = getch();
     #else 
