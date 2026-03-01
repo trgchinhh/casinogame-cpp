@@ -1,9 +1,9 @@
+#include <iostream>
 #ifdef _WIN32
     #include <conio.h>
 #else
     #include <termios.h>
 #endif
-#include <iostream>
 using namespace std;
 
 #define RESET   "\033[0m"
