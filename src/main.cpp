@@ -40,7 +40,8 @@ int sothutucuoicung(DanhSachNguoiChoi& danhsachnguoichoi){
 
 // thêm kiểm tra số dư, tiền cược hợp lệ và hàm nap thêm tiền 
 bool kiemtrasodutaikhoan(ThongTinPtr& nguoichoi){
-    if(nguoichoi->sodu < sodunhonhat) return false;
+    if(nguoichoi->sodu < sodunhonhat) 
+        return false;
     return true;
 }
 
@@ -63,7 +64,8 @@ ThongTinPtr khoitaotaikhoan(ThongTinNguoiChoi& thongtinnguoichoi){
 ThongTinPtr timtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, string& tentaikhoan){
     ThongTinPtr tt = danhsachnguoichoi.first;
     while(tt != NULL){
-        if(tt->tentaikhoan == tentaikhoan) return tt;
+        if(tt->tentaikhoan == tentaikhoan) 
+            return tt;
         tt=tt->next;
     }
     return NULL;
@@ -83,11 +85,15 @@ void themcuoidanhsachtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr 
 // lấy phiên cuối cùng trong lịch sử
 int phiencuoicung(string& tentaikhoan){
     ifstream file(dd_danhsachlichsu);
-    if(!file.is_open()) return 0;
+    if(!file.is_open()) 
+        return 0;
     json data; file >> data; file.close();
-    if(!data.contains(tentaikhoan)) return 0;
-    if(!data[tentaikhoan].is_array()) return 0;
-    if(data[tentaikhoan].empty()) return 0;
+    if(!data.contains(tentaikhoan)) 
+        return 0;
+    if(!data[tentaikhoan].is_array()) 
+        return 0;
+    if(data[tentaikhoan].empty()) 
+        return 0;
     return data[tentaikhoan].back()["phien"].get<int>();
 }   
 
@@ -100,17 +106,23 @@ void intennguoichoi1(const ThongTinPtr nguoichoi){
 // tính level người chơi bằng tiền thắng
 int tinhlevelnguoichoi(ThongTinPtr& nguoichoi){
     int level = nguoichoi->sotienthang / 20000000 + 1;
-    if(level > levelcaonhat) level = levelcaonhat;
-    if(level < levelthapnhat) level = levelthapnhat;
+    if(level > levelcaonhat) 
+        level = levelcaonhat;
+    if(level < levelthapnhat) 
+        level = levelthapnhat;
     return level;
 }
 
 // tính rank người chơi bằng level
 string tinhranknguoichoi(int level){
-    if(level <= 2) return ORANGE "Đồng nát" RESET;
-    if(level <= 4) return GRAY "Bạc rách" RESET;
-    if(level <= 6) return YELLOW "Vàng cứt" RESET;
-    if(level <= 8) return BLUE "Bạch kim" RESET;
+    if(level <= 2) 
+        return ORANGE "Đồng nát" RESET;
+    if(level <= 4) 
+        return GRAY "Bạc rách" RESET;
+    if(level <= 6) 
+        return YELLOW "Vàng cứt" RESET;
+    if(level <= 8) 
+        return BLUE "Bạch kim" RESET;
     return CYAN "Kim cương" RESET;
 }
 
@@ -128,22 +140,26 @@ void inbanner(const string tenbanner){
 // Phần hàm hiệu ứng âm thanh 
 #ifdef _WIN32
     void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh) {
-        if(!trangthaiamthanh) return;
+        if(!trangthaiamthanh) 
+            return;
         string cmd = "play \"" + duongdanamthanh + "\" from 0";
         mciSendStringA(cmd.c_str(), NULL, 0, NULL);
     }
     void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh){
-        if(!trangthaiamthanh) return;
+        if(!trangthaiamthanh) 
+            return;
         PlaySoundA(duongdanamthanh.c_str(), NULL, SND_FILENAME | SND_ASYNC);
     }
 #else 
     void hieuungamthanh_mp3(string duongdanamthanh, bool trangthaiamthanh) {
-        if(!trangthaiamthanh) return;
+        if(!trangthaiamthanh) 
+            return;
         string cmd = "ffplay -nodisp -autoexit \"" + duongdanamthanh + "\" > /dev/null 2>&1 &";
         system(cmd.c_str());
     }
     void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh){
-        if(!trangthaiamthanh) return;
+        if(!trangthaiamthanh) 
+            return;
         string cmd = "aplay \"" + duongdanamthanh + "\" > /dev/null 2>&1 &";
         system(cmd.c_str());
     }
@@ -151,8 +167,10 @@ void inbanner(const string tenbanner){
 
 // bật tắt âm thanh
 void chuyendoitrangthaiamthanh(bool& trangthaiamthanh){
-    if(!trangthaiamthanh) trangthaiamthanh = true;
-    else trangthaiamthanh = false;
+    if(!trangthaiamthanh) 
+        trangthaiamthanh = true;
+    else 
+        trangthaiamthanh = false;
 }
 
 // xóa màu ansi khỏi chuỗi
@@ -202,10 +220,12 @@ bool xacthucthongtin(DanhSachNguoiChoi& danhsachnguoichoi,
     ThongTinPtr tt = danhsachnguoichoi.first;
     while(tt != NULL){
         if(thongtin == 1){   // 1. kiem tra ten tai khoan
-            if(tt->tentaikhoan == thongtinnguoichoi.tentaikhoan) return true;
+            if(tt->tentaikhoan == thongtinnguoichoi.tentaikhoan) 
+                return true;
         } else {             // 2. kiem tra mat khau
             if(tt->matkhau == mahoamatkhau(thongtinnguoichoi.matkhau) &&
-               tt->tentaikhoan == thongtinnguoichoi.tentaikhoan) return true;
+               tt->tentaikhoan == thongtinnguoichoi.tentaikhoan) 
+                return true;
         }
         tt=tt->next;
     }
@@ -240,7 +260,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
         }
         hoplenc = true;
     } while(!hoplenc && solansainc < solansaitoida);
-    if(solansainc == solansaitoida) return false;
+    if(solansainc == solansaitoida) 
+        return false;
     // nhap ten tai khoan (dung de dang nhap)
     int check_ttk;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
@@ -270,7 +291,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
         }
         hopletk = true;
     } while(!hopletk && solansaitk < solansaitoida);
-    if(solansaitk == solansaitoida) return false;
+    if(solansaitk == solansaitoida) 
+        return false;
     // nhap mat khau (dung de dang nhap)
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
@@ -284,7 +306,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
         }
         hoplemk = true;
     } while(!hoplemk && solansaimk < solansaitoida);
-    if(solansaimk == solansaitoida) return false;
+    if(solansaimk == solansaitoida) 
+        return false;
     // mã 6 số
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
@@ -305,7 +328,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             continue;
         } else hoplema6so = true;
     } while(!hoplema6so && solansaima6so < solansaitoida);
-    if(solansaima6so == solansaitoida) return false;
+    if(solansaima6so == solansaitoida) 
+        return false;
     // nhap so du 
     bool soduhople = false;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
@@ -325,7 +349,8 @@ bool dangkytaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& tho
             solansaisd++;
         } else soduhople = true;
     } while(!soduhople && solansaisd < solansaitoida);
-    if(solansaisd == solansaitoida) return false;
+    if(solansaisd == solansaitoida) 
+        return false;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
     thongtinnguoichoi.sothutu = sothutucuoicung(danhsachnguoichoi) + 1;
     luudulieumatjson(thongtinnguoichoi.tentaikhoan, thongtinnguoichoi.matkhau);
@@ -351,7 +376,8 @@ int docphim() {
                 case 77: return 77; 
             }
         }
-        if (c == 13) return 13;
+        if (c == 13) 
+            return 13;
         return c;
     #else
         termios oldt, newt;
@@ -374,7 +400,8 @@ int docphim() {
                 }
             }
         }
-        if (c == 10) c = 13;
+        if (c == 10) 
+            c = 13;
         tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
         return c;
     #endif
@@ -386,7 +413,8 @@ string chematkhau(){
         string matkhau; int kytu;
         while (true){
             kytu = docphim();   
-            if(kytu == 13) break;
+            if(kytu == 13) 
+                break;
             else if(kytu == 8 || kytu == 127){ 
                 if(!matkhau.empty()){
                     matkhau.pop_back();
@@ -446,8 +474,8 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
             continue;
         } hopletentaikhoan = true;
     } while(!hopletentaikhoan && solansaitentaikhoan < solansaitoida);
-    if(solansaitentaikhoan == solansaitoida) return false;
-
+    if(solansaitentaikhoan == solansaitoida) 
+        return false;
     bool hoplematkhau; int solansaimatkhau = 0;
     hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
     do {
@@ -482,7 +510,8 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
         }
         hoplematkhau = true;
     } while(!hoplematkhau && solansaimatkhau < solansaitoida);
-    if(solansaimatkhau == solansaitoida) return false;
+    if(solansaimatkhau == solansaitoida) 
+        return false;
     cout << endl;
     if (thongtinnguoichoi.phanquyen == Admin) {
         cout << GREEN << "\t(*) Đăng nhập Admin thành công !" << RESET << endl;
@@ -525,8 +554,8 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
         }
         hopletentaikhoan = 1;
     } while(!hopletentaikhoan && solansaitentaikhoan < solansaitoida);
-    if(solansaitentaikhoan == solansaitoida) return false;   
-
+    if(solansaitentaikhoan == solansaitoida) 
+        return false;   
     // lấy mã khóa 6 số từ danh sách liên kết đã load trong bộ nhớ
     ThongTinPtr ptr = danhsachnguoichoi.first;
     while(ptr != NULL){
@@ -558,8 +587,8 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
             continue;
         } else makhoa6sohople = true;
     } while(!makhoa6sohople && solansaimakhoa6so < solansaitoida);
-    if(solansaimakhoa6so == solansaitoida) return false;
-
+    if(solansaimakhoa6so == solansaitoida) 
+        return false;
     // nhập đúng thì cho đổi mật khẩu mới
     string matkhaumoi;
     bool matkhauhoplemoi = false; int solansaimatkhaumoi = 0;
@@ -581,7 +610,8 @@ bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongt
             continue;
         } else matkhauhoplemoi = true;
     } while(!matkhauhoplemoi && solansaimatkhaumoi < solansaitoida);
-    if(solansaimatkhaumoi == solansaitoida) return false;
+    if(solansaimatkhaumoi == solansaitoida) 
+        return false;
     thongtinnguoichoi.matkhau = matkhaumoi;
     luumatkhaumoi(danhsachnguoichoi, thongtinnguoichoi);
     cout << GREEN << "\t(*) Đổi mật khẩu mới thành công !" << RESET << endl;
@@ -664,7 +694,8 @@ void xoataikhoannguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             solansaimk++;
         }
     } while(check2 && solansaimk < solansaitoida);
-    if(solansaimk == solansaitoida) return;
+    if(solansaimk == solansaitoida) 
+        return;
     hieuungamthanh_mp3(dd_dunglacontraicuata, trangthaiamthanh);
     if(xoataikhoanjson(thongtinnguoichoi.tentaikhoan)){
         cout << GREEN << "\t(*) Xóa tài khoản " 
@@ -678,7 +709,8 @@ void xoataikhoannguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
 // kiểm tra json rỗng 
 bool kiemtrajsontrong(string duongdanjson){
     ifstream file(duongdanjson);
-    if(!file.is_open()) return true;
+    if(!file.is_open()) 
+        return true;
     json data;
     try {
         file >> data;
@@ -740,7 +772,8 @@ void luudulieujson(DanhSachNguoiChoi& danhsachnguoichoi){
 vector<ThongTinNguoiChoi> taithongtinnguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
     vector<ThongTinNguoiChoi> danhsachthongtinnguoichoi;
     ifstream file(dd_danhsachtaikhoan);
-    if(!file.is_open()) return danhsachthongtinnguoichoi;
+    if(!file.is_open()) 
+        return danhsachthongtinnguoichoi;
     json data; file >> data; file.close();
     for(auto& i : data){
         ThongTinNguoiChoi thongtinnguoichoi;
@@ -759,9 +792,11 @@ vector<ThongTinNguoiChoi> taithongtinnguoichoi(DanhSachNguoiChoi& danhsachnguoic
 vector<LichSu> tailichsujson(string& tentaikhoan){
     vector<LichSu> danhsachlichsu;
     ifstream file(dd_danhsachlichsu);
-    if(!file.is_open()) return danhsachlichsu;
+    if(!file.is_open()) 
+        return danhsachlichsu;
     json data; file >> data; file.close();
-    if(!data.contains(tentaikhoan)) return danhsachlichsu;
+    if(!data.contains(tentaikhoan)) 
+        return danhsachlichsu;
     for(auto& i : data[tentaikhoan]){
         LichSu lichsu;
         lichsu.phien       = i["phien"];
@@ -781,7 +816,8 @@ void luulichsujson(string& tentaikhoan, LichSu& lichsu){
     json data;
     ifstream filein(dd_danhsachlichsu);
     if(filein.is_open()){
-        if(!kiemtrajsontrong(dd_danhsachlichsu)) filein >> data;
+        if(!kiemtrajsontrong(dd_danhsachlichsu)) 
+            filein >> data;
         filein.close();
     }
     if(!data.contains(tentaikhoan)){
@@ -807,11 +843,13 @@ void luulichsujson(string& tentaikhoan, LichSu& lichsu){
 // xóa tài khoản json (admin) 
 bool xoataikhoanjson(string& tentaikhoan){
     ifstream filein(dd_danhsachtaikhoan);
-    if(!filein.is_open()) return false;
+    if(!filein.is_open()) 
+        return false;
     json data_acc;
     filein >> data_acc;
     filein.close();
-    if(!data_acc.is_array()) return false;
+    if(!data_acc.is_array()) 
+        return false;
     bool daxoa = false;
     for(auto it = data_acc.begin(); it != data_acc.end(); ++it){
         if((*it)["tentaikhoan"] == tentaikhoan){
@@ -820,13 +858,15 @@ bool xoataikhoanjson(string& tentaikhoan){
             break;
         }
     }
-    if(!daxoa) return false;
+    if(!daxoa) 
+        return false;
     int stt = 1;
     for(auto& acc : data_acc){
         acc["sothutu"] = stt++;
     }
     ofstream fileout(dd_danhsachtaikhoan);
-    if(!fileout.is_open()) return false;
+    if(!fileout.is_open()) 
+        return false;
     fileout << setw(4) << data_acc;
     fileout.close();
     ifstream filels_in(dd_danhsachlichsu);
@@ -851,7 +891,8 @@ bool xoataikhoanjson(string& tentaikhoan){
 int dodaihienthiutf8(const string& s){
     int dem = 0;
     for (size_t i = 0; i < s.size(); ++i){
-        if ((s[i] & 0xC0) != 0x80) dem++;
+        if ((s[i] & 0xC0) != 0x80) 
+            dem++;
     }
     return dem;
 }
@@ -860,7 +901,8 @@ int dodaihienthiutf8(const string& s){
 int doronghienthithuc(const string& str) {
     int chieudai = 0;
     for (int i = 0; i < str.length(); ++i) {
-        if ((str[i] & 0xC0) != 0x80) chieudai++;
+        if ((str[i] & 0xC0) != 0x80) 
+            chieudai++;
     }
     return chieudai;
 }
@@ -871,7 +913,8 @@ void ingiuamanhinh(const string& cau, string mau){
     string cau_khong_mau = xoa_ansi(cau);
     int dodai = dodaihienthiutf8(cau_khong_mau);
     int khoangtrang = (chieurong - dodai) / 2;
-    if(khoangtrang < 0) khoangtrang = 0;
+    if(khoangtrang < 0) 
+        khoangtrang = 0;
     cout << mau << string(khoangtrang, ' ') << cau << RESET;
 }
 
@@ -1049,8 +1092,7 @@ void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
             cout << YELLOW << "\t\t(!) Vui lòng nhập tên tài khoản hợp lệ !" << RESET << endl;
             solansaitentaikhoan++;
             continue;
-        }
-        else if(timtaikhoan(danhsachnguoichoi, tentaikhoan) == NULL){
+        } else if(timtaikhoan(danhsachnguoichoi, tentaikhoan) == NULL){
             cout << YELLOW << "\t\t(!) Không tìm thấy tài khoản !" << RESET << endl;
             solansaitentaikhoan++;
             continue;
@@ -1062,9 +1104,9 @@ void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi){
     }
     ThongTinPtr nguoichoi = timtaikhoan(danhsachnguoichoi, tentaikhoan);
     vector<LichSu> danhsachlichsu = tailichsujson(nguoichoi->tentaikhoan);
-    if(danhsachlichsu.empty()) 
+    if(danhsachlichsu.empty()) {
         cout << YELLOW << "\t(!) Chưa có lịch sử chơi !" << RESET << endl;
-    else {
+    } else {
         cout << endl;
         xuatbanglichsu(danhsachlichsu);
     }
@@ -1091,8 +1133,12 @@ int doronghienthi(const char* s){
     int chieurong = 0;
     for(int i = 0; s[i] != '\0'; ){
         unsigned char c = s[i];
-        if(c < 128){ chieurong += 1; i += 1; }
-        else{ chieurong += 1; i += 2; }
+        if(c < 128){ 
+            chieurong += 1; i += 1; 
+        } else{ 
+            chieurong += 1; 
+            i += 2; 
+        }
     }
     return chieurong;
 }
@@ -1184,7 +1230,8 @@ void hiensodunguoichoi(ThongTinPtr& nguoichoi){
     string rank = "Rank: ";
     string sodu = "Số dư: ";
     int pad_rank = chieurong - rank.length() - xoa_ansi_number(rk);
-    if(pad_rank < 0) pad_rank = 0;
+    if(pad_rank < 0) 
+        pad_rank = 0;
     cout << "┌────────────────────────────┐\n";
     cout << "│ " << YELLOW << tennguoichoi << RESET << UNDERLINE << tnc 
          << NO_UNDERLINE << string(chieurong - tennguoichoi.length() - tnc.length(), ' ') << "│\n";  
@@ -1240,7 +1287,8 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
             }
             int chieudaidong = doronghienthi(noidung.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if(i == chon){
                 cout << "│" << CYAN << " ▶ "
                      << noidung << string(khoangtrang,' ')
@@ -1333,20 +1381,22 @@ void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi) {
             string dong = oss.str();
             int chieudaidong = doronghienthithuc(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if (i == chon){
                 cout << "│"  << CYAN << " ▶ " << dong
                      << string(khoangtrang, ' ') << RESET << "│" << endl;
-            }
-            else{
+            } else{
                 cout << "│   " << dong
                      << string(khoangtrang, ' ')  << "│" << endl;
             }
         }
         cout << "└──────────────────────┘" << endl;
         int phim = docphim();
-        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80) chon = (chon + 1) % somuc;
+        if(phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) 
+            chon = (chon + 1) % somuc;
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
@@ -1414,20 +1464,22 @@ void sanh_gamexocxoc(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
             string dong = oss.str();
             int chieudaidong = doronghienthi(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if (i == chon){
                 cout << "│"  << CYAN << " ▶ " << dong
                      << string(khoangtrang, ' ') << RESET << "│" << endl;
-            }
-            else{
+            } else{
                 cout << "│   " << dong
                      << string(khoangtrang, ' ')  << "│" << endl;
             }
         }
         cout << "└────────────────────────┘" << endl;
         int phim = docphim();
-        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80) chon = (chon + 1) % somuc;
+        if(phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) 
+            chon = (chon + 1) % somuc;
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
@@ -1483,20 +1535,22 @@ void sanh_gamebai(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             string dong = oss.str();
             int chieudaidong = doronghienthi(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if (i == chon){
                 cout << "│"  << CYAN << " ▶ " << dong
                      << string(khoangtrang, ' ') << RESET << "│" << endl;
-            }
-            else{
+            } else{
                 cout << "│   " << dong
                      << string(khoangtrang, ' ')  << "│" << endl;
             }
         }
         cout << "└────────────────────────┘" << endl;
         int phim = docphim();
-        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80) chon = (chon + 1) % somuc;
+        if(phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) 
+            chon = (chon + 1) % somuc;
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
@@ -1548,20 +1602,22 @@ void sanh_gamemayrui(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
             string dong = oss.str();
             int chieudaidong = doronghienthi(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if (i == chon){
                 cout << "│"  << CYAN << " ▶ " << dong
                      << string(khoangtrang, ' ') << RESET << "│" << endl;
-            }
-            else{
+            } else{
                 cout << "│   " << dong
                      << string(khoangtrang, ' ')  << "│" << endl;
             }
         }
         cout << "└────────────────────────┘" << endl;
         int phim = docphim();
-        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80) chon = (chon + 1) % somuc;
+        if(phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) 
+            chon = (chon + 1) % somuc;
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
@@ -1619,20 +1675,22 @@ void sanh_game2nguoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoicho
             string dong = oss.str();
             int chieudaidong = doronghienthi(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if (i == chon){
                 cout << "│"  << CYAN << " ▶ " << dong
                      << string(khoangtrang, ' ') << RESET << "│" << endl;
-            }
-            else{
+            } else{
                 cout << "│   " << dong
                      << string(khoangtrang, ' ')  << "│" << endl;
             }
         }
         cout << "└────────────────────────┘" << endl;
         int phim = docphim();
-        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80) chon = (chon + 1) % somuc;
+        if(phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) 
+            chon = (chon + 1) % somuc;
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
@@ -1691,20 +1749,22 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             string dong = oss.str();
             int chieudaidong = doronghienthi(dong.c_str());
             int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) khoangtrang = 0;
+            if(khoangtrang < 0) 
+                khoangtrang = 0;
             if (i == chon){
                 cout << "│"  << CYAN << " ▶ " << dong
                      << string(khoangtrang, ' ') << RESET << "│" << endl;
-            }
-            else{
+            } else{
                 cout << "│   " << dong
                      << string(khoangtrang, ' ')  << "│" << endl;
             }
         }
         cout << "└────────────────────────┘" << endl;
         int phim = docphim();
-        if(phim == 72) chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80) chon = (chon + 1) % somuc;
+        if(phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if(phim == 80) 
+            chon = (chon + 1) % somuc;
         else if(phim == 13) {
             hieuungamthanh_mp3(dd_dichuyenmenu, trangthaiamthanh);
             if(chon == 0){
@@ -1772,7 +1832,8 @@ void chosaukhinhapthanhcong(int sogiay) {
         int phantram = (i * 100) / dodaithanh;
         cout << "\r\tĐang tải: [";
         for (int j = 0; j < dodaithanh; j++) {
-            if (j < i) cout << CYAN << "▆" << RESET;
+            if (j < i) 
+                cout << CYAN << "▆" << RESET;
             else cout << " ";
         }
         cout << "] " << phantram << " %" << flush;
@@ -1791,13 +1852,11 @@ bool nhaptiencuoc(int& tiencuoc, ThongTinPtr &nguoichoi){
             cout << YELLOW << "\t\t(!) Vui lòng nhập tiền cược hợp lệ !" << RESET << endl;
             solansaitiencuoc++;
             continue;
-        }
-        else if(tiencuoc < sodunhonhat){
+        } else if(tiencuoc < sodunhonhat){
             cout << YELLOW << "\t\t(!) Tiền cược phải lớn hơn " 
                  << dinhdangtien(sodunhonhat) << " VND" << RESET << endl;
             solansaitiencuoc++;
-        }
-        else if(tiencuoc > nguoichoi->sodu) {
+        } else if(tiencuoc > nguoichoi->sodu) {
             cout << YELLOW << "\t\t(!) Mức cược hợp lệ 1000 - " 
                  << dinhdangtien(nguoichoi->sodu) << " VND"<< RESET << endl;
             solansaitiencuoc++;
