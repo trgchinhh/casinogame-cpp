@@ -24,22 +24,3 @@ const string noidungthongtin =
 "\t│ (" RED "◉" RESET ") " YELLOW "Bản quyền:" RESET " © 2026 - Nguyễn Trường Chinh       │\n"
 "\t│ (" RED "◉" RESET ") " YELLOW "Github: " RESET UNDERLINE "github.com/trgchinhh/casinogame-cpp" NO_UNDERLINE "   │\n"
 "\t└───────────────────────────────────────────────────┘\n";
-
-void mogithub(){
-    cout << noidungthongtin;
-    cout << "\t(?) Bạn có muốn xem chi tiết (y/n): ";
-    #ifdef _WIN32
-        char c = getch();
-    #else 
-        char c = getchar();
-    #endif
-    if(c == 'y'){
-        cout << "\n\tĐang mở Github";
-        #ifdef _WIN32
-            system("start https://github.com/trgchinhh/casinogame-cpp");
-        #else 
-            system("GTK_MODULES= xdg-open https://github.com/trgchinhh/casinogame-cpp");
-        #endif
-    }
-    cout << endl;
-}
