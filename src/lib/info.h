@@ -1,3 +1,8 @@
+#ifdef _WIN32
+    #include <conio.h>
+#else
+    #include <termios.h>
+#endif
 #include <iostream>
 using namespace std;
 
@@ -5,15 +10,36 @@ using namespace std;
 #define RED     "\033[38;2;255;120;120m"
 #define GREEN   "\033[38;2;120;255;120m"
 #define YELLOW  "\033[38;2;255;255;150m"
+#define UNDERLINE    "\033[4m"
+#define NO_UNDERLINE "\033[24m"
 
 const string noidungthongtin =
 "\n"
-"        ┌───────────────────────────────────────────────────┐\n"
-"        │          " RED "CASINO GAMES CONSOLE CUSTOM TUI" RESET "          │\n"
-"        ├───────────────────────────────────────────────────┤\n"
-"        │ (" RED "◉" RESET ") " YELLOW "Phiên bản:" RESET " v1.3.0                             │\n"
-"        │ (" RED "◉" RESET ") " YELLOW "Hoàn thành:" RESET " 28/02/2026                        │\n"
-"        │ (" RED "◉" RESET ") " YELLOW "Giấy phép:" RESET " MIT                                │\n"
-"        │ (" RED "◉" RESET ") " YELLOW "Bản quyền:" RESET " © 2026 - Nguyễn Trường Chinh       │\n"
-"        │ (" RED "◉" RESET ") " YELLOW "Github:" RESET " github.com/trgchinhh/casinogame-cpp   │\n"
-"        └───────────────────────────────────────────────────┘\n";
+"\t┌───────────────────────────────────────────────────┐\n"
+"\t│          " RED "CASINO GAMES CONSOLE CUSTOM TUI" RESET "          │\n"
+"\t├───────────────────────────────────────────────────┤\n"
+"\t│ (" RED "◉" RESET ") " YELLOW "Phiên bản:" RESET " v1.3.0                             │\n"
+"\t│ (" RED "◉" RESET ") " YELLOW "Hoàn thành:" RESET " 28/02/2026                        │\n"
+"\t│ (" RED "◉" RESET ") " YELLOW "Giấy phép:" RESET " MIT                                │\n"
+"\t│ (" RED "◉" RESET ") " YELLOW "Bản quyền:" RESET " © 2026 - Nguyễn Trường Chinh       │\n"
+"\t│ (" RED "◉" RESET ") " YELLOW "Github: " RESET UNDERLINE "github.com/trgchinhh/casinogame-cpp" NO_UNDERLINE "   │\n"
+"\t└───────────────────────────────────────────────────┘\n";
+
+void mogithub(){
+    cout << noidungthongtin;
+    cout << "\t(?) Bạn có muốn mở Github (y/n): ";
+    #ifdef _WIN32
+        char c = getch();
+    #else 
+        char c = getchar();
+    #endif
+    if(c == 'y'){
+        cout << "\n\tĐang mở Github" << endl;
+        #ifdef _WIN32
+            system("start https://github.com/trgchinhh/casinogame-cpp");
+        #else 
+            system("GTK_MODULES= xdg-open https://github.com/trgchinhh/casinogame-cpp");
+        #endif
+    }
+    cout << endl;
+}
