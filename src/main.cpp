@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 25/02/2026 - Bản đa nền tảng        *
+ * Hoàn thành ngày 28/02/2026 - Bản đa nền tảng        *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -752,7 +752,7 @@ vector<LichSu> tailichsujson(string& tentaikhoan){
         lichsu.sodu        = i["sodu"];
         lichsu.tiencuoc    = i["tiencuoc"];
         lichsu.luachon     = i["luachon"];
-        lichsu.tongdiem    = i["tongxucxac"];
+        lichsu.tongdiem    = i["tongdiem"];
         lichsu.ketqua      = i["ketqua"];
         danhsachlichsu.push_back(lichsu);
     }
@@ -775,7 +775,7 @@ void luulichsujson(string& tentaikhoan, LichSu& lichsu){
     j["sodu"]        = lichsu.sodu;
     j["tiencuoc"]    = lichsu.tiencuoc;
     j["luachon"]     = lichsu.luachon;
-    j["tongxucxac"]  = lichsu.tongdiem;
+    j["tongdiem"]    = lichsu.tongdiem;
     j["ketqua"]      = lichsu.ketqua;
     data[tentaikhoan].push_back(j);
     if(data[tentaikhoan].size() > 10){
@@ -1930,4 +1930,3 @@ ___CasinoGames___(int argc, char** argv) {
     ancontrochuot(false);
     return 0;
 }
-
