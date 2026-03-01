@@ -1084,6 +1084,26 @@ void dungchuongtrinh(){
     getchar();
 }
 
+void mogithub(){
+    cout << noidungthongtin;
+    cout << "\t(?) Bạn có muốn xem chi tiết (y/n): ";
+    #ifdef _WIN32
+        char c = getch();
+    #else 
+        char c = getchar();
+    #endif
+    if(c == 'y'){
+        cout << RED << "\n\t>" << RESET << " Đang mở github...";
+        sleep(1500);
+        #ifdef _WIN32
+            system("start https://github.com/trgchinhh/casinogame-cpp");
+        #else 
+            system("GTK_MODULES= xdg-open https://github.com/trgchinhh/casinogame-cpp");
+        #endif
+    }
+    cout << endl;
+}
+
 void hienthongtinadmin(const string& tentaikhoanadmin){
     const int chieurong = 31;
     string taikhoan = "(-) Tài khoản: ";
@@ -1091,10 +1111,6 @@ void hienthongtinadmin(const string& tentaikhoanadmin){
     cout << "│" << YELLOW << taikhoan << RESET << UNDERLINE << tentaikhoanadmin 
          << NO_UNDERLINE << string(chieurong - taikhoan.length() - tentaikhoanadmin.length(), ' ') << "│\n";
     cout << "└────────────────────────────┘\n";
-}
-
-void thongtingame(){
-
 }
 
 void hiensodunguoichoi(ThongTinPtr& nguoichoi){
