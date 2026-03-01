@@ -102,12 +102,12 @@ struct FlagGame {
 };
 
 // số lượng game flag
-const int soluonggameflag = 5;
+const int soluonggameflag          = 5;
 
 // Các đường dẫn 
 // Lưu dữ liệu
-const string dd_danhsachtaikhoan = "data/player/taikhoan.json";
-const string dd_danhsachlichsu   = "data/player/lichsugame.json";
+const string dd_danhsachtaikhoan   = "data/player/taikhoan.json";
+const string dd_danhsachlichsu     = "data/player/lichsugame.json";
 // Lưu âm thanh
 const string dd_lindachaocanha     = "sound/linda_chao_ca_nha.wav";
 const string dd_1dongxuroi         = "sound/1_dong_xu_roi.mp3";
@@ -123,14 +123,14 @@ const string dd_dichuyenmenu       = "sound/chon_menu.mp3";
 const string dd_xinvinhbietcu      = "sound/xin_vinh_biet_cu.wav";
 
 // Các giá trị bắt buộc 
-const int levelthapnhat = 0;            // level thấp nhất cho phép
-const int levelcaonhat = 10;            // level cao nhất cho phép
-const int sodunhonhat = 1000;           // số dư nhỏ nhất cho phép
-const int sodulonnhat = 100000000;      // số dư lớn nhất cho phép
-const int sogiaycho = 2;                // số giây load khi đăng nhập / xuất 
-const int solansaitoida = 3;            // số lần sai tối đa
-const int chieudaima6so = 6;            // chiều dài mã khóa 6 số
-static bool trangthaiamthanh = false;   // trạng thái âm thanh (mới vào luôn tắt)
+const int levelthapnhat            = 0;             // level thấp nhất cho phép
+const int levelcaonhat             = 10;            // level cao nhất cho phép
+const int sodunhonhat              = 1000;          // số dư nhỏ nhất cho phép
+const int sodulonnhat              = 100000000;     // số dư lớn nhất cho phép
+const int sogiaycho                = 2;             // số giây load khi đăng nhập / xuất 
+const int solansaitoida            = 3;             // số lần sai tối đa
+const int chieudaima6so            = 6;             // chiều dài mã khóa 6 số
+static bool trangthaiamthanh       = false;         // trạng thái âm thanh (mới vào luôn tắt)
 
 // NGUYÊN MẪU HÀM
 
@@ -159,6 +159,7 @@ int doronghienthithuc(const string& str);
 int dodaihienthiutf8(const string& s);
 int docphim();
 
+void mogithub(); // Mở repo github bằng trình duyệt
 void sleep(int sogiaymili); // Delay 
 void clear(); // Xóa màn hình  
 bool xoataikhoanjson(string& tentaikhoan);
