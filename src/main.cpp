@@ -1084,13 +1084,28 @@ void dungchuongtrinh(){
     getchar();
 }
 
+// hàm getch cho linux
+#ifdef __linux__
+    char getchlinux() {
+        struct termios oldt, newt;
+        char ch;
+        tcgetattr(STDIN_FILENO, &oldt);
+        newt = oldt;
+        newt.c_lflag &= ~(ICANON | ECHO);
+        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+        ch = getchar();
+        tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+        return ch;
+    }
+#endif
+
 void mogithub(){
     cout << noidungthongtin;
     cout << "\t(?) Bạn có muốn xem chi tiết (y/n): ";
     #ifdef _WIN32
         char c = getch();
     #else 
-        char c = getchar();
+        char c = getchlinux();
     #endif
     if(c == 'y'){
         cout << RED << "\n\t>" << RESET << " Đang mở github...";
