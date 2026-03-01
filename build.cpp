@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 25/02/2026 - Bản đa nền tảng        *
+ * Hoàn thành ngày 28/02/2026 - Bản đa nền tảng        *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -50,3 +50,4 @@ int main(){
     }
     return 0;
 }
+
