@@ -34,7 +34,7 @@ void mogithub(){
         char c = getchar();
     #endif
     if(c == 'y'){
-        cout << "\n\tĐang mở Github" << endl;
+        cout << "\n\tĐang mở Github";
         #ifdef _WIN32
             system("start https://github.com/trgchinhh/casinogame-cpp");
         #else 
