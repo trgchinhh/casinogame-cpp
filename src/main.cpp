@@ -1189,7 +1189,7 @@ void mogithub(){
     #endif
     if(c == 'y'){
         cout << RED << "\n\t>" << RESET << " Đang mở github..." << flush;
-        sleep(1500);
+        sleep(1000);
         #ifdef _WIN32
             system("start https://github.com/trgchinhh/casinogame-cpp");
         #else 
@@ -1822,6 +1822,7 @@ void loadraketqua(int sogiay){
         vitri = (vitri + 1) % 4;
         sleep(dotre);
     }
+    cout << endl;
 }
 
 // chờ load sau khi đăng nhập / xuất
@@ -2015,7 +2016,14 @@ int kiemtraflag(char* flag){
 
 // hướng dẫn chơi game flag
 void huongdanflag(){
-    cout << RED << "Vui lòng nhập đúng tên game !" << RESET << endl; 
+    cout << RED << "Vui lòng nhập đúng tên game !" << RESET << endl;
+    #ifdef _WIN32 
+        cout << YELLOW << "Cách chơi: " << RESET << "Casino.exe <tên trò chơi>" << endl;
+        cout << "\tVD: Casino.exe nem1xx" << endl;
+    #else 
+        cout << YELLOW << "Cách chơi: " << RESET << "./Casino <tên trò chơi>" << endl;
+        cout << "\tVD: ./Casino nem1xx" << endl;
+    #endif
     cout << "Các game hợp lệ: [";
     for(int i = 0; i < soluonggameflag -1; i++){
         cout << YELLOW << games[i].game << RESET << ", ";
