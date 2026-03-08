@@ -24,30 +24,41 @@ using namespace std;
 #define RED     "\033[38;2;255;120;120m"
 
 #ifdef _WIN32
-    const string tenchuongtrinh = "Casino.exe";
+    const string tenchuongtrinh = "bin\\Casino.exe";
     const string lenhbiendich = string("g++ src\\main.cpp")
                               + " -IC:\\OpenSSL-Win64\\include"
                               + " -LC:\\OpenSSL-Win64\\lib src\\resource\\resource.o -o "
                               + tenchuongtrinh + " -lwinmm -lssl -lcrypto -w";
 #else
-    const string tenchuongtrinh = "./Casino";
+    const string tenchuongtrinh = "bin/Casino";
     const string lenhbiendich = string("g++ src/main.cpp")
-                              + " -o" + tenchuongtrinh + " -lssl -lcrypto -w";
+                              + " -o " + tenchuongtrinh + " -lssl -lcrypto -w";
 #endif
 
 int main(){
     cout << "Đang biên dịch ! Vui lòng chờ..." << endl;
     try {
+        // Kiểm tra tồn tại bin (tạo thư mục bin)
+        #ifdef _WIN32
+            system("if not exist bin mkdir bin");
+        #else
+            system("mkdir -p bin");
+        #endif
         int ketquabiendich = system(lenhbiendich.c_str());
         if(ketquabiendich != 0)
             throw runtime_error("Biên dịch thất bại !");
+        // cout << "Đã biên dịch xong ! Chạy file tại " << tenchuongtrinh << endl;
         cout << "Đã biên dịch xong ! Chạy file (y/n): ";
         char c; cin >> c;
-        if(c == 'y') 
-            system(tenchuongtrinh.c_str());
+        if(c == 'y'){
+            #ifdef _WIN32
+                system("cd bin && Casino.exe");
+            #else
+                system("cd bin && ./Casino");
+            #endif
+        }
     } catch(const exception& e){
         cout << RED << "\nLỗi: " << e.what() << RESET << endl;
     }
     return 0;
 }
-
