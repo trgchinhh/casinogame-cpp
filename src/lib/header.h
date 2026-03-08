@@ -37,7 +37,6 @@
 
 // Định nghĩa tên hàm main
 #define ___CasinoGames___ signed main
-
 #pragma comment(lib, "winmm.lib")
 
 using namespace std;
@@ -95,7 +94,9 @@ struct LichSu {
   * Game flag truyền tham số [tên game] vào sau tên chương trình
   VD: Casino.exe bacao hoặc Casino.exe "bacao"
   Các game flag hợp lệ bao gồm: [nem1xx, nem3xx, bacao, xidach, sobai] 
+  Có thể phát triển thêm
 */
+
 struct FlagGame {
     const char* game; 
     void (*tenhamgame)();
@@ -106,21 +107,21 @@ const int soluonggameflag          = 5;
 
 // Các đường dẫn 
 // Lưu dữ liệu
-const string dd_danhsachtaikhoan   = "data/player/taikhoan.json";
-const string dd_danhsachlichsu     = "data/player/lichsugame.json";
+const string dd_danhsachtaikhoan   = "..//data/player/taikhoan.json";
+const string dd_danhsachlichsu     = "..//data/player/lichsugame.json";
 // Lưu âm thanh
-const string dd_lindachaocanha     = "sound/linda_chao_ca_nha.wav";
-const string dd_1dongxuroi         = "sound/1_dong_xu_roi.mp3";
-const string dd_conginuadau        = "sound/con_gi_nua_dau.mp3";
-const string dd_dongudoanhai       = "sound/do_ngu_do_an_hai.mp3";
-const string dd_dunglacontraicuata = "sound/dung_la_con_trai_cua_ta.mp3";
-const string dd_giongcuoithay3     = "sound/giong_cuoi_thay_3.mp3";
-const string dd_hdpethingonluon    = "sound/hdpe_thi_ngon_luon.mp3";
-const string dd_lacxucxac          = "sound/lac_xuc_xac.mp3";
-const string dd_nhieudongxuroi     = "sound/nhieu_dong_xu_roi.mp3";
-const string dd_maymuanuadi        = "sound/mua_nua_di.mp3";
-const string dd_dichuyenmenu       = "sound/chon_menu.mp3";
-const string dd_xinvinhbietcu      = "sound/xin_vinh_biet_cu.wav";
+const string dd_lindachaocanha     = "..//sound/linda_chao_ca_nha.wav";
+const string dd_1dongxuroi         = "..//sound/1_dong_xu_roi.mp3";
+const string dd_conginuadau        = "..//sound/con_gi_nua_dau.mp3";
+const string dd_dongudoanhai       = "..//sound/do_ngu_do_an_hai.mp3";
+const string dd_dunglacontraicuata = "..//sound/dung_la_con_trai_cua_ta.mp3";
+const string dd_giongcuoithay3     = "..//sound/giong_cuoi_thay_3.mp3";
+const string dd_hdpethingonluon    = "..//sound/hdpe_thi_ngon_luon.mp3";
+const string dd_lacxucxac          = "..//sound/lac_xuc_xac.mp3";
+const string dd_nhieudongxuroi     = "..//sound/nhieu_dong_xu_roi.mp3";
+const string dd_maymuanuadi        = "..//sound/mua_nua_di.mp3";
+const string dd_dichuyenmenu       = "..//sound/chon_menu.mp3";
+const string dd_xinvinhbietcu      = "..//sound/xin_vinh_biet_cu.wav";
 
 // Các giá trị bắt buộc 
 const int levelthapnhat            = 0;             // level thấp nhất cho phép
@@ -200,6 +201,8 @@ void loadraketqua(int sogiay);
 void chosaukhinhapthanhcong(int sogiay);
 void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 void huongdanflag();
+
+char getchlinux();
 
 string chematkhau();
 string mahoamatkhau(string matkhau);
