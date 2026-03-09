@@ -18,7 +18,10 @@
 
 #include <iostream>
 #include <exception>
+#include <filesystem>
+
 using namespace std;
+namespace fs = filesystem;
 
 #define RESET   "\033[0m"
 #define RED     "\033[38;2;255;120;120m"
@@ -35,8 +38,20 @@ using namespace std;
                               + " -o " + tenchuongtrinh + " -lssl -lcrypto -w";
 #endif
 
+bool cacfilecanbiendich() {
+    if(!fs::exists(tenchuongtrinh))
+        return true;
+    auto thoigiandich_exe = fs::last_write_time(tenchuongtrinh);
+    for(auto &p : fs::recursive_directory_iterator("src")){
+        if(p.path().extension() == ".cpp" || p.path().extension() == ".h"){
+            if(fs::last_write_time(p) > thoigiandich_exe)
+                return true;
+        }
+    }
+    return false;
+}
+
 int main(){
-    cout << "Đang biên dịch ! Vui lòng chờ..." << endl;
     try {
         // Kiểm tra tồn tại bin (tạo thư mục bin)
         #ifdef _WIN32
@@ -44,11 +59,18 @@ int main(){
         #else
             system("mkdir -p bin");
         #endif
-        int ketquabiendich = system(lenhbiendich.c_str());
-        if(ketquabiendich != 0)
-            throw runtime_error("Biên dịch thất bại !");
-        // cout << "Đã biên dịch xong ! Chạy file tại " << tenchuongtrinh << endl;
-        cout << "Đã biên dịch xong ! Chạy file (y/n): ";
+
+        if(cacfilecanbiendich()){
+            cout << "Đang biên dịch ! Vui lòng chờ..." << endl;
+            //cout << "Source thay đổi -> Đang biên dịch lại..." << RESET << endl;
+            int ketqua = system(lenhbiendich.c_str());
+            if(ketqua != 0){
+                throw runtime_error(RED "Biên dịch thất bại !");
+                exit(0);
+            }
+        }
+        else cout << "Không có thay đổi -> dùng file build cũ" << RESET << endl;
+        cout << "Chạy chương trình (y/n): ";
         char c; cin >> c;
         if(c == 'y'){
             #ifdef _WIN32
