@@ -1268,8 +1268,8 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
         taidulieujson(danhsachnguoichoi);
         inbanner(bannertrangchu);
         cout << "┌─────────── " << RESET << RED << "GỢI Ý" << RESET << " ────────────┐\n";
-        cout << "│ " << YELLOW << "▶ " << RESET << "Dùng phím " << RED << "↑ ↓" << RESET << " để di chuyển │\n";
-        cout << "│ " << YELLOW << "▶ " << RESET << "Dùng phím " << RED << "Enter" << RESET << " để chọn    │\n";
+        cout << "│ " << RED << "▶ " << RESET << "Dùng phím " << RED << "↑ ↓" << RESET << " để di chuyển │\n";
+        cout << "│ " << RED << "▶ " << RESET << "Dùng phím " << RED << "Enter" << RESET << " để chọn    │\n";
         cout << "└──────────────────────────────┘\n\n";
         const int dorongmenu = 19;
         cout << "┌──────── " << RED << "MENU" << RESET << " ────────┐\n";
