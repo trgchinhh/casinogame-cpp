@@ -24,7 +24,10 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 ---
 
 ## Video demo
-* Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
+* Demo bản cũ: [Xem đầy đủ tại đây](https://drive.google.com/drive/my-drive?q=type:video%20parent:0AE8VmzF_NmdGUk9PVA)
+* Demo bản mới: [Xem đầy đủ tại đây](https://drive.google.com/drive/my-drive?q=type:video%20parent:0AE8VmzF_NmdGUk9PVA)
+
+![Casino demo](docs/casino-demo.gif)
 
 ---
 
@@ -109,33 +112,7 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 ---
 
 ## Ảnh minh họa
-
-### Đăng nhập
-![Login](https://github.com/user-attachments/assets/6c64cfe6-5e64-483d-bbb3-f8f1566b5182)
-
-### Hướng dẫn
-![Hướng dẫn](https://github.com/user-attachments/assets/bd1c06aa-efd7-45e7-b892-cee63ee661ee)
-
-### Trang Admin
-![Admin](https://github.com/user-attachments/assets/0e0df5f5-e185-4223-8409-7fe425c97a2c)
-
-### Trang Player
-![Game](https://github.com/user-attachments/assets/ec2e2017-592a-47c6-bbd6-c64ee5388d3d)
-
-### Trang game xóc xóc 
-![Xóc Xóc](https://github.com/user-attachments/assets/4959742b-b88f-4de8-93dd-5648bebc5a22)
-
-### Trang game bài
-![Game bài](https://github.com/user-attachments/assets/6339d5d3-f34a-42bd-a895-8661fe7ed1bc)
-
-### Trang game may rủi
-![Game may rủi](https://github.com/user-attachments/assets/265f8581-49be-4a91-8823-647eac3ace5b)
-
-### Trang game 2 người
-![Game 2 người](https://github.com/user-attachments/assets/15fc5d79-22dd-49d9-9345-17fcce442742)
-
-### Lịch sử chơi
-![Lịch sử chơi](https://github.com/user-attachments/assets/78e624a8-5cb1-4970-ac1d-e5be431e6b1e)
+<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/8cf1f487-9092-4e54-b72c-a0d24b55f350" />
 
 ---
 
