@@ -2,18 +2,19 @@
 
 ## Giới thiệu
 
-**Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, mang lại trải nghiệm sinh động ngay trong terminal.
+**Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, có tích hợp AI, mang lại trải nghiệm sinh động ngay trong terminal.
 
 Dự án được xây dựng với mục tiêu:
 
 * Rèn luyện tư duy lập trình C++ thông qua một project nhỏ
 * Xây dựng 1 TUI của riêng mình (để hạn chế việc dùng chuột khi chơi)
 * Làm quen với việc tổ chức mã nguồn, tách module và quản lý dữ liệu
-* Mô phỏng một hệ thống game có tài khoản, phân quyền và lịch sử chơi và bảo mật
+* Mô phỏng một hệ thống game có tài khoản, phân quyền, cài đặt, xếp hạng, lịch sử chơi và bảo mật
+* Tích hợp AI dự đoán kết quả vào game
 
 Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộng thêm từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
 
-> ⚠️ Lưu ý: Do sử dụng nhiều ký tự đặc biệt và ASCII art, nên khuyến nghị sử dụng các font monospace như **JetBrains Mono**, **Fira Code**, v.v. để hiển thị tốt nhất.
+> ⚠️ Lưu ý: Do sử dụng nhiều ký tự đặc biệt và ASCII art, nên khuyến nghị sử dụng các font monospace như **JetBrains Mono Nerd Font**, **Fira Code Nerd Font**, v.v. để hiển thị tốt nhất.
 
 ---
 
@@ -24,8 +25,6 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 
 ## Video demo
 * Demo phiên bản cũ: [Xem tại đây](https://drive.google.com/file/d/1d1DOfslxWbXEJcciMRLrhgMa6Re98FzR/view?usp=sharing)
-* Demo phiên bản cũ (có phân quyền): [Xem tại đây](https://drive.google.com/file/d/1Hy8oKgY7B0qIRuHvk53ie2pSgyyENue0/view?usp=sharing)
-* Demo phiên bản đầy đủ mới nhất: [Xem tại đây](https://drive.google.com/file/d/1oOljz_fCsw7h26MSMgVNdi5Wh4vCp33_/view?usp=sharing)
 
 ---
 
@@ -53,35 +52,17 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 > ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
 
 #### Quyền User (Trang game)
-* Game Xóc xóc<br>
-    ├─ Tài xỉu 1 xúc xắc<br>
-    ├─ Tài xỉu 3 xúc xắc<br>
-    ├─ Xóc dĩa<br>
-    ├─ Úp ngửa xu<br>
-    ├─ Lắc bầu cua<br>
-    └─ Tung xu (úp / ngửa)<br>
-* Game bài<br>
-    ├─ Ba cào (cào 3 lá)<br>
-    ├─ Xì dách (21 điểm)<br>
-    └─ So bài 1 lá<br>
-* Game May rủi<br>
-    ├─ Đoán dài / ngắn<br>
-    ├─ Đoán 2 / 7 màu sắc<br>
-    ├─ Đoán số trong khoảng A → B<br>
-    ├─ Chẵn / lẻ (0 → 9)<br>
-    └─ Kéo búa bao<br>
-* Game 2 người<br>
-    ├─ Ném 1 xúc xắc<br>
-    ├─ Ném 3 xúc xắc<br>
-    ├─ Ba cào 2 người<br>
-    ├─ Xì dách 2 người<br>
-    └─ So bài 1 lá <br>
-* Game flag<br>
-    ├─ Ném 1 xúc xắc<br>
-    ├─ Ném 3 xúc xắc<br>
-    ├─ Ba cào 2 người<br>
-    ├─ Xì dách 2 người<br>
-    └─ So bài 1 lá <br>
+* Game Xóc xóc
+* Game bài
+* Game May rủi
+* Game 2 người
+* Game flag
+* Bảng xếp hạng
+* Lịch sử chơi
+* Cài đặt
+* Đăng xuất (quay về trang chủ)
+
+
 > ⚠️ Lưu ý: phần game flag chỉ chơi được khi gõ terminal `Casino.exe [game]`
 * Xem lịch sử chơi
 * Đăng xuất (quay về trang chủ)
@@ -97,83 +78,6 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
   * JetBrains Mono
   * Fira Code
   * Hoặc dùng các font hỗ trợ NerdFont
-
----
-
-## Cấu trúc thư mục
-
-```text
-├── data
-│   ├── admin
-│   │   └── thongtintk.json
-│   └── player
-│       ├── lichsugame.json
-│       └── taikhoan.json
-├── sound
-│   ├── 1_dong_xu_roi.mp3
-│   ├── chon_menu.mp3
-│   ├── con_gi_nua_dau.mp3
-│   ├── do_ngu_do_an_hai.mp3
-│   ├── dung_la_con_trai_cua_ta.mp3
-│   ├── giong_cuoi_thay_3.mp3
-│   ├── hdpe_thi_ngon_luon.mp3
-│   ├── lac_xuc_xac.mp3
-│   ├── linda_chao_ca_nha.mp3
-│   ├── linda_chao_ca_nha.wav
-│   ├── mua_nua_di.mp3
-│   ├── nhieu_dong_xu_roi.mp3
-│   ├── xin_vinh_biet_cu.mp3
-│   └── xin_vinh_biet_cu.wav
-├── src
-│   ├── game
-│   │   ├── Game 2 người
-│   │   │   ├── bacao2nguoi.h
-│   │   │   ├── nem1xucxac.h
-│   │   │   ├── nem3xucxac.h
-│   │   │   ├── sobai1la2nguoi.h
-│   │   │   └── xidach2nguoi.h
-│   │   ├── Game bài
-│   │   │   ├── bacao.h
-│   │   │   ├── xidach.h
-│   │   │   └── sobai1la.h
-│   │   ├── Game flag
-│   │   │   ├── bacao2nguoi_flag.h
-│   │   │   ├── nem1xucxac_flag.h
-│   │   │   ├── nem3xucxac_flag.h
-│   │   │   ├── sobai1la2nguoi_flag.h
-│   │   │   └── xidach2nguoi_flag.h
-│   │   ├── Game may rủi
-│   │   │   ├── chanle.h
-│   │   │   ├── daingan.h
-│   │   │   ├── doanmau.h
-│   │   │   ├── doanso.h
-│   │   │   └── keobuabao.h
-│   │   └── Game xóc xóc
-│   │       ├── baucua.h
-│   │       ├── taixiu1xx.h
-│   │       ├── taixiu3xx.h
-│   │       ├── upngua.h
-│   │       └── xocdia.h
-│   ├── lib
-│   │   ├── admin.h
-│   │   ├── banner.h
-│   │   ├── dothd.h
-│   │   ├── header.h
-│   │   ├── info.h
-│   │   ├── instruct.h
-│   │   ├── json.hpp
-│   │   ├── picosha2.h
-│   │   └── props.h
-│   ├── resource
-│   │   ├── casino.ico
-│   │   ├── resource.o
-│   │   └── resource.rc
-│   ├── include.h
-│   └── main.cpp
-├── LICENSE
-├── README.md
-└── build.cpp
-```
 
 ---
 
