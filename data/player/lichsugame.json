@@ -1,0 +1,616 @@
+{
+    "chinh": [
+        {
+            "phien": 999,
+            "trochoi": "XocDia",
+            "sodu": 95706877,
+            "tiencuoc": 34000,
+            "luachon": "le",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 1000,
+            "trochoi": "BauCua",
+            "sodu": 95803877,
+            "tiencuoc": 102000,
+            "luachon": "nai ga bau",
+            "tongdiem": 3,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 1001,
+            "trochoi": "BaCao",
+            "sodu": 96253877,
+            "tiencuoc": 450000,
+            "luachon": "Lat bai tung la",
+            "tongdiem": 7,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 1002,
+            "trochoi": "XiDach",
+            "sodu": 96253877,
+            "tiencuoc": 34600,
+            "luachon": "Rut 2 lan",
+            "tongdiem": 20,
+            "ketqua": "Hòa"
+        },
+        {
+            "phien": 1003,
+            "trochoi": "SoBai",
+            "sodu": 96299877,
+            "tiencuoc": 46000,
+            "luachon": "Lat bai 1 la",
+            "tongdiem": 8,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 1004,
+            "trochoi": "Daingan",
+            "sodu": 95844877,
+            "tiencuoc": 450000,
+            "luachon": "dai",
+            "tongdiem": 24,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 1005,
+            "trochoi": "Doanmau",
+            "sodu": 95834877,
+            "tiencuoc": 60000,
+            "luachon": "luc cham",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 1006,
+            "trochoi": "Doanso",
+            "sodu": 95784877,
+            "tiencuoc": 45000,
+            "luachon": "8",
+            "tongdiem": 4,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 1007,
+            "trochoi": "Keobuabao",
+            "sodu": 95806877,
+            "tiencuoc": 30000,
+            "luachon": "Búa",
+            "tongdiem": 0,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 1008,
+            "trochoi": "Taixiu3xx",
+            "sodu": 95803877,
+            "tiencuoc": 3000,
+            "luachon": "t",
+            "tongdiem": 6,
+            "ketqua": "Thua"
+        }
+    ],
+    "bao": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 100045000,
+            "tiencuoc": 50000,
+            "luachon": "x",
+            "tongdiem": 9,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Chanle",
+            "sodu": 100090000,
+            "tiencuoc": 50000,
+            "luachon": "c",
+            "tongdiem": 4,
+            "ketqua": "Chẵn"
+        },
+        {
+            "phien": 3,
+            "trochoi": "Upngua",
+            "sodu": 100540000,
+            "tiencuoc": 500000,
+            "luachon": "u",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 4,
+            "trochoi": "Taixiu3xx",
+            "sodu": 100585000,
+            "tiencuoc": 50000,
+            "luachon": "x",
+            "tongdiem": 9,
+            "ketqua": "Xỉu"
+        }
+    ],
+    "an": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 270000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 12,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Taixiu3xx",
+            "sodu": 73270000,
+            "tiencuoc": 300000,
+            "luachon": "x",
+            "tongdiem": 7,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 3,
+            "trochoi": "Taixiu3xx",
+            "sodu": 73540000,
+            "tiencuoc": 300000,
+            "luachon": "x",
+            "tongdiem": 5,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 4,
+            "trochoi": "Upngua",
+            "sodu": 73576000,
+            "tiencuoc": 40000,
+            "luachon": "u",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 5,
+            "trochoi": "Taixiu3xx",
+            "sodu": 73603000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 8,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 6,
+            "trochoi": "Taixiu1xx",
+            "sodu": 73573000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 4,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 7,
+            "trochoi": "Chanle",
+            "sodu": 73543000,
+            "tiencuoc": 30000,
+            "luachon": "c",
+            "tongdiem": 1,
+            "ketqua": "Lẻ"
+        }
+    ],
+    "ui": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 3027000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 8,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Doanso",
+            "sodu": 2977000,
+            "tiencuoc": 50000,
+            "luachon": "10",
+            "tongdiem": 5,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 3,
+            "trochoi": "Upngua",
+            "sodu": 3004000,
+            "tiencuoc": 30000,
+            "luachon": "u",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 4,
+            "trochoi": "Taixiu3xx",
+            "sodu": 3031000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 7,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 5,
+            "trochoi": "Taixiu1xx",
+            "sodu": 3001000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 5,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 6,
+            "trochoi": "Chanle",
+            "sodu": 3003700,
+            "tiencuoc": 3000,
+            "luachon": "c",
+            "tongdiem": 2,
+            "ketqua": "Chẵn"
+        },
+        {
+            "phien": 7,
+            "trochoi": "Upngua",
+            "sodu": 3048700,
+            "tiencuoc": 50000,
+            "luachon": "u",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        }
+    ],
+    "oi": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 80027000,
+            "tiencuoc": 30000,
+            "luachon": "x",
+            "tongdiem": 10,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Taixiu3xx",
+            "sodu": 79997000,
+            "tiencuoc": 30000,
+            "luachon": "t",
+            "tongdiem": 9,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 3,
+            "trochoi": "Chanle",
+            "sodu": 79967000,
+            "tiencuoc": 30000,
+            "luachon": "c",
+            "tongdiem": 3,
+            "ketqua": "Lẻ"
+        },
+        {
+            "phien": 4,
+            "trochoi": "Upngua",
+            "sodu": 80327000,
+            "tiencuoc": 400000,
+            "luachon": "u",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 5,
+            "trochoi": "Taixiu1xx",
+            "sodu": 80297000,
+            "tiencuoc": 30000,
+            "luachon": "t",
+            "tongdiem": 2,
+            "ketqua": "Xỉu"
+        },
+        {
+            "phien": 6,
+            "trochoi": "Taixiu3xx",
+            "sodu": 80294000,
+            "tiencuoc": 3000,
+            "luachon": "x",
+            "tongdiem": 14,
+            "ketqua": "Tài"
+        },
+        {
+            "phien": 7,
+            "trochoi": "Upngua",
+            "sodu": 80291000,
+            "tiencuoc": 3000,
+            "luachon": "u",
+            "tongdiem": 2,
+            "ketqua": "Thua"
+        }
+    ],
+    "phuc": [
+        {
+            "phien": 11,
+            "trochoi": "Keobuabao",
+            "sodu": 79495700,
+            "tiencuoc": 500000,
+            "luachon": "Bao",
+            "tongdiem": 2,
+            "ketqua": "Hòa"
+        },
+        {
+            "phien": 12,
+            "trochoi": "Keobuabao",
+            "sodu": 78995700,
+            "tiencuoc": 500000,
+            "luachon": "Kéo",
+            "tongdiem": 1,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 13,
+            "trochoi": "XiDach",
+            "sodu": 78995700,
+            "tiencuoc": 700000,
+            "luachon": "Rut 2 lan",
+            "tongdiem": 18,
+            "ketqua": "Hòa"
+        },
+        {
+            "phien": 14,
+            "trochoi": "XiDach",
+            "sodu": 78295700,
+            "tiencuoc": 700000,
+            "luachon": "Rut 2 lan",
+            "tongdiem": 19,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 15,
+            "trochoi": "BauCua",
+            "sodu": 78325700,
+            "tiencuoc": 90000,
+            "luachon": "cua bau tom",
+            "tongdiem": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 16,
+            "trochoi": "Keobuabao",
+            "sodu": 78275700,
+            "tiencuoc": 50000,
+            "luachon": "Kéo",
+            "tongdiem": 1,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 17,
+            "trochoi": "Chanle",
+            "sodu": 78278400,
+            "tiencuoc": 3000,
+            "luachon": "c",
+            "tongdiem": 4,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 18,
+            "trochoi": "Keobuabao",
+            "sodu": 78275400,
+            "tiencuoc": 3000,
+            "luachon": "Kéo",
+            "tongdiem": 1,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 19,
+            "trochoi": "XocDia",
+            "sodu": 78278400,
+            "tiencuoc": 3000,
+            "luachon": "c",
+            "tongdiem": 1,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 20,
+            "trochoi": "Taixiu3xx",
+            "sodu": 79281100,
+            "tiencuoc": 3000,
+            "luachon": "t",
+            "tongdiem": 12,
+            "ketqua": "Thắng"
+        }
+    ],
+    "hung": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 99700000,
+            "tiencuoc": 300000,
+            "luachon": "x",
+            "tongdiem": 13,
+            "ketqua": "Tài"
+        }
+    ],
+    "mi": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 5000000,
+            "tiencuoc": 60000000,
+            "luachon": "t",
+            "tongdiem": 7,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Upngua",
+            "sodu": 3000000,
+            "tiencuoc": 2000000,
+            "luachon": "up",
+            "tongdiem": 2,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 3,
+            "trochoi": "BauCua",
+            "sodu": 3020000,
+            "tiencuoc": 60000,
+            "luachon": "bau cua tom",
+            "tongdiem": 2,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 4,
+            "trochoi": "SoBai",
+            "sodu": 6020000,
+            "tiencuoc": 3000000,
+            "luachon": "Lat bai 1 la",
+            "tongdiem": 7,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 5,
+            "trochoi": "Taixiu3xx",
+            "sodu": 11420000,
+            "tiencuoc": 6000000,
+            "luachon": "x",
+            "tongdiem": 9,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 6,
+            "trochoi": "Taixiu3xx",
+            "sodu": 1420000,
+            "tiencuoc": 10000000,
+            "luachon": "t",
+            "tongdiem": 8,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 7,
+            "trochoi": "XocDia",
+            "sodu": 1390000,
+            "tiencuoc": 30000,
+            "luachon": "chan",
+            "tongdiem": 1,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 8,
+            "trochoi": "BauCua",
+            "sodu": 1420000,
+            "tiencuoc": 90000,
+            "luachon": "ca nai ga",
+            "tongdiem": 2,
+            "ketqua": "Thắng"
+        }
+    ],
+    "do": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 190000000,
+            "tiencuoc": 100000000,
+            "luachon": "tai",
+            "tongdiem": 13,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Taixiu3xx",
+            "sodu": 361000000,
+            "tiencuoc": 190000000,
+            "luachon": "tai",
+            "tongdiem": 11,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 3,
+            "trochoi": "Taixiu3xx",
+            "sodu": 0,
+            "tiencuoc": 361000000,
+            "luachon": "tai",
+            "tongdiem": 8,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 4,
+            "trochoi": "SoBai",
+            "sodu": 99970000,
+            "tiencuoc": 30000,
+            "luachon": "Lat bai 1 la",
+            "tongdiem": 5,
+            "ketqua": "Thua"
+        }
+    ],
+    "ll": [
+        {
+            "phien": 1,
+            "trochoi": "Taixiu3xx",
+            "sodu": 29997000,
+            "tiencuoc": 3000,
+            "luachon": "x",
+            "tongdiem": 12,
+            "ketqua": "Thua"
+        },
+        {
+            "phien": 2,
+            "trochoi": "Taixiu3xx",
+            "sodu": 1881000,
+            "tiencuoc": 990000,
+            "luachon": "t",
+            "tongdiem": 12,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 3,
+            "trochoi": "Taixiu3xx",
+            "sodu": 3564400,
+            "tiencuoc": 1876000,
+            "luachon": "t",
+            "tongdiem": 11,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 4,
+            "trochoi": "Taixiu3xx",
+            "sodu": 3882500,
+            "tiencuoc": 359000,
+            "luachon": "t",
+            "tongdiem": 12,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 5,
+            "trochoi": "Taixiu3xx",
+            "sodu": 7367250,
+            "tiencuoc": 3877500,
+            "luachon": "t",
+            "tongdiem": 18,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 6,
+            "trochoi": "Taixiu3xx",
+            "sodu": 13988275,
+            "tiencuoc": 7362250,
+            "luachon": "t",
+            "tongdiem": 12,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 7,
+            "trochoi": "Taixiu3xx",
+            "sodu": 26568222,
+            "tiencuoc": 13983275,
+            "luachon": "x",
+            "tongdiem": 10,
+            "ketqua": "Thắng"
+        },
+        {
+            "phien": 8,
+            "trochoi": "Taixiu3xx",
+            "sodu": 0,
+            "tiencuoc": 26563222,
+            "luachon": "t",
+            "tongdiem": 7,
+            "ketqua": "Thua"
+        }
+    ]
+}
