@@ -111,10 +111,6 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 
 ---
 
-## Ảnh minh họa
-<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/8cf1f487-9092-4e54-b72c-a0d24b55f350" />
-
----
 
 ## Ưu điểm
 * Code đã được chỉnh để chạy trên trình biên dịch GNU/GCC trên Windows và Linux
