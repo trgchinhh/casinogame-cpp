@@ -118,7 +118,7 @@ void ai_goiy(const string tennguoichoi, int& sodunguoichoi,
     // kiểm tra số dư nếu không đủ thì ko gợi ý
     if(sodunguoichoi < sodunhonhat || sodunguoichoi < phidungaigoiy){
         cout << YELLOW << "\t(!) Không đủ tiền để AI gợi ý ! Vui lòng nạp thêm" << RESET << endl;
-        cout << RED << "\t> " << RESET << "Chưa thanh toán" << endl;
+        cout << "\t(>) Thanh toán không thành công !" << RESET << endl;
         return;
     }
 
