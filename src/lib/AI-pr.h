@@ -222,8 +222,8 @@ void ai_goiy(const string tennguoichoi, int& sodunguoichoi,
              << "-" << dinhdangtien(phidungaigoiy) << RESET << " (VND)" << endl;
         cout << "\t └> Số dư còn lại: " << YELLOW 
              << dinhdangtien(sodunguoichoi) << RESET << " (VND)" << endl;
-        cout << "\n\t───────────────────────────────────────\n" << endl;
     } else {
         cout << "\t(>) Thanh toán không thành công !" << RESET << endl;
     } 
+    cout << "\n\t───────────────────────────────────────\n" << endl;
 }
