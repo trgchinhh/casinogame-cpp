@@ -23,13 +23,16 @@ using json = nlohmann::ordered_json;
 
 #define s_npos string::npos
 
+const string duongdan_lichsugame = "../data/player/lichsugame.json";
+const string duongdan_env        = "../env/.env";
+
 size_t write_callback(void* contents, size_t size, size_t nmemb, void* userp){
     ((string*)userp)->append((char*)contents, size * nmemb);
     return size * nmemb;
 }
 
 string docfilelichsugame(const string tennguoichoi){
-    ifstream file("../data/player/lichsugame.json");
+    ifstream file(duongdan_lichsugame);
     if(!file.is_open())
         return "Không đọc được file lịch sử !";
     json dulieu;
@@ -71,6 +74,7 @@ void ketqua_ai(const string phanhoi){
     }
     catch(...){
         cout << RED << "\tAI gặp sự cố khi phản hồi !" << RESET << endl;
+        cout << RED << "\tVui lòng kiểm tra API tại dường dẫn: ../env/.env" << RESET << endl; 
     }
 }
 
@@ -117,7 +121,7 @@ void ai_goiy(const string tennguoichoi, int& sodunguoichoi,
     }
 
     // load file .env
-    load_env("../env/.env");
+    load_env(duongdan_env);
     // Groq AI API
     const char* API_KEY = getenv("API_KEY");
     const char* URL = getenv("URL");
