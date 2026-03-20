@@ -31,11 +31,14 @@ namespace fs = filesystem;
     const string lenhbiendich = string("g++ src\\main.cpp")
                               + " -IC:\\OpenSSL-Win64\\include"
                               + " -LC:\\OpenSSL-Win64\\lib src\\resource\\resource.o -o "
-                              + tenchuongtrinh + " -lwinmm -lssl -lcrypto -w";
+                              + tenchuongtrinh + 
+                              " -lwinmm -lssl -lcrypto -lcurl -w";
 #else
     const string tenchuongtrinh = "bin/Casino";
     const string lenhbiendich = string("g++ src/main.cpp")
-                              + " -o " + tenchuongtrinh + " -lssl -lcrypto -w";
+                              + " -o " 
+                              + tenchuongtrinh + 
+                              " -lssl -lcrypto -lcurl -w";
 #endif
 
 bool cacfilecanbiendich() {
@@ -59,7 +62,6 @@ int main(){
         #else
             system("mkdir -p bin");
         #endif
-
         if(cacfilecanbiendich()){
             cout << "Đang biên dịch ! Vui lòng chờ..." << endl;
             //cout << "Source thay đổi -> Đang biên dịch lại..." << RESET << endl;
@@ -68,7 +70,7 @@ int main(){
                 throw runtime_error(RED "Biên dịch thất bại !");
                 exit(0);
             }
-        }
+        } 
         else cout << "Không có thay đổi -> dùng file build cũ" << RESET << endl;
         cout << "Chạy chương trình (y/n): ";
         char c; cin >> c;
