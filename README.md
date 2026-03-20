@@ -102,7 +102,7 @@ build.cpp
 
 ### Build thủ công (Windows - MinGW)
 ```bash
-g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -w
+g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -lcurl -w
 ```
 > Không build trực tiếp trong Mingw64 
 
