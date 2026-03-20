@@ -61,7 +61,7 @@ void hieuung_cho(atomic<bool>& dung){
     cout << "\r                                             \r";
 }
 
-void ketqua_ai(const string phanhoi){
+bool ketqua_ai(const string phanhoi){
     try{
         json j = json::parse(phanhoi);
         string ketqua =
@@ -71,10 +71,12 @@ void ketqua_ai(const string phanhoi){
             ketqua = ketqua.substr(0, pos + 1); 
         cout << "\t[" << RED << "Groq AI" << RESET 
              << "]: " << ketqua << RESET << endl;
+        return true;
     }
     catch(...){
         cout << RED << "\tAI gặp sự cố khi phản hồi !" << RESET << endl;
         cout << RED << "\tVui lòng kiểm tra API tại dường dẫn: ../env/.env" << RESET << endl; 
+        return false;
     }
 }
 
@@ -213,13 +215,15 @@ void ai_goiy(const string tennguoichoi, int& sodunguoichoi,
     loading.join();
 
     // Phí dùng AI 
-    sodunguoichoi -= phidungaigoiy;
-    cout << "\t(>) Đã thanh toán phí AI: " << RED 
-         << "-" << dinhdangtien(phidungaigoiy) << RESET << " (VND)" << endl;
-    cout << "\t └> Số dư còn lại: " << YELLOW 
-         << dinhdangtien(sodunguoichoi) << RESET << " (VND)" << endl;
-
-    cout << "\n\t───────────────────────────────────────\n" << endl;
-
-    ketqua_ai(phanhoi);
+    bool checkketqua_ai = ketqua_ai(phanhoi);
+    if(checkketqua_ai){
+        sodunguoichoi -= phidungaigoiy;
+        cout << "\t(>) Đã thanh toán phí AI: " << RED 
+             << "-" << dinhdangtien(phidungaigoiy) << RESET << " (VND)" << endl;
+        cout << "\t └> Số dư còn lại: " << YELLOW 
+             << dinhdangtien(sodunguoichoi) << RESET << " (VND)" << endl;
+        cout << "\n\t───────────────────────────────────────\n" << endl;
+    } else {
+        cout << YELLOW << "\t(>) Thanh toán không thành công !" << RESET << endl;
+    } 
 }
