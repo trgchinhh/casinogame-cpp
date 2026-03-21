@@ -81,71 +81,71 @@ struct LichSu {
 
 /*
 - Game flag là gì ?
-  -> Nó giống như flag khi các bạn dùng các chương trình như cmatrix (linux) 
+  -> Nó giống như flag khi các bạn dùng các chương trình như cmatrix (linux)
   hoặc rs-matrix cần có flag là các cụm như:
-    
+
     -c/--colour:       màu sắc
     -h/--help:         thể hiện xem lệnh
     -d/--direction:    dường dẫn
     -V/--version:      phiên bản
     ...
-    
-  ngay sau chương trình chính 
+
+  ngay sau chương trình chính
 
   * Game flag truyền tham số [tên game] vào sau tên chương trình
   VD: Casino.exe bacao hoặc Casino.exe "bacao"
-  Các game flag hợp lệ bao gồm: [nem1xx, nem3xx, bacao, xidach, sobai] 
+  Các game flag hợp lệ bao gồm: [nem1xx, nem3xx, bacao, xidach, sobai]
   Có thể phát triển thêm
 */
 
 struct FlagGame {
-    const char* game; 
+    const char* game;
     void (*tenhamgame)();
 };
 
 // số lượng game flag
-const int soluonggameflag          = 5;
+const int soluonggameflag           = 5;
 
 // Các đường dẫn 
 // Lưu dữ liệu
-const string dd_danhsachtaikhoan   = "..//data/player/taikhoan.json";
-const string dd_danhsachlichsu     = "..//data/player/lichsugame.json";
+const string dd_danhsachtaikhoan    = "..//data/player/taikhoan.json";
+const string dd_danhsachlichsu      = "..//data/player/lichsugame.json";
 // Lưu âm thanh
-const string dd_lindachaocanha     = "..//sound/linda_chao_ca_nha.wav";
-const string dd_1dongxuroi         = "..//sound/1_dong_xu_roi.mp3";
-const string dd_conginuadau        = "..//sound/con_gi_nua_dau.mp3";
-const string dd_dongudoanhai       = "..//sound/do_ngu_do_an_hai.mp3";
-const string dd_dunglacontraicuata = "..//sound/dung_la_con_trai_cua_ta.mp3";
-const string dd_giongcuoithay3     = "..//sound/giong_cuoi_thay_3.mp3";
-const string dd_hdpethingonluon    = "..//sound/hdpe_thi_ngon_luon.mp3";
-const string dd_lacxucxac          = "..//sound/lac_xuc_xac.mp3";
-const string dd_nhieudongxuroi     = "..//sound/nhieu_dong_xu_roi.mp3";
-const string dd_maymuanuadi        = "..//sound/mua_nua_di.mp3";
-const string dd_dichuyenmenu       = "..//sound/chon_menu.mp3";
-const string dd_xinvinhbietcu      = "..//sound/xin_vinh_biet_cu.wav";
+const string dd_lindachaocanha      = "..//sound/linda_chao_ca_nha.wav";
+const string dd_1dongxuroi          = "..//sound/1_dong_xu_roi.mp3";
+const string dd_conginuadau         = "..//sound/con_gi_nua_dau.mp3";
+const string dd_dongudoanhai        = "..//sound/do_ngu_do_an_hai.mp3";
+const string dd_dunglacontraicuata  = "..//sound/dung_la_con_trai_cua_ta.mp3";
+const string dd_giongcuoithay3      = "..//sound/giong_cuoi_thay_3.mp3";
+const string dd_hdpethingonluon     = "..//sound/hdpe_thi_ngon_luon.mp3";
+const string dd_lacxucxac           = "..//sound/lac_xuc_xac.mp3";
+const string dd_nhieudongxuroi      = "..//sound/nhieu_dong_xu_roi.mp3";
+const string dd_maymuanuadi         = "..//sound/mua_nua_di.mp3";
+const string dd_dichuyenmenu        = "..//sound/chon_menu.mp3";
+const string dd_xinvinhbietcu       = "..//sound/xin_vinh_biet_cu.wav";
 
 // Các giá trị bắt buộc 
-const int levelthapnhat            = 0;             // level thấp nhất cho phép
-const int levelcaonhat             = 10;            // level cao nhất cho phép
-const int sodunhonhat              = 1000;          // số dư nhỏ nhất cho phép
-const int sodulonnhat              = 100000000;     // số dư lớn nhất cho phép
-const int phidungaigoiy            = 5000;          // phí dùng AI mỗi lượt
-const int sogiaycho                = 2;             // số giây load khi đăng nhập / xuất 
-const int solansaitoida            = 3;             // số lần sai tối đa
-const int chieudaima6so            = 6;             // chiều dài mã khóa 6 số
-static bool trangthaiamthanh       = false;         // trạng thái bật tắt âm thanh (mới vào luôn tắt)
-static bool trangthaiAIgoiy        = false;         // trạng thái bật tắt AI gợi ý kết quả
-static bool trangthaicontrochuot   = false;         // trạng thái bật tắt con trỏ chuột
-static string mauchude             = CYAN;          // màu chủ đề  
-static int thutumautruoc           = 0;             // màu chủ đề khi đã setup (không lưu DB) 
+const int levelthapnhat             = 0;             // level thấp nhất cho phép
+const int levelcaonhat              = 10;            // level cao nhất cho phép
+const int sodunhonhat               = 1000;          // số dư nhỏ nhất cho phép
+const int sodulonnhat               = 100000000;     // số dư lớn nhất cho phép
+const int phidungaigoiy             = 5000;          // phí dùng AI mỗi lượt
+const int sogiaycho                 = 2;             // số giây load khi đăng nhập / xuất 
+const int solansaitoida             = 3;             // số lần sai tối đa
+const int chieudaima6so             = 6;             // chiều dài mã khóa 6 số
+static bool trangthaiamthanh        = false;         // trạng thái bật tắt âm thanh (mới vào luôn tắt)
+static bool trangthaiAIgoiy         = false;         // trạng thái bật tắt AI gợi ý kết quả
+static bool trangthaicontrochuot    = false;         // trạng thái bật tắt con trỏ chuột
+static string mauchude              = CYAN;          // màu chủ đề  
+static int thutumautruoc            = 0;             // màu chủ đề khi đã setup (không lưu DB) 
 
 // Dùng cho theme
 const char* mangmau[] = {
     CYAN, RESET, RED, GREEN, YELLOW, BLUE, MAGENTA, ORANGE, INDIGO,
-    VIOLET, GRAY, PINK, LIGHT_BLUE, LIME, TEAL, GOLD, SALMON, SKY, MINT, LAVENDER, PEACH, 
-    NEON_GREEN, NEON_BLUE, NEON_PINK, NEON_CYAN, NEON_ORANGE, 
-    SOFT_RED, SOFT_GREEN, SOFT_YELLOW, SOFT_BLUE, SOFT_PURPLE, SOFT_CYAN, 
-    PASTEL_PINK, PASTEL_GREEN, PASTEL_BLUE, PASTEL_PURPLE, PASTEL_YELLOW, 
+    VIOLET, GRAY, PINK, LIGHT_BLUE, LIME, TEAL, GOLD, SALMON, SKY, MINT, LAVENDER, PEACH,
+    NEON_GREEN, NEON_BLUE, NEON_PINK, NEON_CYAN, NEON_ORANGE,
+    SOFT_RED, SOFT_GREEN, SOFT_YELLOW, SOFT_BLUE, SOFT_PURPLE, SOFT_CYAN,
+    PASTEL_PINK, PASTEL_GREEN, PASTEL_BLUE, PASTEL_PURPLE, PASTEL_YELLOW,
     BLOOD_RED, FIRE_ORANGE, DEEP_BLUE, DARK_GREEN, GOLDEN,
     DARK_BLUE, DARK_RED, DARK_PURPLE, DARK_CYAN, DARK_GRAY,
     AQUA, TURQUOISE, CORAL, ROSE, FUCHSIA,
@@ -155,10 +155,10 @@ const char* mangmau[] = {
 // tên theme
 const char* tenmau[] = {
     "CYAN", "DEFAULT", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "ORANGE", "INDIGO",
-    "VIOLET", "GRAY", "PINK", "LIGHT_BLUE", "LIME", "TEAL", "GOLD", "SALMON", "SKY", "MINT", "LAVENDER", "PEACH", 
-    "NEON GREEN", "NEON BLUE", "NEON PINK", "NEON CYAN", "NEON ORANGE", 
-    "SOFT RED", "SOFT GREEN", "SOFT YELLOW", "SOFT BLUE", "SOFT PURPLE", "SOFT CYAN", 
-    "PASTEL PINK", "PASTEL GREEN", "PASTEL BLUE", "PASTEL PURPLE", "PASTEL YELLOW", 
+    "VIOLET", "GRAY", "PINK", "LIGHT_BLUE", "LIME", "TEAL", "GOLD", "SALMON", "SKY", "MINT", "LAVENDER", "PEACH",
+    "NEON GREEN", "NEON BLUE", "NEON PINK", "NEON CYAN", "NEON ORANGE",
+    "SOFT RED", "SOFT GREEN", "SOFT YELLOW", "SOFT BLUE", "SOFT PURPLE", "SOFT CYAN",
+    "PASTEL PINK", "PASTEL GREEN", "PASTEL BLUE", "PASTEL PURPLE", "PASTEL YELLOW",
     "BLOOD RED", "FIRE ORANGE", "DEEP BLUE", "DARK GREEN", "GOLDEN",
     "DARK_BLUE", "DARK_RED", "DARK_PURPLE", "DARK_CYAN", "DARK_GRAY",
     "AQUA", "TURQUOISE", "CORAL", "ROSE", "FUCHSIA",
@@ -171,8 +171,6 @@ const char* tenmau[] = {
 // Admin 
 void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi);
 void hienthongtinadmin(const string& tenadmin);
-void xemthongtinnguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
-void xuatthongtinnguoichoi(ThongTinNguoiChoi& thongtinnguoichoi);
 void xuatbangthongtinnguoichoi(vector<ThongTinNguoiChoi>& danhsachthongtinnguoichoi);
 void xemlichsunguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
 void xuatthongtinxephang(ThongTinNguoiChoi& thongtinnguoichoi, int top);
@@ -184,7 +182,6 @@ void trutiennguoichoi(DanhSachNguoiChoi& danhsachnguoichoi);
 // Người chơi
 int tinhlevelnguoichoi(ThongTinPtr& nguoichoi);
 string tinhranknguoichoi(int level);
-int kiemtrasoluongtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi);
 int sothutucuoicung(DanhSachNguoiChoi& danhsachnguoichoi);
 int phiencuoicung(string& tentaikhoan);
 int laychieurongterminal();
@@ -193,6 +190,7 @@ int doronghienthi(const char* s);
 int doronghienthithuc(const string& str);
 int dodaihienthiutf8(const string& s);
 int docphim();
+int xoaansinumber(string s);
 
 void mogithub(); // Mở repo github bằng trình duyệt
 void sleep(int sogiaymili); // Delay 
@@ -207,10 +205,9 @@ bool dangnhaptaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& t
 bool xacthucdangnhapdangky(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi, int dangnhapdangky);
 bool nhaptiencuoc(int& tiencuoc, ThongTinPtr& nguoichoi);
 // viết hàm quên mật khẩu (nhập mã 6 số)
-bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi, 
-                 ThongTinNguoiChoi& thongtinnguoichoi);
+bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi,ThongTinNguoiChoi& thongtinnguoichoi);
 // hàm kiểm tra flag game trước khi chạy chương trình
-int kiemtraflag(string flag);
+int kiemtraflag(char* flag);
 
 void doimauchude(const string mau, int thutumau);
 void inbanner(const string tenbanner, const string mau = mauchude);
@@ -220,7 +217,6 @@ void hieuungamthanh_wav(string duongdanamthanh, bool trangthaiamthanh);
 void chuyendoitrangthaiamthanh(bool& trangthaiamthanh);
 void chuyendoitrangthaiAIgoiy(bool& trangthaiAIgoiy);
 void chuyendoitrangthaitrochuot(bool& trangthaicontrochuot);
-void xoaansi(string s);
 void ancontrochuot(bool trangthaicontrochuot);
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi);
 void themcuoidanhsachtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr thongtinnguoichoi);
@@ -236,10 +232,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
 
 // sảnh 
 void sanhadmin(DanhSachNguoiChoi& danhsachnguoichoi);
-// cài đăt ngoài sảnh 
-void sanh_caidattrangchu();
-// cài đặt trong game 
-void sanh_caidattronggame(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
+void sanh_caidat(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void sanh_gamexocxoc(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void sanh_gamebai(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 void sanh_gamemayrui(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
@@ -256,6 +249,7 @@ char getchlinux();
 string chematkhau();
 string mahoamatkhau(string matkhau);
 string dinhdangtien(int sotien);
+string xoaansi(string s);
 
 ThongTinPtr khoitaotaikhoan(ThongTinNguoiChoi& thongtinnguoichoi);
 ThongTinPtr timtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, string& tentaikhoan);
