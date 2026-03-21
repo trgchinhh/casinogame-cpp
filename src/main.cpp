@@ -200,13 +200,13 @@ void chuyendoitrangthaiamthanh(bool& trangthaiamthanh){
 }
 
 // xóa màu ansi khỏi chuỗi
-string xoa_ansi(string s) {
+string xoaansi(string s) {
     static regex ansi(R"(\x1B\[[0-9;]*m)");
     return regex_replace(s, ansi, "");
 }
 
 // trả về độ dài chuỗi sau khi xóa ansi 
-int xoa_ansi_number(string s) {
+int xoaansinumber(string s) {
     static regex ansi(R"(\x1B\[[0-9;]*m)");
     return regex_replace(s, ansi, "").length();
 }
@@ -940,7 +940,7 @@ int doronghienthithuc(const string& str) {
 // in giữa màn hình 
 void ingiuamanhinh(const string& cau, string mau){
     int chieurong = laychieurongterminal();
-    string cau_khong_mau = xoa_ansi(cau);
+    string cau_khong_mau = xoaansi(cau);
     int dodai = dodaihienthiutf8(cau_khong_mau);
     int khoangtrang = (chieurong - dodai) / 2;
     if(khoangtrang < 0) 
@@ -1228,7 +1228,7 @@ void mogithub(){
     cout << noidungthongtin;
     cout << "\t(?) Bạn có muốn xem chi tiết (y/n): ";
     #ifdef _WIN32
-        char c = getch();
+        char c = getche();
     #else 
         char c = getchlinux();
     #endif
@@ -1274,7 +1274,7 @@ void hienthongtinnguoichoi(ThongTinPtr& nguoichoi){
     string taikhoan = "Tài khoản: ";
     string rank = "Rank: ";
     string sodu = "Số dư: ";
-    int pad_rank = chieurong - rank.length() - xoa_ansi_number(rk);
+    int pad_rank = chieurong - rank.length() - xoaansinumber(rk);
     if(pad_rank < 0) 
         pad_rank = 0;
     cout << "┌───────── " << mauchude << "Tài khoản" RESET " ─────────┐\n";
@@ -1285,11 +1285,11 @@ void hienthongtinnguoichoi(ThongTinPtr& nguoichoi){
     cout << "│ " << YELLOW << rank << RESET << rk; 
         if(r == CYAN "Kim cương" RESET || r == BLUE "Bạch kim" RESET){
             cout << setw(chieurong - 24) << left 
-                 << string(chieurong - rank.length() - (xoa_ansi_number(rk)), ' '); //<< "│\n";
+                 << string(chieurong - rank.length() - (xoaansinumber(rk)), ' '); //<< "│\n";
             cout << "\b│\n";
         } else 
             cout << setw(chieurong - 24) << left 
-                 << string(chieurong - rank.length() - xoa_ansi_number(rk), ' ') << "│\n";
+                 << string(chieurong - rank.length() - xoaansinumber(rk), ' ') << "│\n";
     cout << "│ " << YELLOW << sodu << RESET << UNDERLINE << sd 
          << NO_UNDERLINE << " (VND)" << string(chieurong - sodu.length() - sd.length() - 6, ' ') << "│\n";
     cout << "└─────────────────────────────┘\n";
@@ -1299,11 +1299,12 @@ void hienthongtinnguoichoi(ThongTinPtr& nguoichoi){
 void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi){
     const int somuc = 6;
     const char* menu[somuc] = {
+        "Thông tin",
         "Hướng dẫn",
         "Đăng ký",
         "Đăng nhập",
         "Quên mật khẩu",
-        "Cài đặt",
+        //"Cài đặt",
         "Thoát game"
     };
     int chon = 0;
@@ -1345,14 +1346,18 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
         else if(phim == 13){
             if(chon == 0){
                 clear();
+                inbanner(bannerthongtin);
+                mogithub();
+            } else if(chon == 1){
+                clear();
                 inbanner(bannerhuongdan);
                 if(!tranghuongdan(noidunghuongdan, laychieucaoterminal() - 11)){
                     continue;
                 } 
-            } else if(chon == 1){
+            } else if(chon == 2){
                 cout << "\n[" << RED << chon+1 << RESET << "] ĐĂNG KÝ\n\n";
                 xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 1);
-            } else if(chon == 2){
+            } else if(chon == 3){
                 cout << "\n[" << RED << chon+1 << RESET << "] ĐĂNG NHẬP\n\n";
                 if(xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 2)){
                     ThongTinPtr nguoichoi = timtaikhoan(
@@ -1370,14 +1375,9 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
                     }
                 }
                 continue;
-            } else if(chon == 3){
+            } else if(chon == 4){
                 cout << "\n[" << RED << chon+1 << RESET << "] ĐỔI MẬT KHẨU\n\n";
                 xacthucdangnhapdangky(danhsachnguoichoi, thongtinnguoichoi, 3);
-            } else if(chon == 4){
-                cout << "\n[" << RED << chon+1 << RESET << "] CÀI ĐẶT\n\n";
-                chosaukhinhapthanhcong(sogiaycho);
-                sanh_caidattrangchu();  
-                continue;
             } else{
                 clear();
                 inbanner(bannertambiet);
@@ -1392,126 +1392,10 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
     }
 }
 
-// sảnh cài đặt ngoài sảnh chờ
-void sanh_caidattrangchu(){
-    const int somuc = 6;
-    const char* menu[somuc] = {
-        "Thông tin",
-        "Trỏ chuột",
-        "Âm thanh",
-        "AI gợi ý",
-        "Chủ đề",
-        "Quay lại"
-    };
-
-    int somau = sizeof(mangmau)/sizeof(mangmau[0]);
-    int thutumau = thutumautruoc; 
-
-    int chon = 0;
-    while(true){
-        clear();
-        //taidulieujson(danhsachnguoichoi);
-        inbanner(bannercaidat);
-        const int dorongmenu = 20;
-        cout << "┌─────── " << mauchude << "SETTING" << RESET << " ───────┐\n";
-        for(int i = 0; i < somuc; i++){
-            string noidung;
-            if(i == 1){
-                ostringstream oss;
-                oss << (i+1) << "/ Trỏ chuột: "
-                    << (trangthaicontrochuot ? GREEN "Bật   " RESET : RED "Tắt   " RESET);
-                noidung = oss.str();
-            } else if(i == 2){
-                ostringstream oss;
-                oss << (i+1) << "/ Âm thanh: "
-                    << (trangthaiamthanh ? GREEN "Bật    " RESET : RED "Tắt    " RESET);
-                noidung = oss.str();
-            } else if(i == 3){
-                ostringstream oss;
-                oss << (i+1) << "/ AI gợi ý: "
-                    << (trangthaiAIgoiy ? GREEN "Bật    " RESET : RED "Tắt    " RESET);
-                noidung = oss.str();
-            } else if(i == 4){
-                ostringstream oss;
-                oss << (i+1) << "/ Chủ đề: "
-                    << "◀ "
-                    << mangmau[thutumau] << "███" << RESET
-                    << " ▶  ";
-                noidung = oss.str();
-            } else{
-                ostringstream oss;
-                oss << (i+1) << "/ " << menu[i];
-                noidung = oss.str();
-            }
-            int chieudaidong = doronghienthi(noidung.c_str());
-            int khoangtrang = dorongmenu - chieudaidong;
-            if(khoangtrang < 0) 
-                khoangtrang = 0;
-            if(i == chon){
-                cout << "│" << mauchude << " ▶ " << RESET
-                     << noidung << string(khoangtrang,' ')
-                     << RESET << "│\n";
-            } else{
-                cout << "│   "
-                     << noidung << string(khoangtrang,' ')
-                     << "│\n";
-            }
-        }
-        cout << "└───────────────────────┘\n";
-        int phim = docphim();
-        if(phim == 72)
-            chon = (chon - 1 + somuc) % somuc;
-        else if(phim == 80)
-            chon = (chon + 1) % somuc;
-         // khi nhấn nút →
-        else if(phim == 77 && chon == 4){ 
-            thutumau = (thutumau + 1) % somau;
-            thutumautruoc = thutumau;
-            doimauchude(mangmau[thutumau], thutumau);
-        }
-        // khi nhấn nút ← 
-        else if(phim == 75 && chon == 4){ 
-            thutumau = (thutumau - 1 + somau) % somau;
-            thutumautruoc = thutumau;
-            doimauchude(mangmau[thutumau], thutumau);
-        }
-        else if(phim == 13){
-            if(chon == 0){
-                clear();
-                inbanner(bannerthongtin);
-                mogithub();
-            } else if(chon == 1){
-                chuyendoitrangthaitrochuot(trangthaicontrochuot);
-                ancontrochuot(trangthaicontrochuot);
-                continue;
-            } else if(chon == 2){
-                chuyendoitrangthaiamthanh(trangthaiamthanh);
-                hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
-                continue;
-            } else if(chon == 3){
-                chuyendoitrangthaiAIgoiy(trangthaiAIgoiy);
-                continue;
-            } else if(chon == 4){
-                cout << "\n\t(" RED "*" RESET ") Đã đổi màu chủ để sang: " 
-                     << mauchude << tenmau[thutumau] << RESET << endl;
-                dungchuongtrinh();
-                chosaukhinhapthanhcong(sogiaycho);
-                return;
-            } else {
-                cout << "\n[" << RED << chon + 1 << RESET << "] QUAY LẠI" << RESET << "\n\n";
-                chosaukhinhapthanhcong(sogiaycho);
-                return;
-            }
-            dungchuongtrinh();
-        }
-    }
-}
-
 // sảnh cài đăt trong game 
-void sanh_caidattronggame(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
-    const int somuc = 6;
+void sanh_caidat(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
+    const int somuc = 5;
     const char* menu[somuc] = {
-        "Thông tin",
         "Trỏ chuột",
         "Âm thanh",
         "AI gợi ý",
@@ -1531,22 +1415,22 @@ void sanh_caidattronggame(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& ngu
         cout << "┌─────── " << mauchude << "SETTING" << RESET << " ───────┐\n";
         for(int i = 0; i < somuc; i++){
             string noidung;
-            if(i == 1){
+            if(i == 0){
                 ostringstream oss;
                 oss << (i+1) << "/ Trỏ chuột: "
                     << (trangthaicontrochuot ? GREEN "Bật   " RESET : RED "Tắt   " RESET);
                 noidung = oss.str();
-            } else if(i == 2){
+            } else if(i == 1){
                 ostringstream oss;
                 oss << (i+1) << "/ Âm thanh: "
                     << (trangthaiamthanh ? GREEN "Bật    " RESET : RED "Tắt    " RESET);
                 noidung = oss.str();
-            } else if(i == 3){
+            } else if(i == 2){
                 ostringstream oss;
                 oss << (i+1) << "/ AI gợi ý: "
                     << (trangthaiAIgoiy ? GREEN "Bật    " RESET : RED "Tắt    " RESET);
                 noidung = oss.str();
-            } else if(i == 4){
+            } else if(i == 3){
                 ostringstream oss;
                 oss << (i+1) << "/ Chủ đề: "
                     << "◀ "
@@ -1579,7 +1463,7 @@ void sanh_caidattronggame(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& ngu
         else if(phim == 80)
             chon = (chon + 1) % somuc;
          // khi nhấn nút →
-        else if(phim == 77 && chon == 4){ 
+        else if(phim == 77 && chon == 3){ 
             thutumau = (thutumau + 1) % somau;
             thutumautruoc = thutumau;
             doimauchude(mangmau[thutumau], thutumau);
@@ -1587,7 +1471,7 @@ void sanh_caidattronggame(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& ngu
             luudulieujson(danhsachnguoichoi);
         }
         // khi nhấn nút ← 
-        else if(phim == 75 && chon == 4){ 
+        else if(phim == 75 && chon == 3){ 
             thutumau = (thutumau - 1 + somau) % somau;
             thutumautruoc = thutumau;
             doimauchude(mangmau[thutumau], thutumau);
@@ -1596,21 +1480,17 @@ void sanh_caidattronggame(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& ngu
         }
         else if(phim == 13){
             if(chon == 0){
-                clear();
-                inbanner(bannerthongtin);
-                mogithub();
-            } else if(chon == 1){
                 chuyendoitrangthaitrochuot(trangthaicontrochuot);
                 ancontrochuot(trangthaicontrochuot);
                 continue;
-            } else if(chon == 2){
+            } else if(chon == 1){
                 chuyendoitrangthaiamthanh(trangthaiamthanh);
                 hieuungamthanh_wav(dd_lindachaocanha, trangthaiamthanh);
                 continue;
-            } else if(chon == 3){
+            } else if(chon == 2){
                 chuyendoitrangthaiAIgoiy(trangthaiAIgoiy);
                 continue;
-            } else if(chon == 4){
+            } else if(chon == 3){
                 nguoichoi->mauchude = thutumau;
                 cout << "\n\t(" RED "*" RESET ") Đã đổi màu chủ để sang: " 
                      << mauchude << tenmau[thutumau] << RESET << endl;
@@ -2105,7 +1985,7 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
             } else if(chon == 6){
                 cout << "\n[" << RED << chon+1 << RESET << "] CÀI ĐẶT\n\n";
                 chosaukhinhapthanhcong(sogiaycho);
-                sanh_caidattronggame(danhsachnguoichoi, nguoichoi);  
+                sanh_caidat(danhsachnguoichoi, nguoichoi);  
                 continue;
             } else {
                 // cái này thích thì bật (hơi ồn)
