@@ -225,7 +225,7 @@ void ancontrochuot(bool trangthaicontrochuot){
         cursorInfo.bVisible = trangthaicontrochuot;
         SetConsoleCursorInfo(hConsole, &cursorInfo);
     #else
-        if (trangthaichuot) cout << "\033[?25h"; 
+        if (trangthaicontrochuot) cout << "\033[?25h"; 
         else cout << "\033[?25l";
     #endif
 }
