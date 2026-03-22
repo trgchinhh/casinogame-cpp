@@ -748,7 +748,7 @@ bool kiemtrajsontrong(string duongdanjson){
 }
 
 // tải dữ liệu json vào dslk
-void taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi){
+bool taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi){
     ifstream file(dd_danhsachtaikhoan);
     if(!file.is_open()){
         cout << RED << "\t\t(!) Không thể mở file dữ liệu người chơi !" << RESET << endl;
