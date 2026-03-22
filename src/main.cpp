@@ -752,10 +752,11 @@ bool taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi){
     ifstream file(dd_danhsachtaikhoan);
     if(!file.is_open()){
         cout << RED << "\t\t(!) Không thể mở file dữ liệu người chơi !" << RESET << endl;
-        return;
+        return false;
     }
     if(kiemtrajsontrong(dd_danhsachtaikhoan)){
-        return;
+        cout << RED << "\t(!) File dữ liệu người chơi rỗng " << RESET << endl;
+        return false;
     }
     khoitaolist(danhsachnguoichoi);
     json data; file >> data; file.close();
@@ -2251,7 +2252,10 @@ ___CasinoGames___(int argc, char** argv) {
     // Phần chạy chương trình chính 
     DanhSachNguoiChoi danhsachnguoichoi;            
     khoitaolist(danhsachnguoichoi);
-    taidulieujson(danhsachnguoichoi);
+    // Kiểm tra rỗng hoặc có file json người chơi trước khi vào game
+    if(!taidulieujson(danhsachnguoichoi)){
+        return -1;
+    }
     ThongTinNguoiChoi thongtinnguoichoi;
     trangchu(danhsachnguoichoi, thongtinnguoichoi);
     // True - mở con trỏ chuột khi thoát game 
