@@ -208,6 +208,7 @@ bool nhaptiencuoc(int& tiencuoc, ThongTinPtr& nguoichoi);
 bool quenmatkhau(DanhSachNguoiChoi& danhsachnguoichoi,ThongTinNguoiChoi& thongtinnguoichoi);
 // hàm kiểm tra flag game trước khi chạy chương trình
 int kiemtraflag(char* flag);
+bool taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi);
 
 void doimauchude(const string mau, int thutumau);
 void inbanner(const string tenbanner, const string mau = mauchude);
@@ -220,7 +221,7 @@ void chuyendoitrangthaitrochuot(bool& trangthaicontrochuot);
 void ancontrochuot(bool trangthaicontrochuot);
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi);
 void themcuoidanhsachtaikhoan(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr thongtinnguoichoi);
-void taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi);
+//void taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi);
 void luudulieujson(DanhSachNguoiChoi& danhsachnguoichoi);
 void luulichsujson(string& tentaikhoan, LichSu& lichsu);
 void xuatlichsu(LichSu& lichsu, int stt);
