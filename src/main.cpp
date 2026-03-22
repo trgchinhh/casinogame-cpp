@@ -774,6 +774,7 @@ bool taidulieujson(DanhSachNguoiChoi& danhsachnguoichoi){
         ThongTinPtr tt = khoitaotaikhoan(ttnc);
         themcuoidanhsachtaikhoan(danhsachnguoichoi, tt);
     }
+    return true
 }
 
 // lưu thông tin người chơi vào json 
