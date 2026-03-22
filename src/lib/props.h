@@ -39,7 +39,7 @@ using namespace std;
 #define UNDERLINE       "\033[4m"
 #define NO_UNDERLINE    "\033[24m"
 
-// Định nghĩa màu và hiệu ứng in (42 màu)
+// Định nghĩa màu và hiệu ứng in (62 màu)
 #define RESET           "\033[0m"
 #define WHITE           "\033[38;2;255;255;255m"
 #define RED             "\033[38;2;255;120;120m"
