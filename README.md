@@ -24,7 +24,7 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 ---
 
 ## Video demo
-* Demo bản cũ: [Xem đầy đủ tại đây](https://drive.google.com/drive/my-drive?q=type:video%20parent:0AE8VmzF_NmdGUk9PVA)
+* Demo bản cũ: [Xem đầy đủ tại đây](https://drive.google.com/file/d/1G6eV0DhiAYCDHklUTUk0BhvdWoKOh5SU/view?usp=sharing)
 * Demo bản mới: [Xem đầy đủ tại đây](https://drive.google.com/file/d/1qtnJDql_Izp4dAMMBF2i5QSDuW_2a6QK/view?usp=sharing)
 
 ![Casino demo](docs/casino-demo.gif)
