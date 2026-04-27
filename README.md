@@ -99,7 +99,7 @@ pacman -S mingw-w64-x86_64-openssl
 ### Build tự động
 Chạy file:
 ```bash
-build.cpp
+g++ build.cpp -o build.exe
 ```
 > Sau khi build và chạy file build.exe nó sẽ biên dịch tất cả và chạy chương trình chính 
 
