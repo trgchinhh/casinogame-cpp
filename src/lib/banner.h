@@ -206,6 +206,18 @@ const string bannerxocdia = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
 
 )";
 
+const string bannerdungAI = R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
+ _____                               _____ 
+|  __ \                        /\   |_   _|
+| |  | |_   _ _ __   __ _     /  \    | |  
+| |  | | | | | '_ \ / _` |   / /\ \   | |  
+| |__| | |_| | | | | (_| |  / ____ \ _| |_ 
+|_____/ \__,_|_| |_|\__, | /_/    \_\_____|
+                     __/ |                 
+                    |___/                  
+
+)";
+
 const string bannergame2nguoi= R"(NHÀ CÁI ĐẾN TỪ CHÂU PHI
  _____                _____  
 |  __ \              |  __ \ 
