@@ -136,8 +136,8 @@ const int chieudaima6so             = 6;             // chiều dài mã khóa 6
 static bool trangthaiamthanh        = false;         // trạng thái bật tắt âm thanh (mới vào luôn tắt)
 static bool trangthaiAIgoiy         = false;         // trạng thái bật tắt AI gợi ý kết quả
 static bool trangthaicontrochuot    = false;         // trạng thái bật tắt con trỏ chuột
-static string mauchude              = CYAN;          // màu chủ đề  
-static int thutumautruoc            = 0;             // màu chủ đề khi đã setup (không lưu DB) 
+static string mauchude              = YELLOW;        // màu chủ đề mặc định mới vào
+static int thutumautruoc            = 0;             // màu chủ đề khi đã setup 
 
 // Dùng cho theme
 const char* mangmau[] = {
@@ -191,6 +191,7 @@ int doronghienthithuc(const string& str);
 int dodaihienthiutf8(const string& s);
 int docphim();
 int xoaansinumber(string s);
+int xacnhan_dungAI(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi);
 
 void mogithub(); // Mở repo github bằng trình duyệt
 void sleep(int sogiaymili); // Delay 
