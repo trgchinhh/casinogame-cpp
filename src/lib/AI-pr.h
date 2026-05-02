@@ -50,13 +50,13 @@ string docfilelichsugame(const string tennguoichoi){
 }
 
 void hieuung_cho(atomic<bool>& dung){
-    const char* frames[] = {".  ", ".. ", "..."}; 
+    const char* spinner[] = {"⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"};
     int i = 0;
     while(!dung){
-        cout << "\r\t(" << RED << "*" << RESET 
-             << ") Vui lòng chờ AI phản hồi " << frames[i] << flush;
-        i = (i + 1) % 3;
-        sleep_for(milliseconds(400));
+        cout << "\r\t" << mauchude << spinner[i] 
+             << RESET << " Vui lòng chờ AI phản hồi " << flush;
+        i = (i + 1) % 10;
+        sleep_for(milliseconds(100));
     }
     cout << "\r                                             \r";
 }
