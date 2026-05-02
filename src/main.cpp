@@ -2076,15 +2076,16 @@ void sanhchoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi){
 
 // chờ load kết quả 
 void loadraketqua(int sogiay){
-    const char kytu[] = {'/', '-', '\\', '|'};
+    //const char spinner[] = {'/', '-', '\\', '|'};
+    const char* spinner[] = {"⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"};
     int vitri = 0;
     const int dotre = 100; 
     int tongtick = (sogiay * 1000) / dotre;
     for(int i = 0; i < tongtick; i++){
-        cout << "\r\t(" << mauchude << kytu[vitri] << RESET
-             << ") Vui lòng chờ kết quả trong giây lát ..."
+        cout << "\r\t" << mauchude << spinner[vitri] << RESET
+             << " Vui lòng chờ kết quả trong giây lát ..."
              << flush;
-        vitri = (vitri + 1) % 4;
+        vitri = (vitri + 1) % 10;
         sleep(dotre);
     }
     cout << endl;
