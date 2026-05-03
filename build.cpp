@@ -1,21 +1,3 @@
-//   _____          _             
-//  / ____|        (_)            
-// | |     __ _ ___ _ _ __   ___  
-// | |    / _` / __| | '_ \ / _ \    Casino game C++ 
-// | |___| (_| \__ \ | | | | (_) |   https://github.com/trgchinhh/casinogame-cpp
-//  \_____\__,_|___/_|_| |_|\___/    Tác giả: Nguyễn Trường Chinh
-//                    
-// Bản quyền: MIT LICENSE 2026
-
-/*******************************************************\
- * Hoàn thành ngày 20/03/2026 - Bản đa nền tảng        *
- * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
- * Gồm màu sắc chữ và hiệu ứng âm thanh                *
- * Lưu data và lịch sử ở các file định dạng JSON       *
- * Bảo mật bằng hash SHA256 (player) và RSA (admin)    *
- * Có thể viết thêm game trong folder src/game/        *
-\*******************************************************/
-
 #ifdef _WIN32               // Nếu là Windows 
     #define NOMINMAX
     #include <windows.h>
@@ -89,7 +71,7 @@ void hieuung_cho(atomic<bool>& dung){
     int i = 0;
     while(!dung){
         cout << "\r" << spinner[i] 
-             << RESET << " Vui lòng chờ biên dịch !" << flush;
+             << RESET << " Vui lòng chờ biên dịch" << flush;
         i = (i + 1) % 10;
         sleep_for(milliseconds(100));
     }
@@ -97,17 +79,126 @@ void hieuung_cho(atomic<bool>& dung){
     ancontrochuot(true);
 }
 
+void clear(){
+    #ifdef _WIN32 
+        system("cls");
+    #else 
+        system("clear");
+    #endif
+}
+
+int doronghienthi(const char* s){
+    int chieurong = 0;
+    for(int i = 0; s[i] != '\0'; ){
+        unsigned char c = s[i];
+        if(c < 128){ 
+            chieurong += 1; i += 1; 
+        } else{ 
+            chieurong += 1; 
+            i += 2; 
+        }
+    }
+    return chieurong;
+}
+
+int docphim() {
+    #ifdef _WIN32
+        int c = _getch();
+        if (c == 0 || c == 224) {
+            switch (_getch()) {
+                case 72: return 72; 
+                case 80: return 80; 
+                case 75: return 75; 
+                case 77: return 77; 
+            }
+        }
+        if (c == 13) 
+            return 13;
+        return c;
+    #else
+        termios oldt, newt;
+        tcgetattr(STDIN_FILENO, &oldt);
+        newt = oldt;
+        newt.c_lflag &= ~(ICANON | ECHO);
+        newt.c_cc[VMIN]  = 1;
+        newt.c_cc[VTIME] = 0;
+        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+        int c = getchar();
+        if (c == 27) {
+            int c1 = getchar();
+            if (c1 == '[') {
+                int c2 = getchar();
+                switch (c2) {
+                    case 'A': c = 72; break; 
+                    case 'B': c = 80; break; 
+                    case 'C': c = 77; break; 
+                    case 'D': c = 75; break; 
+                }
+            }
+        }
+        if (c == 10) 
+            c = 13;
+        tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+        return c;
+    #endif
+}
+
+void menu_build(){
+    const int somuc = 2;
+    const char* menu[somuc] = {
+        "Chạy file",
+        "Thoát"
+    };
+    int chon = 0;
+    while(true){
+        clear();
+        cout << "Không có thay đổi -> dùng file build cũ" << RESET << endl;
+        cout << "┌───────────────┐" << RESET << endl;
+
+        for (int i = 0; i < somuc; i++) {
+            if (i == chon) {
+                cout << "│" << RED << " ● " << RESET << menu[i];
+                int spaces = 12 - doronghienthi(menu[i]);
+                cout << RESET << string(spaces, ' ') << "│" << endl;
+            } else {
+                cout << "│   " << menu[i];
+                int spaces = 12 - doronghienthi(menu[i]);
+                cout << RESET << string(spaces, ' ') << "│" << endl;
+            }
+        }
+        cout << "└───────────────┘" << RESET << "\n";
+        int phim = docphim();
+        if (phim == 72) 
+            chon = (chon - 1 + somuc) % somuc;
+        else if (phim == 80)
+            chon = (chon + 1) % somuc;
+        else if (phim == 13) {
+            if(chon == 0){
+                #ifdef _WIN32
+                    system("cd bin && Casino.exe");
+                #else
+                    system("cd bin && ./Casino");
+                #endif
+                ancontrochuot(true);
+                exit(0);
+            } 
+            else if(chon == 1){
+                ancontrochuot(true);
+                exit(0);
+            }
+        }
+    }
+}
+
 int main(){
+    ancontrochuot(false);
     try {
-        // Kiểm tra tồn tại bin (tạo thư mục bin)
         #ifdef _WIN32
             system("if not exist bin mkdir bin");
         #else
             system("mkdir -p bin");
         #endif
         if(cacfilecanbiendich()){
-            //cout << "Đang biên dịch ! Vui lòng chờ..." << endl;
-            //cout << "Source thay đổi -> Đang biên dịch lại..." << RESET << endl;
             atomic<bool> stop(false);
             thread loading(hieuung_cho, ref(stop));
             int ketqua = system(lenhbiendich.c_str());
@@ -115,22 +206,20 @@ int main(){
             loading.join();
             if(ketqua != 0){
                 throw runtime_error(RED "Biên dịch thất bại !");
-                exit(0);
             }
             cout << "Biên dịch thành công !" << endl;
-        } 
-        else cout << "Không có thay đổi -> dùng file build cũ" << RESET << endl;
-        cout << "Chạy chương trình (y/n): ";
-        char c; cin >> c;
-        if(c == 'y'){
             #ifdef _WIN32
                 system("cd bin && Casino.exe");
             #else
                 system("cd bin && ./Casino");
             #endif
-        }
+        } 
+        else{
+            menu_build();
+        } 
     } catch(const exception& e){
         cout << RED << "\nLỗi: " << e.what() << RESET << endl;
     }
+    ancontrochuot(true);
     return 0;
 }
