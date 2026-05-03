@@ -17,7 +17,6 @@
 \*******************************************************/
 
 #include "include.h"
-#include "lib/header.h"
 
 // khởi tạo list 
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi){
