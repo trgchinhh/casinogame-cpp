@@ -1316,18 +1316,19 @@ int xacnhan_dungAI(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinPtr& nguoichoi)
         hienthongtinnguoichoi(nguoichoi);
         cout << "\n(" << RED << ">" << RESET << ") Trạng thái AI gợi ý: " 
              << GREEN << "Bật" << RESET << endl;
-        cout << "(" << RED << ">" << RESET << ") Xác nhận dùng AI ! (Phí 5.000)\n";
+        cout << "(" << RED << ">" << RESET << ") Xác nhận dùng AI ! (Phí " 
+             << dinhdangtien(phidungaigoiy) << ")\n";
         cout << "┌───────────────┐" << RESET << endl;
 
         for (int i = 0; i < somuc; i++) {
             if (i == chon) {
                 cout << "│" << mauchude << " ● " << RESET << menu[i];
                 int spaces = 12 - doronghienthi(menu[i]);
-                cout << string(spaces, ' ') << "│" << endl;
+                cout << RESET << string(spaces, ' ') << "│" << endl;
             } else {
                 cout << "│   " << menu[i];
                 int spaces = 12 - doronghienthi(menu[i]);
-                cout << string(spaces, ' ') << "│" << endl;
+                cout << RESET << string(spaces, ' ') << "│" << endl;
             }
         }
         cout << "└───────────────┘" << RESET << "\n\n";
@@ -2083,7 +2084,7 @@ void loadraketqua(int sogiay){
     int tongtick = (sogiay * 1000) / dotre;
     for(int i = 0; i < tongtick; i++){
         cout << "\r\t" << mauchude << spinner[vitri] << RESET
-             << " Vui lòng chờ kết quả trong giây lát ..."
+             << " Vui lòng chờ kết quả trong giây lát"
              << flush;
         vitri = (vitri + 1) % 10;
         sleep(dotre);
