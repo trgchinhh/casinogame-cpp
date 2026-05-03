@@ -13,8 +13,6 @@
 #include <chrono>
 #include <curl/curl.h>
 #include "header.h"
-#include "json.hpp"
-#include "props.h"
 
 using namespace std;
 using namespace chrono;
@@ -218,7 +216,7 @@ void ai_goiy(const string tennguoichoi, int& sodunguoichoi,
     bool checkketqua_ai = ketqua_ai(phanhoi);
     if(checkketqua_ai){
         sodunguoichoi -= phidungaigoiy;
-        cout << "\t(>) Đã thanh toán phí AI: " << RED 
+        cout << "\t[" << mauchude  << ">" << RESET << "] Đã thanh toán phí AI: " << RED 
              << "-" << dinhdangtien(phidungaigoiy) << RESET << " (VND)" << endl;
         cout << "\t └> Số dư còn lại: " << YELLOW 
              << dinhdangtien(sodunguoichoi) << RESET << " (VND)" << endl;
