@@ -1,8 +1,8 @@
-# CASINO GAME C++
-
-## Giới thiệu
+![Casino logo](docs/logo.png)
 
 **Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, có tích hợp AI, mang lại trải nghiệm sinh động ngay trong terminal.
+
+![Casino demo](docs/casino-demo.gif)
 
 Dự án được xây dựng với mục tiêu:
 
@@ -16,6 +16,35 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 
 > ⚠️ Lưu ý: Do sử dụng nhiều ký tự đặc biệt và ASCII art, nên khuyến nghị sử dụng các font monospace như **JetBrains Mono Nerd Font**, **Fira Code Nerd Font**, v.v. để hiển thị tốt nhất.
 
+## Kiến trúc hệ thống vận hành
+Hệ thống được thiết kế theo mô hình phân tầng chức năng quản lý từ khâu xác thực cho đến khi phân phối các sảnh trò chơi
+```bash
+              ┌─────────────────────────────────┐
+              │            TRANG CHỦ            │
+              ├─────────────────────────────────┤
+              │ • Bật / tắt hiệu ứng âm thanh   │
+              │ • Thông tin game                │
+              │ • Hướng dẫn chơi                │
+              │ • Đăng ký / đăng nhập tài khoản │
+              │ • Thoát chương trình            │
+              └────────────────┬────────────────┘
+                               │ Đăng nhập
+              ┌────────────────┴────────────────┐
+              │       HỆ THỐNG PHÂN QUYỀN       │
+              └──────┬───────────────────┬──────┘
+                     │ Admin             │ User
+┌────────────────────┴────┐     ┌────────┴────────────────┐
+│      SẢNH QUẢN TRỊ      │     │       SẢNH TRÒ CHƠI     │
+├─────────────────────────┤     ├─────────────────────────┤
+│ • Nạp / Trừ tiền User   │     │ • Game Xóc xóc (Có AI)  │
+│ • Xem lịch sử hệ thống  │     │ • Game Bài (Blackjack)  │
+│ • Bảng xếp hạng đại gia │     │ • Game May rủi (Slots)  │
+│ • Quản lý/Xóa tài khoản │     │ • Game 2 người / Flag   │
+└─────────────────────────┘     └─────────────────────────┘
+
+```
+> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
+
 ---
 
 ## Bài viết
@@ -24,47 +53,38 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 ---
 
 ## Video demo
-* Demo bản cũ: [Xem đầy đủ tại đây](https://drive.google.com/file/d/1G6eV0DhiAYCDHklUTUk0BhvdWoKOh5SU/view?usp=sharing)
-* Demo bản mới: [Xem đầy đủ tại đây](https://drive.google.com/file/d/1qtnJDql_Izp4dAMMBF2i5QSDuW_2a6QK/view?usp=sharing)
-
-![Casino demo](docs/casino-demo.gif)
+* Demo bản cũ: [Xem đầy đủ tại đây](https://drive.google.com/drive/my-drive?q=type:video%20parent:0AE8VmzF_NmdGUk9PVA)
+* Demo bản mới: [Xem đầy đủ tại đây](https://drive.google.com/drive/my-drive?q=type:video%20parent:0AE8VmzF_NmdGUk9PVA)
 
 ---
 
-## Chức năng chính
-
-### Trang chủ
-* Bật / tắt hiệu ứng âm thanh
-* Thông tin game
-* Hướng dẫn chơi 
-* Đăng ký / đăng nhập tài khoản
-* Thoát chương trình
-
-### Phân quyền người dùng
-Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
-
-#### Quyền Admin
-* Nạp tiền cho tài khoản người chơi
-* Trừ tiền người chơi
-* Xem thông tin tài khoản
-* Xem lịch sử chơi
-* Xem bảng xếp hạng
-* Xóa tài khoản
-* Đăng xuất (quay về trang chủ)
-
-> ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
-
-#### Quyền User (Trang game)
-* Game Xóc xóc
-* Game bài
-* Game May rủi
-* Game 2 người
-* Game flag
-* Bảng xếp hạng
-* Lịch sử chơi
-* Cài đặt
-* Đăng xuất (quay về trang chủ)
-
+## Kiến trúc vận hành quyền user (trang game)
+```bash
+                  ┌─────────────────────────────────────────────────────────┐
+                  │                HỆ THỐNG CÁC SẢNH TRÒ CHƠI               │
+                  └────────────────────────────┬────────────────────────────┘
+                                               │
+      ┌──────────────────┬─────────────────────┼─────────────────────┬──────────────────┐
+      ▼                  ▼                     ▼                     ▼                  ▼
+┌───────────┐      ┌───────────┐         ┌───────────┐         ┌───────────┐      ┌───────────┐
+│ GAME BÀI  │      │ GAME 2 NG │         │ GAME XÓC  │         │ MAY RỦI   │      │ GAME FLAG │
+├───────────┤      ├───────────┤         ├───────────┤         ├───────────┤      ├───────────┤
+│ • Bài cào │      │ • Bài cào │         │ • Bầu cua │         │ • Chẵn lẻ │      │ • Chế độ  │
+│           │      │           │         │           │         │           │      │   ẩn kích │
+│ • So bài  │      │ • Ném 1   │         │ • Tài xỉu │         │ • Dài     │      │   hoạt qua│
+│   1 lá    │      │   xúc xắc │         │   1 XX    │         │   ngắn    │      │   tham số │
+│           │      │           │         │           │         │           │      │   terminal│
+│ • Xì dách │      │ • Ném 3   │         │ • Tài xỉu │         │ • Đoán    │      │           │
+│           │      │   xúc xắc │         │   3 XX    │         │   màu     │      │ • Gồm đầy │
+│           │      │           │         │           │         │           │      │  đủ 5 game│
+│           │      │ • So bài  │         │ • Úp ngửa │         │ • Đoán số │      │   đối     │
+│           │      │   1 lá 2ng│         │           │         │           │      │   kháng   │
+│           │      │           │         │ • Xóc đĩa │         │ • Kéo búa │      │   như sảnh│
+│           │      │ • Xì dách │         │           │         │   bao     │      │   2 người │
+│           │      │   2 người │         │           │         │           │      │   nhưng có│
+│           │      │           │         │           │         │           │      │   cờ cược │
+└───────────┘      └───────────┘         └───────────┘         └───────────┘      └───────────┘
+```
 
 > ⚠️ Lưu ý: phần game flag chỉ chơi được khi gõ terminal `Casino.exe [game]`
 * Xem lịch sử chơi
@@ -77,7 +97,6 @@ Hệ thống hỗ trợ **2 loại tài khoản**: `Admin` và `User`.
 * Trình biên dịch hỗ trợ **C++17** trở lên
 * Terminal hỗ trợ màu ANSI
 * Font chữ monospace (khuyến nghị):
-
   * JetBrains Mono
   * Fira Code
   * Hoặc dùng các font hỗ trợ NerdFont
@@ -99,7 +118,7 @@ pacman -S mingw-w64-x86_64-openssl
 ### Build tự động
 Chạy file:
 ```bash
-g++ build.cpp -o build.exe
+build.cpp
 ```
 > Sau khi build và chạy file build.exe nó sẽ biên dịch tất cả và chạy chương trình chính 
 
@@ -111,15 +130,13 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 
 ---
 
-
 ## Ưu điểm
 * Code đã được chỉnh để chạy trên trình biên dịch GNU/GCC trên Windows và Linux
 
 ## Hạn chế hiện tại
-* Chưa tối ưu kiến trúc file hoàn chỉnh
-* Chưa mở rộng class mà còn dùng struct
+* Chưa tối ưu kiến trúc file module hoàn chỉnh
+* Chưa mở rộng class mà còn lạm dụng struct nhiều
 * Logic và giao diện vẫn còn gộp ở một số module
-* Còn lặp lại nhiều chỗ trong main
 * Còn hardcore vài chổ như biến global 
 
 ---
