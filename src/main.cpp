@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 20/03/2026 - Bản đa nền tảng        *
+ * Hoàn thành ngày 02/07/2026 - Bản đa nền tảng        *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -17,6 +17,7 @@
 \*******************************************************/
 
 #include "include.h"
+
 
 // khởi tạo list 
 void khoitaolist(DanhSachNguoiChoi& danhsachnguoichoi){
@@ -2302,6 +2303,101 @@ void huongdanflag(){
     cout << "]" << endl;
 }
 
+// void inchutammanhinh(const string chu){
+//     int chieurong_terminal = laychieurongterminal();
+//     int chieucao_terminal = laychieucaoterminal();
+//     //int chieudaichu = chu.length();
+//     int chieudaichu = doronghienthithuc(chu);
+//     cout << "\033[2J\033[H";
+//     int muctieu_hang = chieucao_terminal / 2;
+//     int muctieu_cot = (chieurong_terminal - chieudaichu) / 2;
+//     if(muctieu_cot < 0){
+//         muctieu_cot = 0;
+//     } 
+//     cout << "\033[" << muctieu_hang << ";" << muctieu_cot << "H";
+//     cout << chu << flush;
+// }
+
+void inbannertammanhinh(const string& chu_goc, string mau = "") {
+    system("cls");
+    int chieurong_terminal = laychieurongterminal();
+    int chieucao_terminal = laychieucaoterminal();
+    vector<string> banner;
+    stringstream ss(chu_goc);
+    string dong_tam;
+    while (getline(ss, dong_tam)) {
+        banner.push_back(dong_tam);
+    }
+    int so_dong_banner = banner.size();
+    cout << "\033[2J\033[H";
+    int muctieu_hang = (chieucao_terminal - so_dong_banner) / 2;
+    if (muctieu_hang < 1) {
+        muctieu_hang = 1;
+    }
+    cout << "\033[" << muctieu_hang << ";1H";
+    for (const string& chu : banner) {
+        string chu_khong_mau = xoaansi(chu);
+        int chieudaichu = dodaihienthiutf8(chu_khong_mau);
+        int muctieu_cot = (chieurong_terminal - chieudaichu) / 2;
+        if (muctieu_cot < 0) {
+            muctieu_cot = 0;
+        }
+        if (!mau.empty()) {
+            cout << string(muctieu_cot, ' ') << mau << chu << "\033[0m\n";
+        } else {
+            cout << string(muctieu_cot, ' ') << chu << "\n";
+        }
+    }
+    cout << flush;
+}
+
+void thanh_loading(int seconds, int sodongbanner) {
+    int chieurongterminal = laychieurongterminal();
+    int chieucaoterminal = laychieucaoterminal();
+    int muctieuhang = ((chieucaoterminal - sodongbanner) / 2) + sodongbanner + 2;
+    if (muctieuhang >= chieucaoterminal) {
+        muctieuhang = chieucaoterminal - 1;
+    }
+    string tieudethanh = "ĐANG LOAD GAME ";
+    int dodaithanhloading = dodaihienthiutf8(tieudethanh) + 40 + 2 + 6;
+    int muctieucot = (chieurongterminal - dodaithanhloading) / 2;
+    if (muctieucot < 0) {
+        muctieucot = 0;
+    }
+    const int tongcong = seconds * 25;
+    for (int i = 0; i <= tongcong; i++) {
+        int phantram = i * 100 / tongcong;
+        int vachday = phantram * 40 / 100;
+        int vachtrong = 40 - vachday;
+        string phanvachday = "";
+        for (int j = 0; j < vachday; j++) {
+            phanvachday += "▆";
+        }
+        string chuoiloading = tieudethanh + "[" + phanvachday + string(vachtrong, ' ') + "] " + to_string(phantram) + "%";
+        cout << "\033[" << muctieuhang << ";1H";
+        cout << string(muctieucot, ' ') << chuoiloading << flush;
+        sleep(10);
+    }
+    int demcham = 1;
+    while (!kbhit()) { 
+        string daucham = string(demcham, '.') + string(3 - demcham, ' '); 
+        string chuthongbao = string(CYAN) + "NHẤN PHÍM BẤT KỲ ĐỂ VÀO GAME" + daucham + string(RESET);
+        int dodaituynhon = dodaihienthiutf8(xoaansi(chuthongbao));
+        int muctieucotmoi = (chieurongterminal - dodaituynhon) / 2;
+        if (muctieucotmoi < 0) {
+            muctieucotmoi = 0;
+        }
+        cout << "\033[" << muctieuhang << ";1H\033[K";
+        cout << string(muctieucotmoi, ' ') << chuthongbao << flush;
+        demcham++;
+        if (demcham > 3) {
+            demcham = 1;
+        }
+        sleep(500);
+    }
+    getch(); 
+}
+
 // Hàm main
 ___CasinoGames___(int argc, char** argv) {
     #ifdef _WIN32    
@@ -2310,6 +2406,12 @@ ___CasinoGames___(int argc, char** argv) {
         SetConsoleTitleA("Casino Game");            // tiêu đề terminal         
     #endif
     ancontrochuot(trangthaicontrochuot);            // ẩn con trỏ chuột
+    
+    // in launcher loading game
+    inbannertammanhinh(bannerlauncher, YELLOW);
+    sleep(2000);
+    thanh_loading(3, 9);
+    
     srand(time(NULL) ^ clock());                    // khởi tạo random cho game 
     // Phần ưu tiên kiểm tra dành cho flag game
     if(argc > 1){
