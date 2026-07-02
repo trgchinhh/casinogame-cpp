@@ -1,6 +1,6 @@
-![Casino logo](docs/logo.png)
+# CASINO GAME C++
 
-## Casino Game
+## Giới thiệu
 
 **Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++17+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, có tích hợp AI, mang lại trải nghiệm sinh động ngay trong terminal.
 
@@ -21,28 +21,28 @@ Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộ
 ## Kiến trúc hệ thống vận hành
 Hệ thống được thiết kế theo mô hình phân tầng chức năng quản lý từ khâu xác thực cho đến khi phân phối các sảnh trò chơi
 ```bash
-              ┌─────────────────────────────────┐
-              │            TRANG CHỦ            │
-              ├─────────────────────────────────┤
-              │ • Bật / tắt hiệu ứng âm thanh   │
-              │ • Thông tin game                │
-              │ • Hướng dẫn chơi                │
-              │ • Đăng ký / đăng nhập tài khoản │
-              │ • Thoát chương trình            │
-              └────────────────┬────────────────┘
-                               │ Đăng nhập
-              ┌────────────────┴────────────────┐
-              │       HỆ THỐNG PHÂN QUYỀN       │
-              └──────┬───────────────────┬──────┘
-                     │ Admin             │ User
-┌────────────────────┴────┐     ┌────────┴────────────────┐
-│      SẢNH QUẢN TRỊ      │     │       SẢNH TRÒ CHƠI     │
-├─────────────────────────┤     ├─────────────────────────┤
-│ • Nạp / Trừ tiền User   │     │ • Game Xóc xóc (Có AI)  │
-│ • Xem lịch sử hệ thống  │     │ • Game Bài (Blackjack)  │
-│ • Bảng xếp hạng đại gia │     │ • Game May rủi (Slots)  │
-│ • Quản lý/Xóa tài khoản │     │ • Game 2 người / Flag   │
-└─────────────────────────┘     └─────────────────────────┘
+                                ┌─────────────────────────────────┐
+                                │            TRANG CHỦ            │
+                                ├─────────────────────────────────┤
+                                │ • Bật / tắt hiệu ứng âm thanh   │
+                                │ • Thông tin game                │
+                                │ • Hướng dẫn chơi                │
+                                │ • Đăng ký / đăng nhập tài khoản │
+                                │ • Thoát chương trình            │
+                                └────────────────┬────────────────┘
+                                                 │ Đăng nhập
+                                ┌────────────────┴────────────────┐
+                                │       HỆ THỐNG PHÂN QUYỀN       │
+                                └──────┬───────────────────┬──────┘
+                                       │ Admin             │ User
+                  ┌────────────────────┴────┐     ┌────────┴────────────────┐
+                  │      SẢNH QUẢN TRỊ      │     │       SẢNH TRÒ CHƠI     │
+                  ├─────────────────────────┤     ├─────────────────────────┤
+                  │ • Nạp / Trừ tiền User   │     │ • Game Xóc xóc (Có AI)  │
+                  │ • Xem lịch sử hệ thống  │     │ • Game Bài (Blackjack)  │
+                  │ • Bảng xếp hạng đại gia │     │ • Game May rủi (Slots)  │
+                  │ • Quản lý/Xóa tài khoản │     │ • Game 2 người / Flag   │
+                  └─────────────────────────┘     └─────────────────────────┘
 
 ```
 > ⚠️ Lưu ý: với Admin thì có thể tạo nhiều tài khoản nhưng đều đến trang quản lý (không có phân chia tài khoản như của User)  
