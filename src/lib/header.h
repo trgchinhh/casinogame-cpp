@@ -246,7 +246,7 @@ void chosaukhinhapthanhcong(int sogiay);
 void luumatkhaumoi(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinnguoichoi);
 void huongdanflag();
 void inchutammanhinh(const string chu);
-void inbannertammanhinh(const vector<string>& banner, string mau = "");
+void inbannertammanhinh(const string& chu_goc, string mau = "");
 void thanh_loading(int sogiay, int sodongbanner);
 
 char getchlinux();
