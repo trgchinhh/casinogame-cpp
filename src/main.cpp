@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 02/07/2026 - Bản đa nền tảng        *
+ * Hoàn thành ngày 20/03/2026 - Bản đa nền tảng        *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -17,6 +17,7 @@
 \*******************************************************/
 
 #include "include.h"
+#include "lib/header.h"
 
 
 // khởi tạo list 
@@ -1430,6 +1431,7 @@ void trangchu(DanhSachNguoiChoi& danhsachnguoichoi, ThongTinNguoiChoi& thongtinn
             } else{
                 clear();
                 inbanner(bannertambiet);
+                //inbannertammanhinh(bannertambiet, YELLOW);
                 hieuungamthanh_wav(dd_xinvinhbietcu, trangthaiamthanh);
                 if(trangthaiamthanh) sleep(3000);
                 // True - bật trỏ chuột lên khi thoát game 
@@ -2318,7 +2320,7 @@ void huongdanflag(){
 //     cout << chu << flush;
 // }
 
-void inbannertammanhinh(const string& chu_goc, string mau = "") {
+void inbannertammanhinh(const string& chu_goc, string mau) {
     system("cls");
     int chieurong_terminal = laychieurongterminal();
     int chieucao_terminal = laychieucaoterminal();
