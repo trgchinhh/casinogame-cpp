@@ -17,7 +17,6 @@
 **Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++14+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, có tích hợp AI, mang lại trải nghiệm sinh động ngay trong terminal.
 
 ![Casino launcher](docs/casino-launcher.png)
-![Casino demo](docs/casino-demo.gif)
 
 Dự án được xây dựng với mục tiêu:
 
@@ -26,6 +25,8 @@ Dự án được xây dựng với mục tiêu:
 * Làm quen với việc tổ chức mã nguồn, tách module và quản lý dữ liệu
 * Mô phỏng một hệ thống game có tài khoản, phân quyền, cài đặt, xếp hạng, lịch sử chơi và bảo mật
 * Tích hợp AI dự đoán kết quả vào game
+
+![Casino demo](docs/casino-demo.gif)
 
 Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộng thêm từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
 
