@@ -8,7 +8,7 @@
 // Bản quyền: MIT LICENSE 2026
 
 /*******************************************************\
- * Hoàn thành ngày 20/03/2026 - Bản đa nền tảng        *
+ * Hoàn thành ngày 03/07/2026 - Bản đa nền tảng        *
  * Cấu trúc dữ liệu dựa trên danh sách liên kết kép    *
  * Gồm màu sắc chữ và hiệu ứng âm thanh                *
  * Lưu data và lịch sử ở các file định dạng JSON       *
@@ -17,7 +17,6 @@
 \*******************************************************/
 
 #include "include.h"
-#include "lib/header.h"
 
 
 // khởi tạo list 
@@ -2380,7 +2379,7 @@ void thanh_loading(int seconds, int sodongbanner) {
         cout << string(muctieucot, ' ') << chuoiloading << flush;
         sleep(10);
     }
-    int demcham = 1;
+    int demcham = 0;
     while (!kbhit()) { 
         string daucham = string(demcham, '.') + string(3 - demcham, ' '); 
         string chuthongbao = string(CYAN) + "NHẤN PHÍM BẤT KỲ ĐỂ VÀO GAME" + daucham + string(RESET);
@@ -2393,7 +2392,7 @@ void thanh_loading(int seconds, int sodongbanner) {
         cout << string(muctieucotmoi, ' ') << chuthongbao << flush;
         demcham++;
         if (demcham > 3) {
-            demcham = 1;
+            demcham = 0;
         }
         sleep(500);
     }
@@ -2409,11 +2408,10 @@ ___CasinoGames___(int argc, char** argv) {
     #endif
     ancontrochuot(trangthaicontrochuot);            // ẩn con trỏ chuột
     
-    // in launcher loading game
-    inbannertammanhinh(bannerlauncher, YELLOW);
-    sleep(2000);
-    thanh_loading(3, 9);
-    
+    inbannertammanhinh(bannerlauncher, YELLOW);     // in launcher loading game
+    sleep(3000);
+    thanh_loading(4, 9);
+
     srand(time(NULL) ^ clock());                    // khởi tạo random cho game 
     // Phần ưu tiên kiểm tra dành cho flag game
     if(argc > 1){
