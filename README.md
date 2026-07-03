@@ -1,4 +1,16 @@
 ![Casino-logo](img/logo.png)
+<p align="center">
+  <a href="https://en.cppreference.com/w/cpp/17">
+    <img src="https://img.shields.io/badge/C%2B%2B-14-blue.svg?style=flat-pack&logo=c%2B%2B" alt="C++ Version"/>
+  </a>
+  <a href="https://github.com/trgchinhh/casinogame-cpp">
+    <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-orange.svg" alt="Platform"/>
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"/>
+  </a>
+</p>
+
 
 ## CASINO GAME C++
 
@@ -18,6 +30,38 @@ Dự án được xây dựng với mục tiêu:
 Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộng thêm từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
 
 > ⚠️ Lưu ý: Do sử dụng nhiều ký tự đặc biệt và ASCII art, nên khuyến nghị sử dụng các font monospace như **JetBrains Mono Nerd Font**, **Fira Code Nerd Font**, v.v. để hiển thị tốt nhất.
+
+---
+
+## Cấu Trúc Thư Mục Dự Án
+
+```bash
+casinogame-cpp/
+├── bin/
+├── data/
+├── docs/
+├── env/
+├── img/
+├── sound/
+├── src/
+│   ├── main.cpp
+│   ├── include.h
+│   ├── core/
+│   ├── tui/
+│   ├── lib/
+│   ├── resource/
+│   └── game/
+│       ├── co_cuoc_flag/
+│       ├── game_2_nguoi/
+│       ├── game_bai/
+│       ├── game_may_rui/
+│       └── game_xoc_xoc/
+├── .gitignore
+├── build.cpp
+├── LICENSE
+└── README.md
+```
+---
 
 ## Kiến trúc hệ thống vận hành
 Hệ thống được thiết kế theo mô hình phân tầng chức năng quản lý từ khâu xác thực cho đến khi phân phối các sảnh trò chơi
@@ -150,4 +194,4 @@ GitHub: [https://github.com/trgchinhh](https://github.com/trgchinhh)
 
 ---
 
-> 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh.
+> 📌 Dự án nhỏ được phát triển với mục đích học tập và nghiên cứu. Mọi góp ý và đóng góp đều được hoan nghênh. Nếu thấy dự án này thú vị hoặc hữu ích cho bạn, hãy tặng 1 sao cho repo này !!!
