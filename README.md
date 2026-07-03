@@ -50,12 +50,10 @@ casinogame-cpp/
 ├── src/
 │   ├── main.cpp
 │   ├── include.h
-│   ├── core/
-│   ├── tui/
 │   ├── lib/
 │   ├── resource/
 │   └── game/
-│       ├── co_cuoc_flag/
+│       ├── game_flag/
 │       ├── game_2_nguoi/
 │       ├── game_bai/
 │       ├── game_may_rui/
