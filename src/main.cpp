@@ -2352,7 +2352,7 @@ void inbannertammanhinh(const string& chu_goc, string mau) {
     cout << flush;
 }
 
-void thanh_loading(int seconds, int sodongbanner) {
+void thanh_loading(int sogiay, int sodongbanner) {
     int chieurongterminal = laychieurongterminal();
     int chieucaoterminal = laychieucaoterminal();
     int muctieuhang = ((chieucaoterminal - sodongbanner) / 2) + sodongbanner + 2;
@@ -2365,7 +2365,7 @@ void thanh_loading(int seconds, int sodongbanner) {
     if (muctieucot < 0) {
         muctieucot = 0;
     }
-    const int tongcong = seconds * 25;
+    const int tongcong = sogiay * 25;
     for (int i = 0; i <= tongcong; i++) {
         int phantram = i * 100 / tongcong;
         int vachday = phantram * 40 / 100;
