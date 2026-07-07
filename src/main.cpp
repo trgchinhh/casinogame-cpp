@@ -2407,10 +2407,6 @@ ___CasinoGames___(int argc, char** argv) {
         SetConsoleTitleA("Casino Game");            // tiêu đề terminal         
     #endif
     ancontrochuot(trangthaicontrochuot);            // ẩn con trỏ chuột
-    
-    inbannertammanhinh(bannerlauncher, YELLOW);     // in launcher loading game
-    sleep(3000);
-    thanh_loading(4, 9);
 
     srand(time(NULL) ^ clock());                    // khởi tạo random cho game 
     // Phần ưu tiên kiểm tra dành cho flag game
@@ -2421,11 +2417,19 @@ ___CasinoGames___(int argc, char** argv) {
             ancontrochuot(trangthaicontrochuot);
             return -1;
         }
-        cout << endl;
+        inbannertammanhinh(bannerlauncher, YELLOW);     // in launcher loading game
+        sleep(3000);
+        thanh_loading(4, 9);
+        system("cls");
         games[vitrigameflag].tenhamgame();
         ancontrochuot(trangthaicontrochuot);
         return 0;
-    }                       
+    }
+
+    inbannertammanhinh(bannerlauncher, YELLOW);     // in launcher loading game
+    sleep(3000);
+    thanh_loading(4, 9);
+
     // Phần chạy chương trình chính 
     DanhSachNguoiChoi danhsachnguoichoi;            
     khoitaolist(danhsachnguoichoi);
