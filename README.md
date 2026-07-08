@@ -19,6 +19,19 @@
 
 **Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++14+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, có tích hợp AI, mang lại trải nghiệm sinh động ngay trong terminal.
 
+---
+
+## Số sao
+<a href="https://www.star-history.com/?repos=trgchinhh%2Fcasinogame-cpp&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=trgchinhh/casinogame-cpp&type=date&theme=dark&legend=top-left&sealed_token=4eQAVN-YCJNngVcPUpYmQoJ3RvMzY_yDGvA2Ir-SeRH9-2fCZPp3OIxx6JNnzJ3KGZRYp02FP3E8tmroXQ2yuBr_psYo_BgYCcCNarsqHDGtNo0x_Nock7-5ub7FrioXqfsmgqtNm6ItEdA4wVogAWSqvhmgT3UQXe0Oyvdf-228X-JY1oEUppjp8mx_" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=trgchinhh/casinogame-cpp&type=date&legend=top-left&sealed_token=4eQAVN-YCJNngVcPUpYmQoJ3RvMzY_yDGvA2Ir-SeRH9-2fCZPp3OIxx6JNnzJ3KGZRYp02FP3E8tmroXQ2yuBr_psYo_BgYCcCNarsqHDGtNo0x_Nock7-5ub7FrioXqfsmgqtNm6ItEdA4wVogAWSqvhmgT3UQXe0Oyvdf-228X-JY1oEUppjp8mx_" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=trgchinhh/casinogame-cpp&type=date&legend=top-left&sealed_token=4eQAVN-YCJNngVcPUpYmQoJ3RvMzY_yDGvA2Ir-SeRH9-2fCZPp3OIxx6JNnzJ3KGZRYp02FP3E8tmroXQ2yuBr_psYo_BgYCcCNarsqHDGtNo0x_Nock7-5ub7FrioXqfsmgqtNm6ItEdA4wVogAWSqvhmgT3UQXe0Oyvdf-228X-JY1oEUppjp8mx_" />
+ </picture>
+</a>
+
+---
+
 ![Casino launcher](docs/casino-launcher.png)
 
 Dự án được xây dựng với mục tiêu:
