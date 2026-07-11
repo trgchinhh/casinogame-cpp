@@ -19,7 +19,9 @@
 
 **Casino Game C++** là một dự án game cá cược chạy trên môi trường dòng lệnh (custom TUI), được phát triển bằng ngôn ngữ **C++ (C++14+)**. Dự án mô phỏng nhiều trò chơi cá cược quen thuộc với giao diện ASCII trực quan, hiệu ứng màu sắc và âm thanh, có tích hợp AI, mang lại trải nghiệm sinh động ngay trong terminal.
 
+<!--
 ---
+
 
 ## Số sao
 <a href="https://www.star-history.com/?repos=trgchinhh%2Fcasinogame-cpp&type=date&legend=bottom-right">
@@ -29,7 +31,7 @@
    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=trgchinhh/casinogame-cpp&type=date&legend=bottom-right&sealed_token=PN0boDw7w5Qh7BLq25Vu4jM4A1344kbkLt_iKZ264i0p6nGR5gob0kqIPkb1KU-t2s1eqAKrDy_hwusXjZ1vtWM5Hhks-jRVOaET_L0nLzrBXqWHKU2L-6WLPEV3o4_Z3j9nBX1hhUs0pkdk2pn4cBZKeCytvrQfPEUkhLkTcECBiY89h4V54qpJ5AYOJru5hYwvYDKbYBvvNJ6OBIwPX78ipChaCg_rX43qymsoWWruK7do4YfJvXWTny-gfaCb_hlzAdzXig-z8YvssgFoqk_xCJ2Q4_74ybx1A45s9vZYjbFOpX45zKHPQZcppIB9zjb-EigPaLCS44zC4UFzqVDZWTT7fpt3wyDRISk6_UgByosTu9i8L2yKXIAiUSrnkpvTCAMfUAPAr-HPgztTo2qFHPhekWY9GmKoMBQUjGIr89LLzAQWXVIIyf2udX-aAl4soGCIn2FIQrdMNrv3Hg8DgmnB0z495QjbO7Qop7qAgxgMPOuBfjmksV1q-T8l6OBrplTbI9DRdQsmpjmJSx3YQJmos3wyGExR1yhIcga-gA5TOa9Ov_FLKaED8pAWIT5aTMAEAle_GV1CUERAwYERFEiZMtmpZFpD8EbgJ6RnkgG1bR3p1iGKxMQ-ClosQ8W8OuTBmQiJMrth04ivrjfFEyZn8AKLyZzQujB4M-TWJVfF9DjSmSh5p9AZFIuK4IwNV7Gp9Zx2oHofx6RHBwK6rNHB3RDvL4kXMi4RZIfzgnRQhDl0yoCzy06qujYXIK81kjZyoAI-gSMluAPK-AH7EXihvrYSTHx4w0wgNfzicycXFiU7-EiuF_2t_lW_LDxxf5smKtRLFJBK2E7bTER_9ET6AzT0LgU2ibAYoy6oHuCvIyS6xVa6UZVwCcipYy5hxfPagyhhVazlkyKYixUpe7s8nHLf9vABuySpJ8dZFA2gIcvr1XWsP9j9GaLfF8r_IUh9Umzf1j_5-cUKdiA0ax5KbOQ8J4PlM8udCNIb8-SjjCSZZUUP0Ak1i2tfkTU_otBkgsXBqJkoZkJoCAACGK5CjE1NKzk2hZ-OXI5C-ggOVAHN3Md9CHC6w1AwQMFQMNzxC3IVpcfHLv1dNagokioHbqFGpe4-Glh-muydss5CxsGStTWBAAMOOuXgt2TH3FYv4ohrbCkrPt8uNwFMOo5mDjAe5IbA6UX7DxUi7gdKB0j61KD9JBi24eD5brGf3xX6hd5p9SKlDgk8zdyFNW80yj6z9Ofg9u-TO16nz1-lVMLun2RSONPGdIwXdjr0QFvRTGW_lzn-6kRMfgzq95k4kPWjPJaAqUDLjTAUYcHPxqVZosIegA7AI9-Ov5YYsIWCWK5G3su0pJzNaZuQoBn5y5BI5FK2fIZWn29nhVtolkgaWdOB1yKadrXD7qN9NmdD9cP5hZQVgi2kzEX2TkeMT7s-vQZvrCQVpnVXh0FamewNcUspRIgtdXL8mSy9nOiATOqWd_9m9tvJdU-2pQBdVJkLvUzUZSQmgPUMF3xPY2nmQSVwv6IsSEoGQFv5cYFDWAz5EElh9AcweXFEPWUryV2zTdHbeAWK6aNGuvL-BmlBdgHFpSgmPe-aUVeI-EZ50uzic2oPj9Sa-LoCzCO4k_OGDd_MHhPcCA" />
  </picture>
 </a>
-
+-->
 ---
 
 ![Casino launcher](docs/casino-launcher.png)
