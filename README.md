@@ -14,19 +14,6 @@
   </a>
 </p>
 
-## Mục lục
-
-- [Giới thiệu](#gioi-thieu)
-- [Tính năng nổi bật](#tinh-nang)
-- [Cấu trúc thư mục](#cau-truc)
-- [Kiến trúc hệ thống](#kien-truc)
-- [Các thể loại game](#menu-game)
-- [Tài liệu và Video](#tai-lieu)
-- [Yêu cầu hệ thống](#yeu-cau)
-- [Cài đặt và Build](#build)
-- [Ưu điểm](#uu-diem)
-- [Hạn chế hiện tại](#han-che)
-- [Tác giả](#tac-gia)
 
 ## CASINO GAME C++
 
