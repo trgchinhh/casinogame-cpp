@@ -16,16 +16,16 @@
 
 ## Mục lục
 
-- [Giới thiệu](#casino-game-c)
-- [Tính năng nổi bật](#casino-game-c)
-- [Cấu trúc thư mục](#cau-truc-thu-muc-du-an)
-- [Kiến trúc hệ thống](#kien-truc-he-thong-van-hanh)
-- [Các thể loại game](#menu-moi-the-loai-game)
-- [Tài liệu và Video](#bai-viet)
-- [Yêu cầu hệ thống](#yeu-cau-he-thong)
-- [Cài đặt và Build](#cai-dat--build)
+- [Giới thiệu](#gioi-thieu)
+- [Tính năng nổi bật](#tinh-nang)
+- [Cấu trúc thư mục](#cau-truc)
+- [Kiến trúc hệ thống](#kien-truc)
+- [Các thể loại game](#menu-game)
+- [Tài liệu và Video](#tai-lieu)
+- [Yêu cầu hệ thống](#yeu-cau)
+- [Cài đặt và Build](#build)
 - [Ưu điểm](#uu-diem)
-- [Hạn chế hiện tại](#han-che-hien-tai)
+- [Hạn chế hiện tại](#han-che)
 - [Tác giả](#tac-gia)
 
 ## CASINO GAME C++
