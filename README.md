@@ -1,4 +1,7 @@
-![Casino-logo](https://github.com/trgchinhh/casinogame-cpp/blob/main/img/logo.png)
+<p align="center">
+  <img height="300" src="img/logo.png"/>
+</p>
+
 <p align="center">
   <a href="https://en.cppreference.com/w/cpp/17">
     <img src="https://img.shields.io/badge/Language-C%2B%2B-orange.svg" alt="Language"/>
