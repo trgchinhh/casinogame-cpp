@@ -53,7 +53,7 @@
 - Âm thanh / màu sắc:
   - Game cũng bao gồm âm thanh vui nhộn để tăng tính hài hước cho game, bên cạnh cũng có màu sắc (theme) có thể chỉnh trong cài đặt
 
-![Casino demo](docs/casino-demo.gif)
+![Casino demo](docs/demo.gif)
 
 Giao diện và cách tổ chức menu được lấy cảm hứng và mở rộng thêm từ dự án trước đó: [quanlysinhvien-cpp](https://github.com/trgchinhh/quanlysinhvien-cpp).
 
