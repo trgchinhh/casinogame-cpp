@@ -15,6 +15,7 @@
     #include <sys/ioctl.h>
     #include <unistd.h> 
     #include <termios.h>
+    #include <fcntl.h>
 #endif
 
 #include <iostream>
