@@ -2352,6 +2352,26 @@ void inbannertammanhinh(const string& chu_goc, string mau) {
     cout << flush;
 }
 
+#ifdef __linux__
+    int kbhit() {
+        termios oldt, newt;
+        tcgetattr(STDIN_FILENO, &oldt);
+        newt = oldt;
+        newt.c_lflag &= ~(ICANON | ECHO);
+        tcsetattr(STDIN_FILENO, TCSANOW, &newt);
+        int oldf = fcntl(STDIN_FILENO, F_GETFL, 0);
+        fcntl(STDIN_FILENO, F_SETFL, oldf | O_NONBLOCK);
+        int ch = getchar();
+        tcsetattr(STDIN_FILENO, TCSANOW, &oldt);
+        fcntl(STDIN_FILENO, F_SETFL, oldf);
+        if (ch != EOF) {
+            ungetc(ch, stdin); 
+            return 1;
+        }
+        return 0;
+    }
+#endif
+
 void thanh_loading(int sogiay, int sodongbanner) {
     int chieurongterminal = laychieurongterminal();
     int chieucaoterminal = laychieucaoterminal();
@@ -2396,7 +2416,7 @@ void thanh_loading(int sogiay, int sodongbanner) {
         }
         sleep(500);
     }
-    getch(); 
+    docphim();
 }
 
 // Hàm main
