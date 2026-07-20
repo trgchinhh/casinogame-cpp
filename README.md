@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://en.cppreference.com/w/cpp/17">
-    <img src="https://img.shields.io/badge/Language-C%2B%2B-orange.svg" alt="Language"/>
+    <img src="https://img.shields.io/badge/Language-C%2B%2B-blue.svg" alt="Language"/>
   </a>
   <a href="https://github.com/trgchinhh/casinogame-cpp">
     <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-orange.svg" alt="Platform"/>
