@@ -199,6 +199,7 @@ g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\
 
 ## Tác giả
 **Nguyễn Trường Chinh (NTC++)**<br>
+**Ủng hộ:** [Nếu bạn thấy hữu ích hãy ủng hộ mình](https://github.com/sponsors/trgchinhh)<br>
 **GitHub:** [https://github.com/trgchinhh](https://github.com/trgchinhh)
 
 ---
