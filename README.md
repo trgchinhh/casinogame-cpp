@@ -169,18 +169,14 @@ pacman -S mingw-w64-x86_64-openssl
 ```
 > Cần chạy lệnh trong MingW64
 
-### Build tự động
-Chạy file:
+### Hướng dẫn tải và build tự động
 ```bash
-build.cpp
+git clone https://github.com/trgchinhh/casinogame-cpp.git
+cd casinogame-cpp
+g++ ./build.cpp -o ./build.exe
+./build.exe
 ```
-> Sau khi build và chạy file build.exe nó sẽ biên dịch tất cả và chạy chương trình chính 
-
-### Build thủ công (Windows - MinGW)
-```bash
-g++ src\main.cpp -IC:\OpenSSL-Win64\include -LC:\OpenSSL-Win64\lib src\resource\resource.o -o Casino.exe -lwinmm -lssl -lcrypto -lcurl -w
-```
-> Không build trực tiếp trong Mingw64 
+> Lần sau muốn chạy lại mà không biên dịch thì vào thư mục `bin/` và chạy `Casino.exe`
 
 ---
 
